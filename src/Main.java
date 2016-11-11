@@ -7,9 +7,17 @@ import java.io.*;
  * Created by Rishabh Khatri(2015077) and Ravi Sharma(2015165) on 11/3/2016.
  */
 public class Main {
-    public static void main(String[] args) {
-
+    public static void writeFile(String fileName) {
         // Write csv files
+        try {
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileName, true));
+            bufferedWriter.newLine();
+            bufferedWriter.close();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
         try {
             CSVWriter writer = new CSVWriter(new FileWriter("data.csv", true));
             String[] entries = "first,second,third".split(",");
@@ -19,7 +27,9 @@ public class Main {
         catch (IOException e) {
             e.printStackTrace();
         }
+    }
 
+    public static void readFile(String fileName) {
         // Read csv files
         try {
             CSVReader reader = new CSVReader(new FileReader(new File("data.csv")));
@@ -32,5 +42,9 @@ public class Main {
         catch (IOException i) {
             i.printStackTrace();
         }
+    }
+    public static void main(String[] args) {
+        writeFile("data.csv");
+        readFile("data.csv");
     }
 }

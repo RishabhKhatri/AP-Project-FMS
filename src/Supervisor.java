@@ -1,6 +1,6 @@
 /**
- * Created by ravi on 4/11/16.
+ * Created by Rishabh Khatri(2015077) and Ravi Sharma(2015165) on 4/11/16.
  */
 public class Supervisor {
-	// I love Gaurav Gehlot
+
 }

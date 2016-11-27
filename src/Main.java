@@ -2,11 +2,20 @@ import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 
 import java.io.*;
+import java.util.ArrayList;
 
 /**
  * Created by Rishabh Khatri(2015077) and Ravi Sharma(2015165) on 11/3/2016.
  */
 public class Main {
+    public static long id = 1000001;
+//    public static Person admin = new Admin();
+//    public static Person Electricity_supervisor = new Supervisor();
+//    public static Person HVAC_supervisor = new Supervisor();
+//    public static Person AV_supervisor = new Supervisor();
+//    public static Person Security_supervisor = new Supervisor();
+//    public static Person Housekeeping_supervisor = new Supervisor();
+    public static ArrayList<Person> Staff = new ArrayList<>();
     public static void writeFile(String fileName) {
         // Write csv files
         try {
@@ -44,7 +53,7 @@ public class Main {
         }
     }
     public static void main(String[] args) {
-        writeFile("data.csv");
-        readFile("data.csv");
+        Interface frame = new Interface();
+        frame.FrontScreen();
     }
 }

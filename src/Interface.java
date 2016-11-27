@@ -21,12 +21,12 @@ public class Interface {
         catch (IOException | FontFormatException e) {
             e.printStackTrace();
         }
-        jFrame.setSize(700,600);
+        jFrame.setSize(1000,1000);
         jFrame.setLocationRelativeTo(null);
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     public void FrontScreen() {
-        JPanel jPanel = new JPanel(new GridBagLayout());
+        JPanel jPanel = new JPanel(null);
         JLabel jLabel = new JLabel("Facility Management Service", SwingConstants.CENTER);
         JLabel label = new JLabel("(For new staff member)", SwingConstants.CENTER);
         label.setFont(font1);
@@ -42,7 +42,6 @@ public class Interface {
         login.setFont(font1);
         register.setFont(font1);
         exit.setFont(font1);
-        GridBagConstraints grid = new GridBagConstraints();
 
         // Label and Button sizing
         jLabel.setPreferredSize(jLabel.getPreferredSize());
@@ -51,14 +50,14 @@ public class Interface {
         exit.setPreferredSize(exit.getPreferredSize());
 
         // Panel Layout using grid bag constraints
-        grid.gridx=grid.gridy=0;
-        jPanel.add(jLabel, grid);
-        grid.gridy++;
-        jPanel.add(login, grid);
-        grid.gridy++;
-        jPanel.add(register, grid);
-        grid.gridy++;
-        jPanel.add(exit, grid);
+        jPanel.add(jLabel);
+        jPanel.add(login);
+        jPanel.add(register);
+        jPanel.add(exit);
+        jLabel.setBounds(250, 100, 500, 70);
+        login.setBounds(300, 200, 150, 50);
+        register.setBounds(500, 200, 150, 50);
+        exit.setBounds(400, 270, 150, 50);
 
         // JFrame setup
         jFrame.add(jPanel);
@@ -70,7 +69,7 @@ public class Interface {
             new Login(jFrame);
         });
         register.addActionListener(e -> {
-            jPanel.remove(jPanel);
+            jFrame.remove(jPanel);
             Register register1 = new Register(jFrame);
         });
         exit.addActionListener(e -> System.exit(0));

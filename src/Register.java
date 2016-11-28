@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.util.Arrays;
 
 /**
  * Created by Rishabh Khatri(2015077) and Ravi Sharma(2015165) on 6/11/16.
@@ -11,6 +12,7 @@ public class Register {
     private JPanel jPanel = new JPanel(null);
     private Font font = new Font("Roboto Light", Font.PLAIN, 35);
     private Font font1 = new Font("Roboto Light", Font.PLAIN, 20);
+    private Font font2 = new Font("Roboto Light", Font.ITALIC, 15);
     private JTextField name = new JTextField(20);
     private JTextField user_name = new JTextField(20);
     private JPasswordField password = new JPasswordField(20);
@@ -35,7 +37,13 @@ public class Register {
         JLabel confirm_password_label = new JLabel("Confirm password ", SwingConstants.CENTER);
         JLabel contact_label = new JLabel("Contact ", SwingConstants.CENTER);
         JLabel email_label = new JLabel("E-mail ", SwingConstants.CENTER);
-        JLabel warning = new JLabel("Please fill the empty field(s) to continue registration");
+        JLabel name_warning = new JLabel("Empty field");
+        JLabel user_name_warning = new JLabel("Empty field");
+        JLabel email_warning = new JLabel("Empty field");
+        JLabel password_warning = new JLabel("Empty field");
+        JLabel confirm_password_warning = new JLabel("Empty field");
+        JLabel contact_warning = new JLabel("Empty field");
+        JLabel warning = new JLabel("Empty field");
         JButton submit = new JButton("Submit");
 
         // Set width of text fields
@@ -55,6 +63,12 @@ public class Register {
         confirm_password_label.setPreferredSize(new Dimension(300, 70));
         contact_label.setPreferredSize(new Dimension(300, 70));
         email_label.setPreferredSize(new Dimension(300, 70));
+        name_warning.setPreferredSize(new Dimension(300, 70));
+        user_name_warning.setPreferredSize(new Dimension(300, 70));
+        email_warning.setPreferredSize(new Dimension(300, 70));
+        password_warning.setPreferredSize(new Dimension(300, 70));
+        confirm_password_warning.setPreferredSize(new Dimension(300, 70));
+        contact_warning.setPreferredSize(new Dimension(300, 70));
         warning.setPreferredSize(new Dimension(300, 70));
         submit.setPreferredSize(new Dimension(200,50));
         submit.setPreferredSize(submit.getPreferredSize());
@@ -68,7 +82,13 @@ public class Register {
         confirm_password_label.setFont(font1);
         contact_label.setFont(font1);
         email_label.setFont(font1);
-        warning.setFont(font1);
+        name_warning.setFont(font2);
+        user_name_warning.setFont(font2);
+        email_warning.setFont(font2);
+        password_warning.setFont(font2);
+        confirm_password_warning.setFont(font2);
+        contact_warning.setFont(font2);
+        warning.setFont(font2);
         submit.setFont(font1);
 
         // Set Layout
@@ -88,6 +108,18 @@ public class Register {
         jPanel.add(email);
         jPanel.add(id);
         jPanel.add(submit);
+        jPanel.add(name_warning);
+        name_warning.setVisible(false);
+        jPanel.add(user_name_warning);
+        user_name_warning.setVisible(false);
+        jPanel.add(email_warning);
+        email_warning.setVisible(false);
+        jPanel.add(password_warning);
+        password_warning.setVisible(false);
+        jPanel.add(confirm_password_warning);
+        confirm_password_warning.setVisible(false);
+        jPanel.add(contact_warning);
+        contact_warning.setVisible(false);
         jPanel.add(warning);
         warning.setVisible(false);
         id.setText(""+ID);
@@ -107,7 +139,6 @@ public class Register {
         confirm_password.setBounds(400,450,300,30);
         contact_label.setBounds(100,500,300,30);
         contact.setBounds(400,500,300,30);
-        warning.setBounds(200, 550, 500,50);
         submit.setBounds(400, 550, 200,50);
 
         // Initialize frame
@@ -116,42 +147,79 @@ public class Register {
 
         // Button listeners
         submit.addActionListener(e -> {
-            if (name.getText().isEmpty() || user_name.getText().isEmpty() || password.getPassword().length==0
-                    || confirm_password.getPassword().length==0 || contact.getText().isEmpty()) {
-                warning.setVisible(true);
-                submit.setBounds(400, 600, 200,50);
+            // Display error messages
+            if (name.getText().isEmpty()) {
+                name_warning.setBounds(700,200,300,30);
+                name_warning.setVisible(true);
                 jFrame.setVisible(true);
                 flag=false;
-            }
-            if (!password.getPassword().equals(confirm_password.getPassword())) {
+            } else {name_warning.setVisible(false);}
+            if (user_name.getText().isEmpty()) {
+                user_name_warning.setBounds(700,300,300,30);
+                user_name_warning.setVisible(true);
+                jFrame.setVisible(true);
+                flag=false;
+            } else {user_name_warning.setVisible(false);}
+            if (email.getText().isEmpty()) {
+                email_warning.setBounds(700,350,300,30);
+                email_warning.setVisible(true);
+                jFrame.setVisible(true);
+                flag=false;
+            } else {email_warning.setVisible(false);}
+            if (password.getPassword().length==0) {
+                password_warning.setBounds(700,400,300,30);
+                password_warning.setVisible(true);
+                jFrame.setVisible(true);
+                flag=false;
+            } else {password_warning.setVisible(false);}
+            if (confirm_password.getPassword().length==0) {
+                confirm_password_warning.setBounds(700,450,300,30);
+                confirm_password_warning.setVisible(true);
+                jFrame.setVisible(true);
+                flag=false;
+            } else {confirm_password_warning.setVisible(false);}
+            if (contact.getText().isEmpty()) {
+                contact_warning.setBounds(700,500,300,30);
+                contact_warning.setVisible(true);
+                jFrame.setVisible(true);
+                flag=false;
+            } else {contact_warning.setVisible(false);}
+            if (!Arrays.equals(password.getPassword(), confirm_password.getPassword())) {
                 warning.setText("Passwords are not same!");
-                warning.setBounds(700,400,300,30);
+                warning.setBounds(700,450,300,30);
                 warning.setVisible(true);
                 jFrame.setVisible(true);
                 flag=false;
-            }
+            } else {warning.setVisible(false);}
+
+            // Form a new person
             this.Name = name.getText();
             this.username = user_name.getText();
             String string = new String(password.getPassword());
             this.Password = string;
             this.Contact = contact.getText();
             this.Email = email.getText();
-            System.out.println(Password);
             Person temp_staff = new Staff(Name, ID, username, Password, Contact, Email);
+
+            // Check for existing staff member
             for (Person person : Main.Staff) {
-               if (person.getEmail().equals(temp_staff.getEmail()) || person.getContact().equals(temp_staff.getContact())) {
-                   warning.setText("User already exists!");
-                   submit.setBounds(400, 600, 200,50);
-                   jFrame.setVisible(true);
-                   flag=false;
-               }
+                if (person.getUser_name().equals(temp_staff.getUser_name()) ||
+                        person.getEmail().equals(temp_staff.getEmail()) || person.getContact().equals(temp_staff.getContact())) {
+                    warning.setText("User already exists!");
+                    submit.setBounds(400, 600, 200,50);
+                    jFrame.setVisible(true);
+                    flag=false;
+                }
             }
+
+            // Create a new staff member if everything is good to go
             if (flag) {
                 Main.Staff.add(temp_staff);
                 jFrame.remove(jPanel);
                 Interface frame = new Interface();
                 frame.FrontScreen();
             }
+            flag=true;
         });
     }
 }

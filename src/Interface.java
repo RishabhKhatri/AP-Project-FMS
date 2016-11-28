@@ -66,7 +66,7 @@ public class Interface {
         // Button Actions
         login.addActionListener(e -> {
             jFrame.remove(jPanel);
-            new Login(jFrame);
+            Login login1 = new Login(jFrame);
         });
         register.addActionListener(e -> {
             jFrame.remove(jPanel);

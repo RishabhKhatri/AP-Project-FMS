@@ -10,10 +10,10 @@ import java.io.IOException;
  */
 public class Interface {
     // Declarations
-    private JFrame jFrame = new JFrame("Facility Management Service");
-    private Font font = new Font("Roboto Light", Font.PLAIN, 35);
-    private Font font1 = new Font("Roboto Light", Font.PLAIN, 20);
+    private static Font font = new Font("Roboto Light", Font.PLAIN, 35);
+    private static Font font1 = new Font("Roboto Light", Font.PLAIN, 20);
     Interface() {
+        JFrame jFrame = new JFrame("Facility Management Service");
         try {
             GraphicsEnvironment graphicsEnvironment = GraphicsEnvironment.getLocalGraphicsEnvironment();
             graphicsEnvironment.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("Roboto-Light.ttf")));
@@ -21,11 +21,12 @@ public class Interface {
         catch (IOException | FontFormatException e) {
             e.printStackTrace();
         }
-        jFrame.setSize(1000,1000);
+        jFrame.setSize(1400,1000);
         jFrame.setLocationRelativeTo(null);
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        FrontScreen(jFrame);
     }
-    public void FrontScreen() {
+    public static void FrontScreen(JFrame jFrame) {
         JPanel jPanel = new JPanel(null);
         JLabel jLabel = new JLabel("Facility Management Service", SwingConstants.CENTER);
         JLabel label = new JLabel("(For new staff member)", SwingConstants.CENTER);

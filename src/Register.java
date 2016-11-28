@@ -6,7 +6,7 @@ import java.util.Arrays;
  * Created by Rishabh Khatri(2015077) and Ravi Sharma(2015165) on 6/11/16.
  */
 public class Register {
-    private String Name, username, Password, Contact, Email, Department;
+    private String Name, username, Password, Contact, Email, Department, Type;
     private long ID;
     private JFrame jFrame;
     private JPanel jPanel = new JPanel(null);
@@ -15,7 +15,8 @@ public class Register {
     private Font font2 = new Font("Roboto Light", Font.ITALIC, 15);
     private JTextField name = new JTextField(20);
     private JTextField user_name = new JTextField(20);
-    private JComboBox<String> jComboBox;
+    private JComboBox<String> department;
+    private JComboBox<String> type;
     private JPasswordField password = new JPasswordField(20);
     private JPasswordField confirm_password = new JPasswordField(20);
     private JTextField contact = new JTextField(20);
@@ -46,6 +47,7 @@ public class Register {
         JLabel contact_warning = new JLabel("(Empty field)");
         JLabel warning = new JLabel("(Empty field)");
         JLabel department_label = new JLabel("Department", SwingConstants.CENTER);
+        JLabel type_label = new JLabel("Type", SwingConstants.CENTER);
         JButton submit = new JButton("Submit");
 
         // Set width of text fields
@@ -58,7 +60,9 @@ public class Register {
 
         // Setup combo box
         String[] strings = {"Electricity", "HVAC", "Audio/Video", "Security", "Housekeeping"};
-        jComboBox = new JComboBox<String>(strings);
+        department = new JComboBox<>(strings);
+        String[] strings1 = {"Staffer", "Supervisor"};
+        type = new JComboBox<>(strings1);
 
         // Set fonts
         title.setFont(font);
@@ -78,6 +82,7 @@ public class Register {
         warning.setFont(font2);
         submit.setFont(font1);
         department_label.setFont(font1);
+        type_label.setFont(font1);
 
         // Set Layout
         jPanel.add(title);
@@ -98,7 +103,9 @@ public class Register {
         jPanel.add(submit);
         jPanel.add(name_warning);
         jPanel.add(department_label);
-        jPanel.add(jComboBox);
+        jPanel.add(department);
+        jPanel.add(type);
+        jPanel.add(type_label);
         name_warning.setVisible(false);
         jPanel.add(user_name_warning);
         user_name_warning.setVisible(false);
@@ -129,9 +136,11 @@ public class Register {
         confirm_password.setBounds(400,450,300,30);
         contact_label.setBounds(100,500,300,30);
         contact.setBounds(400,500,300,30);
-        department_label.setBounds(100,550,300,30);
-        jComboBox.setBounds(400,550,300,30);
-        submit.setBounds(400, 600, 200,50);
+        type_label.setBounds(100,550,300,30);
+        type.setBounds(400,550,300,30);
+        department_label.setBounds(100,600,300,30);
+        department.setBounds(400,600,300,30);
+        submit.setBounds(400, 650, 200,50);
 
         // Initialize frame
         jFrame.add(jPanel);
@@ -139,6 +148,7 @@ public class Register {
 
         // Button listeners
         submit.addActionListener(e -> {
+            flag=true;
             // Display error messages
             if (name.getText().isEmpty()) {
                 name_warning.setBounds(720,200,300,30);
@@ -191,28 +201,53 @@ public class Register {
             this.Password = string;
             this.Contact = contact.getText();
             this.Email = email.getText();
-            this.Department = (String)jComboBox.getSelectedItem();
-            Person temp_staff = new Staff(Name, ID, username, Password, Contact, Email, Department);
+            this.Type = (String)type.getSelectedItem();
+            this.Department = (String)department.getSelectedItem();
+
+            Staff temp=null;
+            Supervisor temp1=null;
+            if (Type.equals("Staffer")) {
+                temp = new Staff(Name, ID, username, Password, Contact, Email, Department);
+            } else {
+                temp1 = new Supervisor(Name, ID, username, Password, Contact, Email, Department);
+            }
 
             // Check for existing staff member
-            for (Person person : Main.Staff) {
-                if (person.getUser_name().equals(temp_staff.getUser_name()) ||
-                        person.getEmail().equals(temp_staff.getEmail()) || person.getContact().equals(temp_staff.getContact())) {
-                    warning.setText("User already exists!");
-                    submit.setBounds(400, 600, 200,50);
-                    jFrame.setVisible(true);
-                    flag=false;
+            if (Type.equals("Staffer")) {
+                for (Person person : Main.Staff) {
+                    if (person.getUser_name().equals(temp.getUser_name()) ||
+                            person.getEmail().equals(temp.getEmail())) {
+                        warning.setText("User already exists!");
+                        submit.setBounds(400, 600, 200,50);
+                        jFrame.setVisible(true);
+                        flag=false;
+                    }
+                }
+            }
+            else {
+                for (Person person : Main.supervisors) {
+                    if (person.getUser_name().equals(temp1.getUser_name()) ||
+                            person.getEmail().equals(temp1.getEmail())) {
+                        warning.setText("User already exists!");
+                        submit.setBounds(400, 600, 200,50);
+                        jFrame.setVisible(true);
+                        flag=false;
+                    }
                 }
             }
 
-            // Create a new staff member if everything is good to go
+            // Create a new staff/supervisor member if everything is good to go
             if (flag) {
-                Main.Staff.add(temp_staff);
+                if (Type.equals("Staffer")) {
+                    Main.Staff.add(temp);
+                    System.out.println(Main.Staff.size());
+                }
+                else {
+                    Main.supervisors.add(temp1);
+                }
                 jFrame.remove(jPanel);
-                Interface frame = new Interface();
-                frame.FrontScreen();
+                Interface.FrontScreen(jFrame);
             }
-            flag=true;
         });
     }
 }

@@ -80,12 +80,14 @@ public class Login {
                     boolean flag1 = false;
                     this.username = user_name.getText();
                     this.Password = new String(password.getPassword());
+
+                    // Staff login
                     for (Person person:Main.Staff) {
                         if (person.getUser_name().equals(this.username)) {
                             user_existence.setVisible(false);
                             if (person.getPassword().equals(this.Password))
                             {
-                                loggedIn(person);
+                                Staff.staff_login(person, jFrame);
                                 flag1 = true;
                             }
                             else {
@@ -98,7 +100,7 @@ public class Login {
                         else if (person.getEmail().equals(this.username)) {
                             if (person.getPassword().equals(this.Password))
                             {
-                                loggedIn(person);
+                                Staff.staff_login(person, jFrame);
                                 flag1 = true;
                             }
                             else {
@@ -109,6 +111,69 @@ public class Login {
                             }
                         }
                     }
+
+                    // Supervisor Login
+                    for (Person person:Main.supervisors) {
+                        if (person.getUser_name().equals(this.username)) {
+                            user_existence.setVisible(false);
+                            if (person.getPassword().equals(this.Password))
+                            {
+                                Supervisor.supervisor_login(person, jFrame);
+                                flag1 = true;
+                            }
+                            else {
+                                password_wrong.setBounds(700, 250, 300, 30);
+                                password_wrong.setVisible(true);
+                                jFrame.setVisible(true);
+                                flag1 = true;
+                            }
+                        }
+                        else if (person.getEmail().equals(this.username)) {
+                            if (person.getPassword().equals(this.Password))
+                            {
+                                Supervisor.supervisor_login(person, jFrame);
+                                flag1 = true;
+                            }
+                            else {
+                                password_wrong.setBounds(700, 250, 300, 30);
+                                password_wrong.setVisible(true);
+                                jFrame.setVisible(true);
+                                flag1 = true;
+                            }
+                        }
+                    }
+
+                    // Admin Login
+                    if (Main.admin.getUser_name().equals(this.username)) {
+                        user_existence.setVisible(false);
+                        if (Main.admin.getPassword().equals(this.Password))
+                        {
+                            jFrame.remove(jPanel);
+                            Main.admin.admin_login(jFrame);
+                            flag1 = true;
+                        }
+                        else {
+                            password_wrong.setBounds(700, 250, 300, 30);
+                            password_wrong.setVisible(true);
+                            jFrame.setVisible(true);
+                            flag1 = true;
+                        }
+                    }
+                    else if (Main.admin.getEmail().equals(this.username)) {
+                        if (Main.admin.getPassword().equals(this.Password))
+                        {
+                            jFrame.remove(jPanel);
+                            Main.admin.admin_login(jFrame);
+                            flag1 = true;
+                        }
+                        else {
+                            password_wrong.setBounds(700, 250, 300, 30);
+                            password_wrong.setVisible(true);
+                            jFrame.setVisible(true);
+                            flag1 = true;
+                        }
+                    }
+
                     if (!flag1) {
                         user_existence.setBounds(700, 200, 300, 30);
                         user_existence.setVisible(true);
@@ -118,8 +183,5 @@ public class Login {
             }
             flag=true;
         });
-    }
-    public void loggedIn(Person person) {
-
     }
 }

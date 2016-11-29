@@ -45,4 +45,12 @@ public class Task_staff {
     public void setStatus(String status) {
         Status = status;
     }
+
+    public long getID() {
+        return ID;
+    }
+
+    public String getEquipments() {
+        return Equipments;
+    }
 }

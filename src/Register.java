@@ -48,15 +48,8 @@ public class Register {
         JLabel warning = new JLabel("(Empty field)");
         JLabel department_label = new JLabel("Department", SwingConstants.CENTER);
         JLabel type_label = new JLabel("Type", SwingConstants.CENTER);
+        JButton back = new JButton("Back");
         JButton submit = new JButton("Submit");
-
-        // Set width of text fields
-        name.setColumns(20);
-        user_name.setColumns(20);
-        password.setColumns(20);
-        confirm_password.setColumns(20);
-        contact.setColumns(20);
-        email.setColumns(20);
 
         // Setup combo box
         String[] strings = {"Electricity", "HVAC", "Audio/Video", "Security", "Housekeeping"};
@@ -83,6 +76,7 @@ public class Register {
         submit.setFont(font1);
         department_label.setFont(font1);
         type_label.setFont(font1);
+        back.setFont(font1);
 
         // Set Layout
         jPanel.add(title);
@@ -105,6 +99,7 @@ public class Register {
         jPanel.add(department_label);
         jPanel.add(department);
         jPanel.add(type);
+        jPanel.add(back);
         jPanel.add(type_label);
         name_warning.setVisible(false);
         jPanel.add(user_name_warning);
@@ -140,13 +135,18 @@ public class Register {
         type.setBounds(400,550,300,30);
         department_label.setBounds(100,600,300,30);
         department.setBounds(400,600,300,30);
-        submit.setBounds(400, 650, 200,50);
+        submit.setBounds(400, 650, 130,50);
+        back.setBounds(550, 650, 130, 50);
 
         // Initialize frame
         jFrame.add(jPanel);
         jFrame.setVisible(true);
 
         // Button listeners
+        back.addActionListener(e -> {
+            jFrame.remove(jPanel);
+            Interface.FrontScreen(jFrame);
+        });
         submit.addActionListener(e -> {
             flag=true;
             // Display error messages

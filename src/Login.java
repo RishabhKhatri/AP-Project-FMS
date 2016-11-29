@@ -23,6 +23,7 @@ public class Login {
     private JLabel password_wrong = new JLabel("(Password does not match)", SwingConstants.CENTER);
     private boolean flag = true;
     Login(JFrame jFrame) {
+        JButton back = new JButton("Back");
         this.jFrame = jFrame;
 
         // Set fonts
@@ -33,6 +34,8 @@ public class Login {
         password_warning.setFont(font2);
         user_existence.setFont(font2);
         password_wrong.setFont(font2);
+        back.setFont(font1);
+        login.setFont(font1);
 
         // Add components to jPanel
         jPanel.add(title);
@@ -49,6 +52,7 @@ public class Login {
         jPanel.add(user_name);
         jPanel.add(password);
         jPanel.add(login);
+        jPanel.add(back);
 
         // Set layout
         title.setBounds(300,100,500,70);
@@ -57,11 +61,16 @@ public class Login {
         password_label.setBounds(100, 250, 300, 30);
         password.setBounds(400, 250, 300, 30);
         login.setBounds(400, 300, 150, 40);
+        back.setBounds(570, 300, 130, 40);
 
         // Set jFrame
         this.jFrame.add(jPanel);
         this.jFrame.setVisible(true);
 
+        back.addActionListener(e -> {
+            jFrame.remove(jPanel);
+            Interface.FrontScreen(jFrame);
+        });
         login.addActionListener(e -> {
             if (user_name.getText().isEmpty()) {
                 user_name_warning.setBounds(700, 200, 300, 30);
@@ -88,6 +97,8 @@ public class Login {
                             if (person.getPassword().equals(this.Password))
                             {
                                 if (person.isValid()) {
+                                    System.out.println("success");
+                                    jFrame.remove(jPanel);
                                     person.staff_login(jFrame);
                                     flag1 = true;
                                 }
@@ -109,6 +120,7 @@ public class Login {
                             if (person.getPassword().equals(this.Password))
                             {
                                 if (person.isValid()) {
+                                    jFrame.remove(jPanel);
                                     person.staff_login(jFrame);
                                     flag1 = true;
                                 }

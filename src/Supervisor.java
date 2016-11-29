@@ -17,6 +17,7 @@ public class Supervisor extends Person {
     private ArrayList<SupervisorTask> mytasks = new ArrayList<>();
     private ArrayList<Leave> leave_staff = new ArrayList<>();
     private ArrayList<Leave> myLeaves = new ArrayList<>();
+    private ArrayList<Logistics> logisticsArrayList = new ArrayList<>();
     private static ArrayList<Staff> registration_staff = new ArrayList<>();
     Supervisor(String Name, long ID, String user_name, String Password, String Contact, String Email, String Department) {
         super(Name, ID, user_name, Password, Contact, Email);
@@ -123,14 +124,14 @@ public class Supervisor extends Person {
             jFrame.remove(jPanel);
             staff_list(jFrame);
         });
-//        Logistics.addActionListener(e -> {
-//            jFrame.remove(jPanel);
-//            logistics(jFrame);
-//        });
-//        Reports.addActionListener(e -> {
-//            jFrame.remove(jPanel);
-//            reports(jFrame);
-//        });
+        Logistics.addActionListener(e -> {
+            jFrame.remove(jPanel);
+            logistics(jFrame);
+        });
+        Reports.addActionListener(e -> {
+            jFrame.remove(jPanel);
+            reports(jFrame);
+        });
         Requests.addActionListener(e -> {
             jFrame.remove(jPanel);
             request(jFrame);
@@ -139,6 +140,167 @@ public class Supervisor extends Person {
             jFrame.remove(jPanel);
             leave_request(jFrame);
         });
+    }
+    public void logistics(JFrame jFrame) {
+        JPanel jPanel = new JPanel(null);
+        Font font = new Font("Roboto Light", Font.PLAIN, 35);
+        Font font1 = new Font("Roboto Light", Font.PLAIN, 20);
+        Font font2 = new Font("Roboto Light", Font.PLAIN, 17);
+        Border border = BorderFactory.createLineBorder(Color.blue, 1);
+        JLabel name_label = new JLabel(this.getName()+"(Admin)", SwingConstants.CENTER);
+        JButton Home = new JButton("Home");
+        JButton Tasks = new JButton("Tasks");
+        JButton Staff_list = new JButton("Staff");
+        JButton Logistics = new JButton("Logistics");
+        JButton Reports = new JButton("Reports");
+        JButton Requests = new JButton("Requests");
+        final JLabel date_label = new JLabel();
+        final JLabel time_label = new JLabel();
+        TimeKeeper timeKeeper = new TimeKeeper(date_label, time_label);
+        JButton leave_request = new JButton("Leave Request");
+        JButton my_leaves = new JButton("My Leaves");
+        my_leaves.setFont(font2);
+        my_leaves.setBounds(1, 60, 150, 50);
+        jPanel.add(my_leaves);
+
+        int j=100;
+        JLabel[] request_list = new JLabel[logisticsArrayList.size()];
+        for (int i=0;i<logisticsArrayList.size();i++) {
+            request_list[i] = new JLabel(logisticsArrayList.get(i).list_string());
+            request_list[i].setBorder(border);
+            request_list[i].setFont(font2);
+            jPanel.add(request_list[i]);
+            request_list[i].setBounds(20, j, 800, 200);
+            j+=200;
+        }
+        j=100;
+        JButton[] approve_signup_buttons = new JButton[registration_staff.size()];
+        for (int i=0;i<registration_staff.size();i++) {
+            approve_signup_buttons[i] = new JButton("Approve");
+            approve_signup_buttons[i].setFont(font2);
+            jPanel.add(approve_signup_buttons[i]);
+            approve_signup_buttons[i].setBounds(840, j, 100, 50);
+            j+=200;
+        }
+        j=200;
+        JButton[] reject_signup_buttons = new JButton[registration_staff.size()];
+        for (int i=0;i<registration_staff.size();i++) {
+            reject_signup_buttons[i] = new JButton("Reject");
+            reject_signup_buttons[i].setFont(font2);
+            jPanel.add(reject_signup_buttons[i]);
+            reject_signup_buttons[i].setBounds(840, j, 100, 50);
+            j+=200;
+        }
+
+        // Set Fonts
+        name_label.setFont(font2);
+        Home.setFont(font2);
+        Tasks.setFont(font2);
+        Staff_list.setFont(font2);
+        Logistics.setFont(font2);
+        Reports.setFont(font2);
+        Requests.setFont(font2);
+        date_label.setFont(font2);
+        time_label.setFont(font2);
+        leave_request.setFont(font2);
+
+        // Add components to JPanel
+        jPanel.add(name_label);
+        jPanel.add(Home);
+        jPanel.add(Staff_list);
+        jPanel.add(Logistics);
+        jPanel.add(Requests);
+        jPanel.add(Reports);
+        jPanel.add(date_label);
+        jPanel.add(time_label);
+        jPanel.add(Tasks);
+        jPanel.add(leave_request);
+
+        // Set Layout of components
+        name_label.setBounds(790,1,150,50);
+        date_label.setBounds(940, 1, 150, 50);
+        time_label.setBounds(1090, 1, 70, 50);
+        Home.setBounds(1,1,100,50);
+        Staff_list.setBounds(100,1,100,50);
+        Logistics.setBounds(200,1,120,50);
+        Reports.setBounds(320,1,100,50);
+        Requests.setBounds(420,1,120,50);
+        leave_request.setBounds(540, 1, 150, 50);
+        Tasks.setBounds(690, 1, 100, 50);
+
+        JButton logout = new JButton("Logout");
+        logout.setBounds(1160, 1, 150, 50);
+        logout.setFont(font2);
+        jPanel.add(logout);
+        // Setup frame
+        jFrame.add(jPanel);
+        timeKeeper.start();
+        jFrame.setVisible(true);
+
+        // Button Listeners
+
+        // Button listeners for delete buttons
+        my_leaves.addActionListener(e -> {
+            jFrame.remove(jPanel);
+            accept_leave_request(jFrame);
+        });
+        logout.addActionListener(e -> {
+            jFrame.remove(jPanel);
+            Interface.FrontScreen(jFrame);
+        });
+        for (int i = 0; i< approve_signup_buttons.length; i++) {
+            final int temp = i;
+            approve_signup_buttons[i].addActionListener(actionEvent -> {
+                JButton jButton = (JButton) actionEvent.getSource();
+                jButton.setEnabled(false);
+                registration_staff.get(temp).setValid(true);
+                registration_staff.remove(temp);
+                jFrame.remove(jPanel);
+                request(jFrame);
+            });
+        }
+        for (int i = 0; i< reject_signup_buttons.length; i++) {
+            final int temp = i;
+            reject_signup_buttons[i].addActionListener(actionEvent -> {
+                JButton jButton = (JButton) actionEvent.getSource();
+                jButton.setEnabled(false);
+                Main.Staff.remove(temp);
+                registration_staff.remove(temp);
+                jFrame.remove(jPanel);
+                request(jFrame);
+            });
+        }
+        Home.addActionListener(e -> {
+            jFrame.remove(jPanel);
+            supervisor_login(jFrame);
+        });
+        Staff_list.addActionListener(e -> {
+            jFrame.remove(jPanel);
+            staff_list(jFrame);
+        });
+        Tasks.addActionListener(e -> {
+            jFrame.remove(jPanel);
+            Tasks_action(jFrame);
+        });
+        Logistics.addActionListener(e -> {
+            jFrame.remove(jPanel);
+            logistics(jFrame);
+        });
+        Reports.addActionListener(e -> {
+            jFrame.remove(jPanel);
+            reports(jFrame);
+        });
+        Requests.addActionListener(e -> {
+            jFrame.remove(jPanel);
+            request(jFrame);
+        });
+        leave_request.addActionListener(e -> {
+            jFrame.remove(jPanel);
+            leave_request(jFrame);
+        });
+    }
+    public void reports(JFrame jFrame) {
+
     }
     public void staff_list(JFrame jFrame) {
         JPanel jPanel = new JPanel(null);
@@ -399,6 +561,7 @@ public class Supervisor extends Person {
                 jButton.setEnabled(false);
                 registration_staff.get(temp).setValid(true);
                 registration_staff.remove(temp);
+                jFrame.remove(jPanel);
                 request(jFrame);
             });
         }
@@ -409,6 +572,7 @@ public class Supervisor extends Person {
                 jButton.setEnabled(false);
                 Main.Staff.remove(temp);
                 registration_staff.remove(temp);
+                jFrame.remove(jPanel);
                 request(jFrame);
             });
         }
@@ -424,14 +588,14 @@ public class Supervisor extends Person {
             jFrame.remove(jPanel);
             Tasks_action(jFrame);
         });
-//        Logistics.addActionListener(e -> {
-//            jFrame.remove(jPanel);
-//            logistics(jFrame);
-//        });
-//        Reports.addActionListener(e -> {
-//            jFrame.remove(jPanel);
-//            reports(jFrame);
-//        });
+        Logistics.addActionListener(e -> {
+            jFrame.remove(jPanel);
+            logistics(jFrame);
+        });
+        Reports.addActionListener(e -> {
+            jFrame.remove(jPanel);
+            reports(jFrame);
+        });
         Requests.addActionListener(e -> {
             jFrame.remove(jPanel);
             request(jFrame);
@@ -615,27 +779,32 @@ public class Supervisor extends Person {
             submit.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent actionEvent) {
-                    if (!(Description.getText().isEmpty() || Name.getText().isEmpty() || Equipments.getText().isEmpty() ||
+                    if ((Description.getText().isEmpty() || Name.getText().isEmpty() || Equipments.getText().isEmpty() ||
                             Deadline.getText().isEmpty())) {
-                        String[] strings1 = new String[number];
-                        for (int i=0;i<number;i++) {
-                            strings1[i] = (String)jComboBoxes[i].getSelectedItem();
-                        }
-                        ArrayList<Staff> arrayList = new ArrayList<Staff>();
-                        for (int i=0;i<department_list.size();i++) {
-                            for (int j=0;j<number;j++) {
-                                if (department_list.get(i).equals(strings1[j])) {
-                                    arrayList.add(Main.Staff.get(i));
-                                }
+                        JOptionPane.showMessageDialog(null, "Some of the field(s) left empty!");
+                        jFrame1.setVisible(false);
+                        jFrame.remove(jPanel);
+                        Tasks_action(jFrame);
+                    }
+                    String[] strings1 = new String[number];
+                    for (int i=0;i<number;i++) {
+                        strings1[i] = (String)jComboBoxes[i].getSelectedItem();
+                    }
+                    ArrayList<Staff> arrayList = new ArrayList<Staff>();
+                    for (int i=0;i<department_list.size();i++) {
+                        for (int j=0;j<number;j++) {
+                            if (department_list.get(i).equals(strings1[j])) {
+                                arrayList.add(Main.Staff.get(i));
                             }
                         }
-                        for (int i=0;i<arrayList.size();i++) {
-                            arrayList.get(i).addTask(new Task_staff(Description.getText(), Name.getText(), "Pending", Equipments.getText(),
-                                    Deadline.getText(), arrayList));
-                        }
-                        tasks.add(new Task_staff(Description.getText(), Name.getText(), "Pending", Equipments.getText(),
+                    }
+                    for (int i=0;i<arrayList.size();i++) {
+                        arrayList.get(i).addTask(new Task_staff(Description.getText(), Name.getText(), "Pending", Equipments.getText(),
                                 Deadline.getText(), arrayList));
                     }
+                    tasks.add(new Task_staff(Description.getText(), Name.getText(), "Pending", Equipments.getText(),
+                            Deadline.getText(), arrayList));
+                    jFrame1.setVisible(false);
                 }
             });
         });
@@ -785,6 +954,7 @@ public class Supervisor extends Person {
                 jButton.setEnabled(false);
                 leave_staff.get(temp).setValid(true);
                 leave_staff.remove(temp);
+                jFrame.remove(jPanel);
                 leave_request(jFrame);
             });
         }
@@ -794,6 +964,7 @@ public class Supervisor extends Person {
                 JButton jButton = (JButton) actionEvent.getSource();
                 jButton.setEnabled(false);
                 leave_staff.remove(temp);
+                jFrame.remove(jPanel);
                 leave_request(jFrame);
             });
         }
@@ -983,6 +1154,7 @@ public class Supervisor extends Person {
             submit.addActionListener((ActionEvent actionEvent) -> {
                 if (reason.getText().isEmpty() || from.getText().isEmpty() || to.getText().isEmpty()) {
                     JOptionPane.showMessageDialog(null, "Some of the field(s) left empty!");
+                    jFrame.remove(jPanel);
                     accept_leave_request(jFrame);
                 }
                 Leave temp=null;
@@ -996,10 +1168,9 @@ public class Supervisor extends Person {
                 myLeaves.add(temp);
                 Admin.leave_supervisor.add(temp);
                 Admin.leave_supervisor.size();
-                accept_leave_request(jFrame);
-                jFrame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 jFrame1.setVisible(false);
-                jFrame1.dispose();
+                jFrame.remove(jPanel);
+                accept_leave_request(jFrame);
             });
         });
         Home.addActionListener(e -> {
@@ -1033,5 +1204,11 @@ public class Supervisor extends Person {
     }
     public void addTask(SupervisorTask task) {
         mytasks.add(task);
+    }
+    public void addLeave(Leave leave) {
+        leave_staff.add(leave);
+    }
+    public void addLogistics(Logistics logistics) {
+        logisticsArrayList.add(logistics);
     }
 }

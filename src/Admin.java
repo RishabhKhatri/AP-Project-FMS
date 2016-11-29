@@ -83,16 +83,17 @@ public class Admin extends Person {
         logout.setBounds(1160, 1, 150, 50);
         logout.setFont(font2);
         jPanel.add(logout);
-        logout.addActionListener(e -> {
-            jFrame.remove(jPanel);
-            Interface.FrontScreen(jFrame);
-        });
+
         // Setup frame
         jFrame.add(jPanel);
         timeKeeper.start();
         jFrame.setVisible(true);
 
         // Button Listeners
+        logout.addActionListener(e -> {
+            jFrame.remove(jPanel);
+            Interface.FrontScreen(jFrame);
+        });
         Home.addActionListener(e -> {
             jFrame.remove(jPanel);
             admin_login(jFrame);
@@ -207,10 +208,7 @@ public class Admin extends Person {
         logout.setBounds(1160, 1, 150, 50);
         logout.setFont(font2);
         jPanel.add(logout);
-        logout.addActionListener(e -> {
-            jFrame.remove(jPanel);
-            Interface.FrontScreen(jFrame);
-        });
+
         // Setup frame
         jFrame.add(jPanel);
         timeKeeper.start();
@@ -219,6 +217,10 @@ public class Admin extends Person {
         // Button Listeners
 
         // Button listeners for delete buttons
+        logout.addActionListener(e -> {
+            jFrame.remove(jPanel);
+            Interface.FrontScreen(jFrame);
+        });
         for (int i=0;i<delete_buttons.length;i++) {
             final int temp = i;
             delete_buttons[i].addActionListener(actionEvent -> {
@@ -557,7 +559,7 @@ public class Admin extends Person {
             approve_buttons[i].addActionListener(actionEvent -> {
                 JButton jButton = (JButton) actionEvent.getSource();
                 jButton.setEnabled(false);
-
+                jFrame.remove(jPanel);
                 logistics(jFrame);
             });
         }
@@ -566,6 +568,7 @@ public class Admin extends Person {
             reject_buttons[i].addActionListener(actionEvent -> {
                 JButton jButton = (JButton) actionEvent.getSource();
                 jButton.setEnabled(false);
+                jFrame.remove(jPanel);
                 logistics(jFrame);
             });
         }
@@ -574,6 +577,7 @@ public class Admin extends Person {
             hold_buttons[i].addActionListener(actionEvent -> {
                 JButton jButton = (JButton) actionEvent.getSource();
                 jButton.setEnabled(false);
+                jFrame.remove(jPanel);
                 logistics(jFrame);
             });
         }
@@ -716,6 +720,7 @@ public class Admin extends Person {
                 jButton.setEnabled(false);
                 registration_staff.get(temp).setValid(true);
                 registration_staff.remove(temp);
+                jFrame.remove(jPanel);
                 request(jFrame);
             });
         }
@@ -726,6 +731,7 @@ public class Admin extends Person {
                 jButton.setEnabled(false);
                 Main.Staff.remove(temp);
                 registration_staff.remove(temp);
+                jFrame.remove(jPanel);
                 request(jFrame);
             });
         }
@@ -867,6 +873,7 @@ public class Admin extends Person {
                 jButton.setEnabled(false);
                 leave_supervisor.get(temp).setValid(true);
                 leave_supervisor.remove(temp);
+                jFrame.remove(jPanel);
                 leave_request(jFrame);
             });
         }
@@ -876,6 +883,7 @@ public class Admin extends Person {
                 JButton jButton = (JButton) actionEvent.getSource();
                 jButton.setEnabled(false);
                 leave_supervisor.remove(temp);
+                jFrame.remove(jPanel);
                 leave_request(jFrame);
             });
         }

@@ -10,18 +10,24 @@ import java.util.*;
  */
 public class Admin extends Person {
     private ArrayList<SupervisorTask> tasks = new ArrayList<>();
-    public static ArrayList<Leave> leave_supervisor = new ArrayList<>();
+    public ArrayList<Leave> leave_supervisor = new ArrayList<>();
     private ArrayList<Logistics> logistics_list = new ArrayList<>();
-    private static ArrayList<Staff> registration_staff = new ArrayList<>();
+    private ArrayList<TaskReport> myReports = new ArrayList<>();
+    private ArrayList<Staff> registration_staff = new ArrayList<>();
     Admin(String Name, long ID, String user_name, String Password, String Contact, String Email) {
         super(Name, ID, user_name, Password, Contact, Email);
     }
 
-    public static void RegistrationRequest_Staff(Staff person) {
+    public void RegistrationRequest_Staff(Staff person, Main main) {
         registration_staff.add(person);
+
+        // Write to database
+        main.writeAdmin();
+        main.writeStaff();
+        main.writeSupervisors();
     }
 
-    public void admin_login(JFrame jFrame) {
+    public void admin_login(JFrame jFrame, Main main) {
         JPanel jPanel = new JPanel(null);
         Font font = new Font("Roboto Light", Font.PLAIN, 35);
         Font font1 = new Font("Roboto Light", Font.PLAIN, 20);
@@ -92,38 +98,43 @@ public class Admin extends Person {
         // Button Listeners
         logout.addActionListener(e -> {
             jFrame.remove(jPanel);
-            Interface.FrontScreen(jFrame);
+            Interface.FrontScreen(jFrame, main);
+
+            // Write to database
+            main.writeAdmin();
+            main.writeStaff();
+            main.writeSupervisors();
         });
         Home.addActionListener(e -> {
             jFrame.remove(jPanel);
-            admin_login(jFrame);
+            admin_login(jFrame, main);
         });
         Tasks.addActionListener(e -> {
             jFrame.remove(jPanel);
-            Tasks_action(jFrame);
+            Tasks_action(jFrame, main);
         });
         Staff_list.addActionListener(e -> {
             jFrame.remove(jPanel);
-            staff_list(jFrame);
+            staff_list(jFrame, main);
         });
         Logistics.addActionListener(e -> {
             jFrame.remove(jPanel);
-            logistics(jFrame);
+            logistics(jFrame, main);
         });
         Reports.addActionListener(e -> {
             jFrame.remove(jPanel);
-            reports(jFrame);
+            reports(jFrame, main);
         });
         Requests.addActionListener(e -> {
             jFrame.remove(jPanel);
-            request(jFrame);
+            request(jFrame, main);
         });
         leave_request.addActionListener(e -> {
             jFrame.remove(jPanel);
-            leave_request(jFrame);
+            leave_request(jFrame, main);
         });
     }
-    public void staff_list(JFrame jFrame) {
+    public void staff_list(JFrame jFrame, Main main) {
         JPanel jPanel = new JPanel(null);
         Font font = new Font("Roboto Light", Font.PLAIN, 35);
         Font font1 = new Font("Roboto Light", Font.PLAIN, 20);
@@ -139,13 +150,13 @@ public class Admin extends Person {
         final JLabel date_label = new JLabel();
         final JLabel time_label = new JLabel();
         TimeKeeper timeKeeper = new TimeKeeper(date_label, time_label);
-        JLabel[] staff_list = new JLabel[Main.Staff.size()];
+        JLabel[] staff_list = new JLabel[main.Staff.size()];
         JButton leave_request = new JButton("Leave Request");
 
         ArrayList<Staff> valid_staff = new ArrayList<>();
-        for (int i=0;i<Main.Staff.size();i++) {
-            if (Main.Staff.get(i).isValid()) {
-                valid_staff.add(Main.Staff.get(i));
+        for (int i=0;i<main.Staff.size();i++) {
+            if (main.Staff.get(i).isValid()) {
+                valid_staff.add(main.Staff.get(i));
             }
         }
 
@@ -219,48 +230,53 @@ public class Admin extends Person {
         // Button listeners for delete buttons
         logout.addActionListener(e -> {
             jFrame.remove(jPanel);
-            Interface.FrontScreen(jFrame);
+            Interface.FrontScreen(jFrame, main);
+
+            // Write to database
+            main.writeAdmin();
+            main.writeStaff();
+            main.writeSupervisors();
         });
         for (int i=0;i<delete_buttons.length;i++) {
             final int temp = i;
             delete_buttons[i].addActionListener(actionEvent -> {
                 JButton jButton = (JButton) actionEvent.getSource();
                 jButton.setEnabled(false);
-                removeStaff(valid_staff.get(temp));
+                removeStaff(valid_staff.get(temp), main);
                 jFrame.remove(jPanel);
-                staff_list(jFrame);
+                staff_list(jFrame, main);
             });
         }
         Home.addActionListener(e -> {
             jFrame.remove(jPanel);
-            admin_login(jFrame);
+            admin_login(jFrame, main);
         });
         Staff_list.addActionListener(e -> {
             jFrame.remove(jPanel);
-            staff_list(jFrame);
+            staff_list(jFrame, main);
         });
         Tasks.addActionListener(e -> {
             jFrame.remove(jPanel);
-            Tasks_action(jFrame);
+            Tasks_action(jFrame, main);
         });
         Logistics.addActionListener(e -> {
             jFrame.remove(jPanel);
-            logistics(jFrame);
+            logistics(jFrame, main);
         });
         Reports.addActionListener(e -> {
             jFrame.remove(jPanel);
-            reports(jFrame);
+            reports(jFrame, main);
         });
         Requests.addActionListener(e -> {
             jFrame.remove(jPanel);
-            request(jFrame);
+            request(jFrame, main);
         });
         leave_request.addActionListener(e -> {
             jFrame.remove(jPanel);
-            leave_request(jFrame);
+            leave_request(jFrame, main);
         });
     }
-    public void Tasks_action(JFrame jFrame) {
+    public void Tasks_action(JFrame jFrame, Main main) {
         JPanel jPanel = new JPanel(null);
         Font font = new Font("Roboto Light", Font.PLAIN, 35);
         Font font1 = new Font("Roboto Light", Font.PLAIN, 20);
@@ -334,8 +350,14 @@ public class Admin extends Person {
         jPanel.add(logout);
         logout.addActionListener(e -> {
             jFrame.remove(jPanel);
-            Interface.FrontScreen(jFrame);
+            Interface.FrontScreen(jFrame, main);
+
+            // Write to database
+            main.writeAdmin();
+            main.writeStaff();
+            main.writeSupervisors();
         });
+
         // Setup frame
         jFrame.add(jPanel);
         timeKeeper.start();
@@ -360,7 +382,7 @@ public class Admin extends Person {
             JTextField Deadline = new JTextField(8);
             String[] supervisors = new String[5];
             for (int i=0;i<5;i++) {
-                supervisors[i] = Main.supervisors.get(i).getName();
+                supervisors[i] = main.supervisors.get(i).getName();
             }
             JComboBox<String> supervisorJComboBox = new JComboBox<String>(supervisors);
 
@@ -404,12 +426,12 @@ public class Admin extends Person {
                     if (!(Description.getText().isEmpty() || Name.getText().isEmpty() || Equipments.getText().isEmpty() ||
                             Deadline.getText().isEmpty())) {
                         for (int i=0;i<5;i++) {
-                            if (Main.supervisors.get(i).getName().equals((String)supervisorJComboBox.getSelectedItem())) {
+                            if (main.supervisors.get(i).getName().equals((String)supervisorJComboBox.getSelectedItem())) {
                                 tasks.add(new SupervisorTask(Description.getText(), Name.getText(), "Pending", Equipments.getText(),
-                                        Deadline.getText(), Main.supervisors.get(i)));
-                                Main.supervisors.get(i).addTask(new SupervisorTask(Description.getText(), Name.getText(),
+                                        Deadline.getText(), main.supervisors.get(i)));
+                                main.supervisors.get(i).addTask(new SupervisorTask(Description.getText(), Name.getText(),
                                         "Pending", Equipments.getText(),
-                                        Deadline.getText(), Main.supervisors.get(i)));
+                                        Deadline.getText(), main.supervisors.get(i)), main);
                                 jFrame1.setVisible(false);
                             }
                         }
@@ -419,34 +441,34 @@ public class Admin extends Person {
         });
         Home.addActionListener(e -> {
             jFrame.remove(jPanel);
-            admin_login(jFrame);
+            admin_login(jFrame, main);
         });
         Staff_list.addActionListener(e -> {
             jFrame.remove(jPanel);
-            staff_list(jFrame);
+            staff_list(jFrame, main);
         });
         Tasks.addActionListener(e -> {
             jFrame.remove(jPanel);
-            Tasks_action(jFrame);
+            Tasks_action(jFrame, main);
         });
         Logistics.addActionListener(e -> {
             jFrame.remove(jPanel);
-            logistics(jFrame);
+            logistics(jFrame, main);
         });
         Reports.addActionListener(e -> {
             jFrame.remove(jPanel);
-            reports(jFrame);
+            reports(jFrame, main);
         });
         Requests.addActionListener(e -> {
             jFrame.remove(jPanel);
-            request(jFrame);
+            request(jFrame, main);
         });
         leave_request.addActionListener(e -> {
             jFrame.remove(jPanel);
-            leave_request(jFrame);
+            leave_request(jFrame, main);
         });
     }
-    public void logistics(JFrame jFrame) {
+    public void logistics(JFrame jFrame, Main main) {
         JPanel jPanel = new JPanel(null);
         Font font = new Font("Roboto Light", Font.PLAIN, 35);
         Font font1 = new Font("Roboto Light", Font.PLAIN, 20);
@@ -486,19 +508,10 @@ public class Admin extends Person {
         j=100;
         JButton[] reject_buttons = new JButton[logistics_list.size()];
         for (int i=0;i<logistics_list.size();i++) {
-            reject_buttons[i] = new JButton("Approve");
+            reject_buttons[i] = new JButton("Reject");
             reject_buttons[i].setFont(font2);
             jPanel.add(reject_buttons[i]);
             reject_buttons[i].setBounds(940, j, 100, 50);
-            j+=200;
-        }
-        j=100;
-        JButton[] hold_buttons = new JButton[logistics_list.size()];
-        for (int i=0;i<logistics_list.size();i++) {
-            hold_buttons[i] = new JButton("Approve");
-            hold_buttons[i].setFont(font2);
-            jPanel.add(hold_buttons[i]);
-            hold_buttons[i].setBounds(1040, j, 100, 50);
             j+=200;
         }
 
@@ -544,7 +557,12 @@ public class Admin extends Person {
         jPanel.add(logout);
         logout.addActionListener(e -> {
             jFrame.remove(jPanel);
-            Interface.FrontScreen(jFrame);
+            Interface.FrontScreen(jFrame, main);
+
+            // Write to database
+            main.writeAdmin();
+            main.writeStaff();
+            main.writeSupervisors();
         });
         // Setup frame
         jFrame.add(jPanel);
@@ -559,8 +577,10 @@ public class Admin extends Person {
             approve_buttons[i].addActionListener(actionEvent -> {
                 JButton jButton = (JButton) actionEvent.getSource();
                 jButton.setEnabled(false);
+                logistics_list.get(temp).setValid(true);
+                logistics_list.remove(temp);
                 jFrame.remove(jPanel);
-                logistics(jFrame);
+                logistics(jFrame, main);
             });
         }
         for (int i = 0; i< reject_buttons.length; i++) {
@@ -568,52 +588,161 @@ public class Admin extends Person {
             reject_buttons[i].addActionListener(actionEvent -> {
                 JButton jButton = (JButton) actionEvent.getSource();
                 jButton.setEnabled(false);
+                logistics_list.get(temp).setValid(false);
+                logistics_list.remove(temp);
                 jFrame.remove(jPanel);
-                logistics(jFrame);
-            });
-        }
-        for (int i = 0; i< hold_buttons.length; i++) {
-            final int temp = i;
-            hold_buttons[i].addActionListener(actionEvent -> {
-                JButton jButton = (JButton) actionEvent.getSource();
-                jButton.setEnabled(false);
-                jFrame.remove(jPanel);
-                logistics(jFrame);
+                logistics(jFrame, main);
             });
         }
         Home.addActionListener(e -> {
             jFrame.remove(jPanel);
-            admin_login(jFrame);
+            admin_login(jFrame, main);
         });
         Staff_list.addActionListener(e -> {
             jFrame.remove(jPanel);
-            staff_list(jFrame);
+            staff_list(jFrame, main);
         });
         Tasks.addActionListener(e -> {
             jFrame.remove(jPanel);
-            Tasks_action(jFrame);
+            Tasks_action(jFrame, main);
         });
         Logistics.addActionListener(e -> {
             jFrame.remove(jPanel);
-            logistics(jFrame);
+            logistics(jFrame, main);
         });
         Reports.addActionListener(e -> {
             jFrame.remove(jPanel);
-            reports(jFrame);
+            reports(jFrame, main);
         });
         Requests.addActionListener(e -> {
             jFrame.remove(jPanel);
-            request(jFrame);
+            request(jFrame, main);
         });
         leave_request.addActionListener(e -> {
             jFrame.remove(jPanel);
-            leave_request(jFrame);
+            leave_request(jFrame, main);
         });
     }
-    public void reports(JFrame jFrame) {
+    public void reports(JFrame jFrame, Main main) {
+        JPanel jPanel = new JPanel(null);
+        Font font = new Font("Roboto Light", Font.PLAIN, 35);
+        Font font1 = new Font("Roboto Light", Font.PLAIN, 20);
+        Font font2 = new Font("Roboto Light", Font.PLAIN, 17);
+        Border border = BorderFactory.createLineBorder(Color.blue, 1);
+        JLabel name_label = new JLabel(this.getName()+"(Supervisor)", SwingConstants.CENTER);
+        JButton Home = new JButton("Home");
+        JButton Tasks = new JButton("Tasks");
+        JButton Staff_list = new JButton("Staff");
+        JButton Logistics = new JButton("Logistics");
+        JButton Reports = new JButton("Reports");
+        JButton Requests = new JButton("Requests");
+        final JLabel date_label = new JLabel();
+        final JLabel time_label = new JLabel();
+        TimeKeeper timeKeeper = new TimeKeeper(date_label, time_label);
+        JButton leave_request = new JButton("Leave Request");
+        JButton my_leaves = new JButton("My Leaves");
+        my_leaves.setFont(font2);
+        my_leaves.setBounds(1, 60, 150, 50);
+        jPanel.add(my_leaves);
 
+        JLabel[] report_list = new JLabel[myReports.size()];
+        int j=100;
+        for (int i=0;i<myReports.size();i++) {
+            report_list[i] = new JLabel(myReports.get(i).list_string());
+            report_list[i].setBorder(border);
+            report_list[i].setFont(font2);
+            jPanel.add(report_list[i]);
+            report_list[i].setBounds(20, j, 800, 200);
+            j+=200;
+        }
+
+        // Set Fonts
+        name_label.setFont(font2);
+        Home.setFont(font2);
+        Tasks.setFont(font2);
+        Staff_list.setFont(font2);
+        Logistics.setFont(font2);
+        Reports.setFont(font2);
+        Requests.setFont(font2);
+        date_label.setFont(font2);
+        time_label.setFont(font2);
+        leave_request.setFont(font2);
+
+        // Add components to JPanel
+        jPanel.add(name_label);
+        jPanel.add(Home);
+        jPanel.add(Staff_list);
+        jPanel.add(Logistics);
+        jPanel.add(Requests);
+        jPanel.add(Reports);
+        jPanel.add(date_label);
+        jPanel.add(time_label);
+        jPanel.add(Tasks);
+        jPanel.add(leave_request);
+
+        // Set Layout of components
+        name_label.setBounds(790,1,150,50);
+        date_label.setBounds(940, 1, 150, 50);
+        time_label.setBounds(1090, 1, 100, 50);
+        Home.setBounds(1,1,100,50);
+        Staff_list.setBounds(100,1,100,50);
+        Logistics.setBounds(200,1,120,50);
+        Reports.setBounds(320,1,100,50);
+        Requests.setBounds(420,1,120,50);
+        leave_request.setBounds(540, 1, 150, 50);
+        Tasks.setBounds(690, 1, 100, 50);
+
+        JButton logout = new JButton("Logout");
+        logout.setBounds(1160, 1, 150, 50);
+        logout.setFont(font2);
+        jPanel.add(logout);
+        // Setup frame
+        jFrame.add(jPanel);
+        timeKeeper.start();
+        jFrame.setVisible(true);
+
+        // Button Listeners
+
+        // Button listeners for delete buttons
+        logout.addActionListener(e -> {
+            jFrame.remove(jPanel);
+            Interface.FrontScreen(jFrame, main);
+
+            // Write to database
+            main.writeAdmin();
+            main.writeStaff();
+            main.writeSupervisors();
+        });
+        Home.addActionListener(e -> {
+            jFrame.remove(jPanel);
+            admin_login(jFrame, main);
+        });
+        Staff_list.addActionListener(e -> {
+            jFrame.remove(jPanel);
+            staff_list(jFrame, main);
+        });
+        Tasks.addActionListener(e -> {
+            jFrame.remove(jPanel);
+            Tasks_action(jFrame, main);
+        });
+        Logistics.addActionListener(e -> {
+            jFrame.remove(jPanel);
+            logistics(jFrame, main);
+        });
+        Reports.addActionListener(e -> {
+            jFrame.remove(jPanel);
+            reports(jFrame, main);
+        });
+        Requests.addActionListener(e -> {
+            jFrame.remove(jPanel);
+            request(jFrame, main);
+        });
+        leave_request.addActionListener(e -> {
+            jFrame.remove(jPanel);
+            leave_request(jFrame, main);
+        });
     }
-    public void request(JFrame jFrame) {
+    public void request(JFrame jFrame, Main main) {
         JPanel jPanel = new JPanel(null);
         Font font = new Font("Roboto Light", Font.PLAIN, 35);
         Font font1 = new Font("Roboto Light", Font.PLAIN, 20);
@@ -703,7 +832,12 @@ public class Admin extends Person {
         jPanel.add(logout);
         logout.addActionListener(e -> {
             jFrame.remove(jPanel);
-            Interface.FrontScreen(jFrame);
+            Interface.FrontScreen(jFrame, main);
+
+            // Write to database
+            main.writeAdmin();
+            main.writeStaff();
+            main.writeSupervisors();
         });
         // Setup frame
         jFrame.add(jPanel);
@@ -718,10 +852,17 @@ public class Admin extends Person {
             approve_signup_buttons[i].addActionListener(actionEvent -> {
                 JButton jButton = (JButton) actionEvent.getSource();
                 jButton.setEnabled(false);
+                main.Staff.get(temp).setValid(true);
                 registration_staff.get(temp).setValid(true);
                 registration_staff.remove(temp);
+
+                // Write to database
+                main.writeAdmin();
+                main.writeStaff();
+                main.writeSupervisors();
+
                 jFrame.remove(jPanel);
-                request(jFrame);
+                request(jFrame, main);
             });
         }
         for (int i = 0; i< reject_signup_buttons.length; i++) {
@@ -729,42 +870,48 @@ public class Admin extends Person {
             reject_signup_buttons[i].addActionListener(actionEvent -> {
                 JButton jButton = (JButton) actionEvent.getSource();
                 jButton.setEnabled(false);
-                Main.Staff.remove(temp);
+                main.Staff.remove(temp);
                 registration_staff.remove(temp);
+
+                // Write to database
+                main.writeAdmin();
+                main.writeStaff();
+                main.writeSupervisors();
+
                 jFrame.remove(jPanel);
-                request(jFrame);
+                request(jFrame, main);
             });
         }
         Home.addActionListener(e -> {
             jFrame.remove(jPanel);
-            admin_login(jFrame);
+            admin_login(jFrame, main);
         });
         Staff_list.addActionListener(e -> {
             jFrame.remove(jPanel);
-            staff_list(jFrame);
+            staff_list(jFrame, main);
         });
         Tasks.addActionListener(e -> {
             jFrame.remove(jPanel);
-            Tasks_action(jFrame);
+            Tasks_action(jFrame, main);
         });
         Logistics.addActionListener(e -> {
             jFrame.remove(jPanel);
-            logistics(jFrame);
+            logistics(jFrame, main);
         });
         Reports.addActionListener(e -> {
             jFrame.remove(jPanel);
-            reports(jFrame);
+            reports(jFrame, main);
         });
         Requests.addActionListener(e -> {
             jFrame.remove(jPanel);
-            request(jFrame);
+            request(jFrame, main);
         });
         leave_request.addActionListener(e -> {
             jFrame.remove(jPanel);
-            leave_request(jFrame);
+            leave_request(jFrame, main);
         });
     }
-    public void leave_request(JFrame jFrame) {
+    public void leave_request(JFrame jFrame, Main main) {
         JPanel jPanel = new JPanel(null);
         Font font = new Font("Roboto Light", Font.PLAIN, 35);
         Font font1 = new Font("Roboto Light", Font.PLAIN, 20);
@@ -856,7 +1003,12 @@ public class Admin extends Person {
         jPanel.add(logout);
         logout.addActionListener(e -> {
             jFrame.remove(jPanel);
-            Interface.FrontScreen(jFrame);
+            Interface.FrontScreen(jFrame, main);
+
+            // Write to database
+            main.writeAdmin();
+            main.writeStaff();
+            main.writeSupervisors();
         });
         // Setup frame
         jFrame.add(jPanel);
@@ -874,7 +1026,7 @@ public class Admin extends Person {
                 leave_supervisor.get(temp).setValid(true);
                 leave_supervisor.remove(temp);
                 jFrame.remove(jPanel);
-                leave_request(jFrame);
+                leave_request(jFrame, main);
             });
         }
         for (int i = 0; i< reject_buttons.length; i++) {
@@ -884,43 +1036,55 @@ public class Admin extends Person {
                 jButton.setEnabled(false);
                 leave_supervisor.remove(temp);
                 jFrame.remove(jPanel);
-                leave_request(jFrame);
+                leave_request(jFrame, main);
             });
         }
         Home.addActionListener(e -> {
             jFrame.remove(jPanel);
-            admin_login(jFrame);
+            admin_login(jFrame, main);
         });
         Staff_list.addActionListener(e -> {
             jFrame.remove(jPanel);
-            staff_list(jFrame);
+            staff_list(jFrame, main);
         });
         Tasks.addActionListener(e -> {
             jFrame.remove(jPanel);
-            Tasks_action(jFrame);
+            Tasks_action(jFrame, main);
         });
         Logistics.addActionListener(e -> {
             jFrame.remove(jPanel);
-            logistics(jFrame);
+            logistics(jFrame, main);
         });
         Reports.addActionListener(e -> {
             jFrame.remove(jPanel);
-            reports(jFrame);
+            reports(jFrame, main);
         });
         Requests.addActionListener(e -> {
             jFrame.remove(jPanel);
-            request(jFrame);
+            request(jFrame, main);
         });
         leave_request.addActionListener(e -> {
             jFrame.remove(jPanel);
-            leave_request(jFrame);
+            leave_request(jFrame, main);
         });
     }
-    public void removeStaff(Staff staff) {
-        for (int i=0;i<Main.Staff.size();i++) {
-            if (Main.Staff.get(i).equals(staff)) {
-                Main.Staff.remove(i);
+    public void removeStaff(Staff staff, Main main) {
+        for (int i=0;i<main.Staff.size();i++) {
+            if (main.Staff.get(i).equals(staff)) {
+                main.Staff.remove(i);
+                // Write to database
+                main.writeAdmin();
+                main.writeStaff();
+                main.writeSupervisors();
             }
         }
+    }
+    public void addLeaves(Leave leave, Main main) {
+        leave_supervisor.add(leave);
+
+        // Write to database
+        main.writeAdmin();
+        main.writeStaff();
+        main.writeSupervisors();
     }
 }

@@ -1,9 +1,10 @@
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by rishabh on 29/11/16.
  */
-public class Leave {
+public class Leave implements Serializable {
     private String toWhom, Reason;
     private Date from, to;
     private boolean valid = false;

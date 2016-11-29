@@ -1,10 +1,11 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Random;
 
 /**
  * Created by rishabh on 29/11/16.
  */
-public class Task_staff {
+public class Task_staff implements Serializable {
     private static int r=1000001;
     private String Description, Name, Status, Equipments;
     private String deadline;

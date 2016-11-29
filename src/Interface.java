@@ -12,7 +12,7 @@ public class Interface {
     // Declarations
     private static Font font = new Font("Roboto Light", Font.PLAIN, 35);
     private static Font font1 = new Font("Roboto Light", Font.PLAIN, 20);
-    Interface() {
+    Interface(Main main) {
         JFrame jFrame = new JFrame("Facility Management Service");
         try {
             GraphicsEnvironment graphicsEnvironment = GraphicsEnvironment.getLocalGraphicsEnvironment();
@@ -24,9 +24,9 @@ public class Interface {
         jFrame.setSize(1400,1000);
         jFrame.setLocationRelativeTo(null);
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        FrontScreen(jFrame);
+        FrontScreen(jFrame, main);
     }
-    public static void FrontScreen(JFrame jFrame) {
+    public static void FrontScreen(JFrame jFrame, Main main) {
         JPanel jPanel = new JPanel(null);
         JLabel jLabel = new JLabel("Facility Management Service", SwingConstants.CENTER);
         JLabel label = new JLabel("(For new staff member)", SwingConstants.CENTER);
@@ -67,11 +67,11 @@ public class Interface {
         // Button Actions
         login.addActionListener(e -> {
             jFrame.remove(jPanel);
-            Login login1 = new Login(jFrame);
+            Login login1 = new Login(jFrame, main);
         });
         register.addActionListener(e -> {
             jFrame.remove(jPanel);
-            Register register1 = new Register(jFrame);
+            Register register1 = new Register(jFrame, main);
         });
         exit.addActionListener(e -> System.exit(0));
     }

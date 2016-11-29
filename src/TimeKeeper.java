@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -6,7 +7,7 @@ import java.util.Date;
 /**
  * Created by Rishabh on 11/28/2016.
  */
-public class TimeKeeper extends Thread {
+public class TimeKeeper extends Thread implements Serializable {
     private boolean flag;
     private JLabel  date_label, time_label;
     private SimpleDateFormat dateFormat = new SimpleDateFormat("EEE, d MMM yyyy");

@@ -1,7 +1,9 @@
+import java.io.Serializable;
+
 /**
  * Created by Rishabh on 11/29/2016.
  */
-public class Logistics {
+public class Logistics implements Serializable {
     private long ID, reference_ID;
     private String items;
     private boolean valid = false;
@@ -13,7 +15,12 @@ public class Logistics {
 
     public String list_string() {
         String string;
-        string = "<html>ID: "+this.ID+"<br>Items: "+this.items+"<br>Reference Task ID: "+this.reference_ID+"</html>";
+        if (valid) {
+            string = "<html>ID: "+this.ID+"<br>Items: "+this.items+"<br>Reference Task ID: "+this.reference_ID+"<br>Approval: approved</html>";
+        }
+        else {
+            string = "<html>ID: "+this.ID+"<br>Items: "+this.items+"<br>Reference Task ID: "+this.reference_ID+"<br>Approval: rejected</html>";
+        }
         return string;
     }
 

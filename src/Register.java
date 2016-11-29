@@ -23,13 +23,13 @@ public class Register {
     private JTextField email = new JTextField(20);
     private JTextField id = new JTextField(20);
     private boolean flag=true;
-    Register(JFrame jFrame) {
+    Register(JFrame jFrame, Main main) {
         this.jFrame = jFrame;
         this.ID = Main.id;
         Main.id++;
-        GUI();
+        GUI(main);
     }
-    public void GUI() {
+    public void GUI(Main main) {
         // Panel Setup
         JLabel title = new JLabel("Registration Details", SwingConstants.CENTER);
         JLabel name_label = new JLabel("Name ", SwingConstants.CENTER);
@@ -75,7 +75,7 @@ public class Register {
         warning.setFont(font2);
         submit.setFont(font1);
         department_label.setFont(font1);
-        type_label.setFont(font1);
+//        type_label.setFont(font1);
         back.setFont(font1);
 
         // Set Layout
@@ -98,9 +98,9 @@ public class Register {
         jPanel.add(name_warning);
         jPanel.add(department_label);
         jPanel.add(department);
-        jPanel.add(type);
+//        jPanel.add(type);
         jPanel.add(back);
-        jPanel.add(type_label);
+//        jPanel.add(type_label);
         name_warning.setVisible(false);
         jPanel.add(user_name_warning);
         user_name_warning.setVisible(false);
@@ -145,7 +145,7 @@ public class Register {
         // Button listeners
         back.addActionListener(e -> {
             jFrame.remove(jPanel);
-            Interface.FrontScreen(jFrame);
+            Interface.FrontScreen(jFrame, main);
         });
         submit.addActionListener(e -> {
             flag=true;
@@ -214,7 +214,7 @@ public class Register {
 
             // Check for existing staff member
             if (Type.equals("Staffer")) {
-                for (Person person : Main.Staff) {
+                for (Person person : main.Staff) {
                     if (person.getUser_name().equals(temp.getUser_name()) ||
                             person.getEmail().equals(temp.getEmail())) {
                         warning.setText("User already exists!");
@@ -225,7 +225,7 @@ public class Register {
                 }
             }
             else {
-                for (Person person : Main.supervisors) {
+                for (Person person : main.supervisors) {
                     if (person.getUser_name().equals(temp1.getUser_name()) ||
                             person.getEmail().equals(temp1.getEmail())) {
                         warning.setText("User already exists!");
@@ -236,23 +236,23 @@ public class Register {
                 }
             }
 
-            // Create a new staff/supervisor member if everything is good to go
+            // Create a new staff member if everything is good to go
             if (flag) {
                 if (Type.equals("Staffer")) {
-                    Main.Staff.add(temp);
-                    Admin.RegistrationRequest_Staff(temp);
-                    for (int i=0;i<Main.supervisors.size();i++) {
-                        if (Main.supervisors.get(i).getDepartment().equals(temp.getDepartment())) {
-                            Main.supervisors.get(i).RegistrationRequest_Staff(temp);
+                    main.Staff.add(temp);
+                    main.admin.RegistrationRequest_Staff(temp, main);
+                    for (int i=0;i<main.supervisors.size();i++) {
+                        if (main.supervisors.get(i).getDepartment().equals(temp.getDepartment())) {
+                            main.supervisors.get(i).RegistrationRequest_Staff(temp, main);
                         }
                     }
-                    System.out.println(Main.Staff.size());
-                }
-                else {
-                    Main.supervisors.add(temp1);
+                    // Write to database
+                    main.writeAdmin();
+                    main.writeStaff();
+                    main.writeSupervisors();
                 }
                 jFrame.remove(jPanel);
-                Interface.FrontScreen(jFrame);
+                Interface.FrontScreen(jFrame, main);
             }
         });
     }

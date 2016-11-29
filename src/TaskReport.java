@@ -1,7 +1,9 @@
+import java.io.Serializable;
+
 /**
  * Created by rishabh on 29/11/16.
  */
-public class TaskReport {
+public class TaskReport implements Serializable {
     private long ID, taskID, time_taken;
     private String taskName, description, items, comments;
     TaskReport(String taskName, String description, String items, String comments, long ID, long taskID, long time_taken) {

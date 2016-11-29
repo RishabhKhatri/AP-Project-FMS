@@ -1,3 +1,4 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Random;
@@ -5,7 +6,7 @@ import java.util.Random;
 /**
  * Created by Rishabh on 11/29/2016.
  */
-public class SupervisorTask {
+public class SupervisorTask implements Serializable {
     private static int r=1000001;
     private String Description, Name, Status, Equipments;
     private String deadline;

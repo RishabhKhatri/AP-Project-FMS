@@ -22,7 +22,7 @@ public class Login {
     private JLabel user_existence = new JLabel("(User does not exist)", SwingConstants.CENTER);
     private JLabel password_wrong = new JLabel("(Password does not match)", SwingConstants.CENTER);
     private boolean flag = true;
-    Login(JFrame jFrame) {
+    Login(JFrame jFrame, Main main) {
         JButton back = new JButton("Back");
         this.jFrame = jFrame;
 
@@ -69,7 +69,7 @@ public class Login {
 
         back.addActionListener(e -> {
             jFrame.remove(jPanel);
-            Interface.FrontScreen(jFrame);
+            Interface.FrontScreen(jFrame, main);
         });
         login.addActionListener(e -> {
             if (user_name.getText().isEmpty()) {
@@ -91,7 +91,7 @@ public class Login {
                     this.Password = new String(password.getPassword());
 
                     // Staff login
-                    for (Staff person:Main.Staff) {
+                    for (Staff person:main.Staff) {
                         if (person.getUser_name().equals(this.username)) {
                             user_existence.setVisible(false);
                             if (person.getPassword().equals(this.Password))
@@ -99,14 +99,14 @@ public class Login {
                                 if (person.isValid()) {
                                     System.out.println("success");
                                     jFrame.remove(jPanel);
-                                    person.staff_login(jFrame);
+                                    person.staff_login(jFrame, main);
                                     flag1 = true;
                                 }
                                 else {
                                     JOptionPane.showMessageDialog(null, "User not verified", "Invalid Login",
                                             JOptionPane.INFORMATION_MESSAGE);
                                     jFrame.remove(jPanel);
-                                    Interface.FrontScreen(jFrame);
+                                    Interface.FrontScreen(jFrame, main);
                                 }
                             }
                             else {
@@ -121,14 +121,14 @@ public class Login {
                             {
                                 if (person.isValid()) {
                                     jFrame.remove(jPanel);
-                                    person.staff_login(jFrame);
+                                    person.staff_login(jFrame, main);
                                     flag1 = true;
                                 }
                                 else {
                                     JOptionPane.showMessageDialog(null, "User not verified", "Invalid Login",
                                             JOptionPane.INFORMATION_MESSAGE);
                                     jFrame.remove(jPanel);
-                                    Interface.FrontScreen(jFrame);
+                                    Interface.FrontScreen(jFrame, main);
                                 }
                             }
                             else {
@@ -141,13 +141,13 @@ public class Login {
                     }
 
                     // Supervisor Login
-                    for (Supervisor person:Main.supervisors) {
+                    for (Supervisor person:main.supervisors) {
                         if (person.getUser_name().equals(this.username)) {
                             user_existence.setVisible(false);
                             if (person.getPassword().equals(this.Password))
                             {
                                 jFrame.remove(jPanel);
-                                person.supervisor_login(jFrame);
+                                person.supervisor_login(jFrame, main);
                                 flag1 = true;
                             }
                             else {
@@ -161,7 +161,7 @@ public class Login {
                             if (person.getPassword().equals(this.Password))
                             {
                                 jFrame.remove(jPanel);
-                                person.supervisor_login(jFrame);
+                                person.supervisor_login(jFrame, main);
                                 flag1 = true;
                             }
                             else {
@@ -174,12 +174,12 @@ public class Login {
                     }
 
                     // Admin Login
-                    if (Main.admin.getUser_name().equals(this.username)) {
+                    if (main.admin.getUser_name().equals(this.username)) {
                         user_existence.setVisible(false);
-                        if (Main.admin.getPassword().equals(this.Password))
+                        if (main.admin.getPassword().equals(this.Password))
                         {
                             jFrame.remove(jPanel);
-                            Main.admin.admin_login(jFrame);
+                            main.admin.admin_login(jFrame, main);
                             flag1 = true;
                         }
                         else {
@@ -189,11 +189,11 @@ public class Login {
                             flag1 = true;
                         }
                     }
-                    else if (Main.admin.getEmail().equals(this.username)) {
-                        if (Main.admin.getPassword().equals(this.Password))
+                    else if (main.admin.getEmail().equals(this.username)) {
+                        if (main.admin.getPassword().equals(this.Password))
                         {
                             jFrame.remove(jPanel);
-                            Main.admin.admin_login(jFrame);
+                            main.admin.admin_login(jFrame, main);
                             flag1 = true;
                         }
                         else {

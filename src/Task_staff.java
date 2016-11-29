@@ -37,4 +37,12 @@ public class Task_staff {
         }
         return string;
     }
+
+    public String getStatus() {
+        return Status;
+    }
+
+    public void setStatus(String status) {
+        Status = status;
+    }
 }

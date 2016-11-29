@@ -10,7 +10,7 @@ import java.util.*;
  */
 public class Admin extends Person {
     private ArrayList<SupervisorTask> tasks = new ArrayList<>();
-    private ArrayList<Leave> leave_supervisor = new ArrayList<>();
+    public static ArrayList<Leave> leave_supervisor = new ArrayList<>();
     private ArrayList<Logistics> logistics_list = new ArrayList<>();
     private static ArrayList<Staff> registration_staff = new ArrayList<>();
     Admin(String Name, long ID, String user_name, String Password, String Contact, String Email) {
@@ -914,8 +914,5 @@ public class Admin extends Person {
                 Main.Staff.remove(i);
             }
         }
-    }
-    public void add_leave(Leave leave) {
-        leave_supervisor.add(leave);
     }
 }

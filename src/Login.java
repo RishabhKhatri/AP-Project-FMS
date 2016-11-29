@@ -88,7 +88,7 @@ public class Login {
                             if (person.getPassword().equals(this.Password))
                             {
                                 if (person.isValid()) {
-                                    Staff.staff_login(person, jFrame);
+                                    person.staff_login(jFrame);
                                     flag1 = true;
                                 }
                                 else {
@@ -109,7 +109,7 @@ public class Login {
                             if (person.getPassword().equals(this.Password))
                             {
                                 if (person.isValid()) {
-                                    Staff.staff_login(person, jFrame);
+                                    person.staff_login(jFrame);
                                     flag1 = true;
                                 }
                                 else {

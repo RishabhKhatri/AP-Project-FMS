@@ -3,6 +3,9 @@ import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 /**
@@ -13,6 +16,7 @@ public class Supervisor extends Person {
     private ArrayList<Task_staff> tasks = new ArrayList<>();
     private ArrayList<SupervisorTask> mytasks = new ArrayList<>();
     private ArrayList<Leave> leave_staff = new ArrayList<>();
+    private ArrayList<Leave> myLeaves = new ArrayList<>();
     private static ArrayList<Staff> registration_staff = new ArrayList<>();
     Supervisor(String Name, long ID, String user_name, String Password, String Contact, String Email, String Department) {
         super(Name, ID, user_name, Password, Contact, Email);
@@ -45,6 +49,10 @@ public class Supervisor extends Person {
         final JLabel time_label = new JLabel();
         TimeKeeper timeKeeper = new TimeKeeper(date_label, time_label);
         JButton leave_request = new JButton("Leave Request");
+        JButton my_leaves = new JButton("My Leaves");
+        my_leaves.setFont(font2);
+        my_leaves.setBounds(1, 60, 150, 50);
+        jPanel.add(my_leaves);
 
         // Set Fonts
         name_label.setFont(font2);
@@ -99,6 +107,10 @@ public class Supervisor extends Person {
         jFrame.setVisible(true);
 
         // Button Listeners
+        my_leaves.addActionListener(e -> {
+            jFrame.remove(jPanel);
+            accept_leave_request(jFrame);
+        });
         Home.addActionListener(e -> {
             jFrame.remove(jPanel);
             supervisor_login(jFrame);
@@ -145,6 +157,10 @@ public class Supervisor extends Person {
         final JLabel time_label = new JLabel();
         TimeKeeper timeKeeper = new TimeKeeper(date_label, time_label);
         JButton leave_request = new JButton("Leave Request");
+        JButton my_leaves = new JButton("My Leaves");
+        my_leaves.setFont(font2);
+        my_leaves.setBounds(1, 60, 150, 50);
+        jPanel.add(my_leaves);
 
         ArrayList<Staff> department_list = new ArrayList<>();
         for (int i=0;i<Main.Staff.size();i++) {
@@ -235,6 +251,10 @@ public class Supervisor extends Person {
                 staff_list(jFrame);
             });
         }
+        my_leaves.addActionListener(e -> {
+            jFrame.remove(jPanel);
+            accept_leave_request(jFrame);
+        });
         Home.addActionListener(e -> {
             jFrame.remove(jPanel);
             supervisor_login(jFrame);
@@ -283,6 +303,10 @@ public class Supervisor extends Person {
         TimeKeeper timeKeeper = new TimeKeeper(date_label, time_label);
         JLabel[] request_list = new JLabel[registration_staff.size()];
         JButton leave_request = new JButton("Leave Request");
+        JButton my_leaves = new JButton("My Leaves");
+        my_leaves.setFont(font2);
+        my_leaves.setBounds(1, 60, 150, 50);
+        jPanel.add(my_leaves);
 
         int j=100;
         for (int i=0;i<registration_staff.size();i++) {
@@ -360,6 +384,10 @@ public class Supervisor extends Person {
         // Button Listeners
 
         // Button listeners for delete buttons
+        my_leaves.addActionListener(e -> {
+            jFrame.remove(jPanel);
+            accept_leave_request(jFrame);
+        });
         logout.addActionListener(e -> {
             jFrame.remove(jPanel);
             Interface.FrontScreen(jFrame);
@@ -439,6 +467,10 @@ public class Supervisor extends Person {
         JLabel[] task_list = new JLabel[tasks.size()];
         JButton new_task = new JButton("New Task");
         JButton leave_request = new JButton("Leave Request");
+        JButton my_leaves = new JButton("My Leaves");
+        my_leaves.setFont(font2);
+        my_leaves.setBounds(1, 60, 150, 50);
+        jPanel.add(my_leaves);
 
         ArrayList<Staff> department_list = new ArrayList<>();
         for (int i=0;i<Main.Staff.size();i++) {
@@ -509,6 +541,10 @@ public class Supervisor extends Person {
         jFrame.setVisible(true);
 
         // Button Listeners
+        my_leaves.addActionListener(e -> {
+            jFrame.remove(jPanel);
+            accept_leave_request(jFrame);
+        });
         new_task.addActionListener(actionEvent -> {
             int number = Integer.parseInt(JOptionPane.showInputDialog(null, "Number of staff members required (1-5)"));
             JFrame jFrame1 = new JFrame("Assign Task");
@@ -593,6 +629,10 @@ public class Supervisor extends Person {
                                 }
                             }
                         }
+                        for (int i=0;i<arrayList.size();i++) {
+                            arrayList.get(i).addTask(new Task_staff(Description.getText(), Name.getText(), "Pending", Equipments.getText(),
+                                    Deadline.getText(), arrayList));
+                        }
                         tasks.add(new Task_staff(Description.getText(), Name.getText(), "Pending", Equipments.getText(),
                                 Deadline.getText(), arrayList));
                     }
@@ -646,6 +686,10 @@ public class Supervisor extends Person {
         final JLabel date_label = new JLabel();
         final JLabel time_label = new JLabel();
         TimeKeeper timeKeeper = new TimeKeeper(date_label, time_label);
+        JButton my_leaves = new JButton("My Leaves");
+        my_leaves.setFont(font2);
+        my_leaves.setBounds(1, 60, 150, 50);
+        jPanel.add(my_leaves);
 
         JLabel[] request_list = new JLabel[leave_staff.size()];
         int j=100;
@@ -730,6 +774,10 @@ public class Supervisor extends Person {
         // Button Listeners
 
         // Button listeners for delete buttons
+        my_leaves.addActionListener(e -> {
+            jFrame.remove(jPanel);
+            accept_leave_request(jFrame);
+        });
         for (int i = 0; i< approve_buttons.length; i++) {
             final int temp = i;
             approve_buttons[i].addActionListener(actionEvent -> {
@@ -784,7 +832,7 @@ public class Supervisor extends Person {
         Font font1 = new Font("Roboto Light", Font.PLAIN, 20);
         Font font2 = new Font("Roboto Light", Font.PLAIN, 17);
         Border border = BorderFactory.createLineBorder(Color.blue, 1);
-        JLabel name_label = new JLabel(this.getName()+"(Supervisor)", SwingConstants.CENTER);
+        JLabel name_label = new JLabel(this.getName()+"(Admin)", SwingConstants.CENTER);
         JButton Home = new JButton("Home");
         JButton Tasks = new JButton("Tasks");
         JButton Staff_list = new JButton("Staff");
@@ -795,6 +843,29 @@ public class Supervisor extends Person {
         final JLabel time_label = new JLabel();
         TimeKeeper timeKeeper = new TimeKeeper(date_label, time_label);
         JButton leave_request = new JButton("Leave Request");
+        JButton new_leave = new JButton("Apply for leave");
+        JButton my_leaves = new JButton("My Leaves");
+        my_leaves.setFont(font2);
+        my_leaves.setBounds(1, 60, 150, 50);
+        jPanel.add(my_leaves);
+
+        ArrayList<Staff> department_list = new ArrayList<>();
+        for (int i=0;i<Main.Staff.size();i++) {
+            if (this.getDepartment().equals(Main.Staff.get(i).getDepartment()) && Main.Staff.get(i).isValid()) {
+                department_list.add(Main.Staff.get(i));
+            }
+        }
+
+        JLabel[] leave_list = new JLabel[myLeaves.size()];
+        int j=200;
+        for (int i=0;i<myLeaves.size();i++) {
+            leave_list[i] = new JLabel(myLeaves.get(i).list_string());
+            leave_list[i].setBorder(border);
+            leave_list[i].setFont(font2);
+            jPanel.add(leave_list[i]);
+            leave_list[i].setBounds(20, j, 800, 200);
+            j+=200;
+        }
 
         // Set Fonts
         name_label.setFont(font2);
@@ -807,6 +878,7 @@ public class Supervisor extends Person {
         date_label.setFont(font2);
         time_label.setFont(font2);
         leave_request.setFont(font2);
+        new_leave.setFont(font2);
 
         // Add components to JPanel
         jPanel.add(name_label);
@@ -819,6 +891,7 @@ public class Supervisor extends Person {
         jPanel.add(time_label);
         jPanel.add(Tasks);
         jPanel.add(leave_request);
+        jPanel.add(new_leave);
 
         // Set Layout of components
         name_label.setBounds(790,1,150,50);
@@ -831,21 +904,104 @@ public class Supervisor extends Person {
         Requests.setBounds(420,1,120,50);
         leave_request.setBounds(540, 1, 150, 50);
         Tasks.setBounds(690, 1, 100, 50);
+        new_leave.setBounds(20, 150, 120, 50);
 
         JButton logout = new JButton("Logout");
         logout.setBounds(1160, 1, 150, 50);
         logout.setFont(font2);
         jPanel.add(logout);
-        logout.addActionListener(e -> {
-            jFrame.remove(jPanel);
-            Interface.FrontScreen(jFrame);
-        });
+
         // Setup frame
         jFrame.add(jPanel);
         timeKeeper.start();
         jFrame.setVisible(true);
 
         // Button Listeners
+        my_leaves.addActionListener(e -> {
+            jFrame.remove(jPanel);
+            accept_leave_request(jFrame);
+        });
+        logout.addActionListener(e -> {
+            jFrame.remove(jPanel);
+            Interface.FrontScreen(jFrame);
+        });
+        new_leave.addActionListener(e -> {
+            JFrame jFrame1 = new JFrame("Application for leave");
+            JPanel jPanel1 = new JPanel(null);
+            JLabel title = new JLabel("Application for leave");
+            JLabel toWhom_label = new JLabel("Apply to");
+            JLabel reason_label = new JLabel("Reason");
+            JLabel from_label = new JLabel("From (Date)");
+            JLabel to_label = new JLabel("To (Date)");
+            JTextField reason = new JTextField();
+            JTextField from = new JTextField();
+            JTextField to = new JTextField();
+            JTextField toWhom = new JTextField();
+            JButton submit = new JButton("Submit leave");
+
+            title.setFont(font);
+            toWhom_label.setFont(font2);
+            from_label.setFont(font2);
+            to_label.setFont(font2);
+            reason.setFont(font2);
+            from.setFont(font2);
+            to.setFont(font2);
+            submit.setFont(font2);
+            reason_label.setFont(font2);
+            toWhom.setFont(font2);
+
+            jPanel1.add(title);
+            jPanel1.add(toWhom_label);
+            jPanel1.add(from_label);
+            jPanel1.add(to_label);
+            jPanel1.add(reason);
+            jPanel1.add(from);
+            jPanel1.add(to);
+            jPanel1.add(submit);
+            jPanel1.add(reason_label);
+            jPanel1.add(toWhom);
+            toWhom.setEnabled(false);
+            toWhom.setText("Admin");
+
+            title.setBounds(300,100,500,70);
+            toWhom_label.setBounds(100,200,300,30);
+            toWhom.setBounds(400,200,300,30);
+            reason_label.setBounds(100,250,300,30);
+            reason.setBounds(400,250,300,30);
+            from_label.setBounds(100,300,300,30);
+            from.setBounds(400,300,300,30);
+            to_label.setBounds(100,350,300,30);
+            to.setBounds(400,350,300,30);
+            submit.setBounds(400, 400, 150, 30);
+
+            jFrame1.add(jPanel1);
+            jFrame1.setSize(1000,1000);
+            jFrame1.setLocationRelativeTo(null);
+            jFrame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            jFrame1.setVisible(true);
+
+            submit.addActionListener((ActionEvent actionEvent) -> {
+                if (reason.getText().isEmpty() || from.getText().isEmpty() || to.getText().isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "Some of the field(s) left empty!");
+                    accept_leave_request(jFrame);
+                }
+                Leave temp=null;
+                SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+                try {
+                    temp = new Leave("admin", reason.getText(), format.parse(from.getText()), format.parse(to.getText()));
+                }
+                catch (ParseException a) {
+                    a.printStackTrace();
+                }
+                myLeaves.add(temp);
+                Admin.leave_supervisor.add(temp);
+                Admin.leave_supervisor.size();
+                accept_leave_request(jFrame);
+                jFrame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                jFrame1.setVisible(false);
+                jFrame1.dispose();
+            });
+        });
         Home.addActionListener(e -> {
             jFrame.remove(jPanel);
             supervisor_login(jFrame);

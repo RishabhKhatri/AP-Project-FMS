@@ -9,7 +9,7 @@ public class Main {
     public static Admin admin = new Admin("Rishabh", 1000001, "admin", "admin",
             "8505915101", "admin@admin.com");
     public static ArrayList<Supervisor> supervisors = new ArrayList<>();
-    public static ArrayList<Person> Staff = new ArrayList<>();
+    public static ArrayList<Staff> Staff = new ArrayList<>();
     public static Person readAdmin() {
         Person temp = null;
         try {

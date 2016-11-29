@@ -5,9 +5,19 @@ import javax.swing.*;
  */
 public class Staff extends Person {
     private String Department;
+    private boolean valid = false, leave_request = false;
     Staff(String Name, long ID, String user_name, String Password, String Contact, String Email, String Department) {
         super(Name, ID, user_name, Password, Contact, Email);
         this.Department = Department;
+    }
+
+    @Override
+    public void setValid(boolean valid) {
+        this.valid = valid;
+    }
+
+    public boolean isValid() {
+        return valid;
     }
 
     public String getDepartment() {

@@ -240,6 +240,7 @@ public class Register {
             if (flag) {
                 if (Type.equals("Staffer")) {
                     Main.Staff.add(temp);
+                    Admin.RegistrationRequest_Staff(temp);
                     System.out.println(Main.Staff.size());
                 }
                 else {

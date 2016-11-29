@@ -14,7 +14,7 @@ public class Supervisor extends Person {
         return Department;
     }
 
-    public static void supervisor_login(Person person, JFrame jFrame) {
+    public static void supervisor_login(JFrame jFrame) {
 
     }
 }

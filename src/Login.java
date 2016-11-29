@@ -82,13 +82,21 @@ public class Login {
                     this.Password = new String(password.getPassword());
 
                     // Staff login
-                    for (Person person:Main.Staff) {
+                    for (Staff person:Main.Staff) {
                         if (person.getUser_name().equals(this.username)) {
                             user_existence.setVisible(false);
                             if (person.getPassword().equals(this.Password))
                             {
-                                Staff.staff_login(person, jFrame);
-                                flag1 = true;
+                                if (person.isValid()) {
+                                    Staff.staff_login(person, jFrame);
+                                    flag1 = true;
+                                }
+                                else {
+                                    JOptionPane.showMessageDialog(null, "User not verified", "Invalid Login",
+                                            JOptionPane.INFORMATION_MESSAGE);
+                                    jFrame.remove(jPanel);
+                                    Interface.FrontScreen(jFrame);
+                                }
                             }
                             else {
                                 password_wrong.setBounds(700, 250, 300, 30);
@@ -100,8 +108,16 @@ public class Login {
                         else if (person.getEmail().equals(this.username)) {
                             if (person.getPassword().equals(this.Password))
                             {
-                                Staff.staff_login(person, jFrame);
-                                flag1 = true;
+                                if (person.isValid()) {
+                                    Staff.staff_login(person, jFrame);
+                                    flag1 = true;
+                                }
+                                else {
+                                    JOptionPane.showMessageDialog(null, "User not verified", "Invalid Login",
+                                            JOptionPane.INFORMATION_MESSAGE);
+                                    jFrame.remove(jPanel);
+                                    Interface.FrontScreen(jFrame);
+                                }
                             }
                             else {
                                 password_wrong.setBounds(700, 250, 300, 30);
@@ -118,7 +134,7 @@ public class Login {
                             user_existence.setVisible(false);
                             if (person.getPassword().equals(this.Password))
                             {
-                                Supervisor.supervisor_login(person, jFrame);
+                                Supervisor.supervisor_login(jFrame);
                                 flag1 = true;
                             }
                             else {
@@ -131,7 +147,7 @@ public class Login {
                         else if (person.getEmail().equals(this.username)) {
                             if (person.getPassword().equals(this.Password))
                             {
-                                Supervisor.supervisor_login(person, jFrame);
+                                Supervisor.supervisor_login(jFrame);
                                 flag1 = true;
                             }
                             else {

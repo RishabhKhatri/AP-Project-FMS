@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.util.ArrayList;
 
 /**
  * Created by Rishabh Khatri(2015077) and Ravi Sharma(2015165) on 4/11/16.
@@ -6,6 +7,7 @@ import javax.swing.*;
 public class Staff extends Person {
     private String Department;
     private boolean valid = false, leave_request = false;
+    private ArrayList<SupervisorTask> tasks = new ArrayList<>();
     Staff(String Name, long ID, String user_name, String Password, String Contact, String Email, String Department) {
         super(Name, ID, user_name, Password, Contact, Email);
         this.Department = Department;
@@ -33,5 +35,8 @@ public class Staff extends Person {
                 this.getUser_name()+"<br>Contact: "+this.getContact()+"<br>Email: "+
                 this.getEmail()+"<br>Department: "+this.getDepartment()+"</html>";
         return string;
+    }
+    public void addTask(SupervisorTask task) {
+        tasks.add(task);
     }
 }

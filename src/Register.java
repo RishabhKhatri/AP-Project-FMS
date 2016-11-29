@@ -241,6 +241,11 @@ public class Register {
                 if (Type.equals("Staffer")) {
                     Main.Staff.add(temp);
                     Admin.RegistrationRequest_Staff(temp);
+                    for (int i=0;i<Main.supervisors.size();i++) {
+                        if (Main.supervisors.get(i).getDepartment().equals(temp.getDepartment())) {
+                            Main.supervisors.get(i).RegistrationRequest_Staff(temp);
+                        }
+                    }
                     System.out.println(Main.Staff.size());
                 }
                 else {

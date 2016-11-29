@@ -10,7 +10,7 @@ import java.util.*;
  */
 public class Admin extends Person {
     private ArrayList<SupervisorTask> tasks = new ArrayList<>();
-    private ArrayList<Staff> leave_staff = new ArrayList<>();
+    private ArrayList<Leave> leave_supervisor = new ArrayList<>();
     private ArrayList<Logistics> logistics_list = new ArrayList<>();
     private static ArrayList<Staff> registration_staff = new ArrayList<>();
     Admin(String Name, long ID, String user_name, String Password, String Contact, String Email) {
@@ -69,7 +69,7 @@ public class Admin extends Person {
         // Set Layout of components
         name_label.setBounds(790,1,150,50);
         date_label.setBounds(940, 1, 150, 50);
-        time_label.setBounds(1090, 1, 100, 50);
+        time_label.setBounds(1090, 1, 70, 50);
         Home.setBounds(1,1,100,50);
         Staff_list.setBounds(100,1,100,50);
         Logistics.setBounds(200,1,120,50);
@@ -79,6 +79,14 @@ public class Admin extends Person {
         Tasks.setBounds(690, 1, 100, 50);
         welcome_label.setBounds(100, 300, 800, 70);
 
+        JButton logout = new JButton("Logout");
+        logout.setBounds(1160, 1, 150, 50);
+        logout.setFont(font2);
+        jPanel.add(logout);
+        logout.addActionListener(e -> {
+            jFrame.remove(jPanel);
+            Interface.FrontScreen(jFrame);
+        });
         // Setup frame
         jFrame.add(jPanel);
         timeKeeper.start();
@@ -133,9 +141,16 @@ public class Admin extends Person {
         JLabel[] staff_list = new JLabel[Main.Staff.size()];
         JButton leave_request = new JButton("Leave Request");
 
-        int j=100;
+        ArrayList<Staff> valid_staff = new ArrayList<>();
         for (int i=0;i<Main.Staff.size();i++) {
-            staff_list[i] = new JLabel(Main.Staff.get(i).list_string());
+            if (Main.Staff.get(i).isValid()) {
+                valid_staff.add(Main.Staff.get(i));
+            }
+        }
+
+        int j=100;
+        for (int i=0;i<valid_staff.size();i++) {
+            staff_list[i] = new JLabel(valid_staff.get(i).list_string());
             staff_list[i].setBorder(border);
             staff_list[i].setFont(font2);
             jPanel.add(staff_list[i]);
@@ -143,8 +158,8 @@ public class Admin extends Person {
             j+=200;
         }
         j=100;
-        JButton[] delete_buttons = new JButton[Main.Staff.size()];
-        for (int i=0;i<Main.Staff.size();i++) {
+        JButton[] delete_buttons = new JButton[valid_staff.size()];
+        for (int i=0;i<valid_staff.size();i++) {
             delete_buttons[i] = new JButton("Delete");
             delete_buttons[i].setFont(font2);
             jPanel.add(delete_buttons[i]);
@@ -179,7 +194,7 @@ public class Admin extends Person {
         // Set Layout of components
         name_label.setBounds(790,1,150,50);
         date_label.setBounds(940, 1, 150, 50);
-        time_label.setBounds(1090, 1, 100, 50);
+        time_label.setBounds(1090, 1, 70, 50);
         Home.setBounds(1,1,100,50);
         Staff_list.setBounds(100,1,100,50);
         Logistics.setBounds(200,1,120,50);
@@ -188,6 +203,14 @@ public class Admin extends Person {
         leave_request.setBounds(540, 1, 150, 50);
         Tasks.setBounds(690, 1, 100, 50);
 
+        JButton logout = new JButton("Logout");
+        logout.setBounds(1160, 1, 150, 50);
+        logout.setFont(font2);
+        jPanel.add(logout);
+        logout.addActionListener(e -> {
+            jFrame.remove(jPanel);
+            Interface.FrontScreen(jFrame);
+        });
         // Setup frame
         jFrame.add(jPanel);
         timeKeeper.start();
@@ -201,9 +224,9 @@ public class Admin extends Person {
             delete_buttons[i].addActionListener(actionEvent -> {
                 JButton jButton = (JButton) actionEvent.getSource();
                 jButton.setEnabled(false);
-                Main.Staff.remove(temp);
-                jFrame.setVisible(true);
-                System.out.println(Main.Staff.size());
+                removeStaff(valid_staff.get(temp));
+                jFrame.remove(jPanel);
+                staff_list(jFrame);
             });
         }
         Home.addActionListener(e -> {
@@ -293,7 +316,7 @@ public class Admin extends Person {
         // Set Layout of components
         name_label.setBounds(790,1,150,50);
         date_label.setBounds(940, 1, 150, 50);
-        time_label.setBounds(1090, 1, 100, 50);
+        time_label.setBounds(1090, 1, 70, 50);
         Home.setBounds(1,1,100,50);
         Staff_list.setBounds(100,1,100,50);
         Logistics.setBounds(200,1,120,50);
@@ -303,6 +326,14 @@ public class Admin extends Person {
         Tasks.setBounds(690, 1, 100, 50);
         new_task.setBounds(50, 100, 150, 50);
 
+        JButton logout = new JButton("Logout");
+        logout.setBounds(1160, 1, 150, 50);
+        logout.setFont(font2);
+        jPanel.add(logout);
+        logout.addActionListener(e -> {
+            jFrame.remove(jPanel);
+            Interface.FrontScreen(jFrame);
+        });
         // Setup frame
         jFrame.add(jPanel);
         timeKeeper.start();
@@ -344,19 +375,18 @@ public class Admin extends Person {
             jPanel1.add(supervisorJComboBox);
             jPanel1.add(submit);
 
-            // layout
-            title.setBounds(200,1,200,70);
-            name_label1.setBounds(100 , 100, 200,50);
-            Name.setBounds(350 , 100, 300,50);
-            deadline_label.setBounds(100 , 150, 200,50);
-            Description.setBounds(350 , 150, 300,50);
-            equipments_label.setBounds(100 , 200, 200,50);
-            Equipments.setBounds(350 , 200, 300,50);
-            deadline_label.setBounds(100 , 250, 200,50);
-            Deadline.setBounds(350 , 250, 300,50);
-            supervisor_label.setBounds(100 , 300, 200,50);
-            supervisorJComboBox.setBounds(350 , 300, 200,50);
-            submit.setBounds(350, 350, 150, 50);
+            // Layout
+            title.setBounds(300,100,500,70);
+            name_label1.setBounds(100,200,300,30);
+            Name.setBounds(400 , 200, 300,30);
+            description_label.setBounds(100,250,300,30);
+            Description.setBounds(400,250,300,30);
+            equipments_label.setBounds(100,300,300,30);
+            Equipments.setBounds(400,300,300,30);
+            deadline_label.setBounds(100,350,300,30);
+            Deadline.setBounds(400,350,300,30);
+            supervisor_label.setBounds(100,400,300,30);
+            submit.setBounds(400,450,300,30);
 
             // Setup frame
             jFrame1.add(jPanel1);
@@ -374,6 +404,9 @@ public class Admin extends Person {
                         for (int i=0;i<5;i++) {
                             if (Main.supervisors.get(i).getName().equals((String)supervisorJComboBox.getSelectedItem())) {
                                 tasks.add(new SupervisorTask(Description.getText(), Name.getText(), "Pending", Equipments.getText(),
+                                        Deadline.getText(), Main.supervisors.get(i)));
+                                Main.supervisors.get(i).addTask(new SupervisorTask(Description.getText(), Name.getText(),
+                                        "Pending", Equipments.getText(),
                                         Deadline.getText(), Main.supervisors.get(i)));
                                 jFrame1.setVisible(false);
                             }
@@ -494,7 +527,7 @@ public class Admin extends Person {
         // Set Layout of components
         name_label.setBounds(790,1,150,50);
         date_label.setBounds(940, 1, 150, 50);
-        time_label.setBounds(1090, 1, 100, 50);
+        time_label.setBounds(1090, 1, 70, 50);
         Home.setBounds(1,1,100,50);
         Staff_list.setBounds(100,1,100,50);
         Logistics.setBounds(200,1,120,50);
@@ -503,6 +536,14 @@ public class Admin extends Person {
         leave_request.setBounds(540, 1, 150, 50);
         Tasks.setBounds(690, 1, 100, 50);
 
+        JButton logout = new JButton("Logout");
+        logout.setBounds(1160, 1, 150, 50);
+        logout.setFont(font2);
+        jPanel.add(logout);
+        logout.addActionListener(e -> {
+            jFrame.remove(jPanel);
+            Interface.FrontScreen(jFrame);
+        });
         // Setup frame
         jFrame.add(jPanel);
         timeKeeper.start();
@@ -643,7 +684,7 @@ public class Admin extends Person {
         // Set Layout of components
         name_label.setBounds(790,1,150,50);
         date_label.setBounds(940, 1, 150, 50);
-        time_label.setBounds(1090, 1, 100, 50);
+        time_label.setBounds(1090, 1, 70, 50);
         Home.setBounds(1,1,100,50);
         Staff_list.setBounds(100,1,100,50);
         Logistics.setBounds(200,1,120,50);
@@ -652,6 +693,14 @@ public class Admin extends Person {
         leave_request.setBounds(540, 1, 150, 50);
         Tasks.setBounds(690, 1, 100, 50);
 
+        JButton logout = new JButton("Logout");
+        logout.setBounds(1160, 1, 150, 50);
+        logout.setFont(font2);
+        jPanel.add(logout);
+        logout.addActionListener(e -> {
+            jFrame.remove(jPanel);
+            Interface.FrontScreen(jFrame);
+        });
         // Setup frame
         jFrame.add(jPanel);
         timeKeeper.start();
@@ -727,10 +776,11 @@ public class Admin extends Person {
         final JLabel date_label = new JLabel();
         final JLabel time_label = new JLabel();
         TimeKeeper timeKeeper = new TimeKeeper(date_label, time_label);
-        JLabel[] request_list = new JLabel[leave_staff.size()];
+
+        JLabel[] request_list = new JLabel[leave_supervisor.size()];
         int j=100;
-        for (int i=0;i<leave_staff.size();i++) {
-            request_list[i] = new JLabel(leave_staff.get(i).list_string());
+        for (int i=0;i<leave_supervisor.size();i++) {
+            request_list[i] = new JLabel(leave_supervisor.get(i).list_string());
             request_list[i].setBorder(border);
             request_list[i].setFont(font2);
             jPanel.add(request_list[i]);
@@ -738,8 +788,8 @@ public class Admin extends Person {
             j+=200;
         }
         j=100;
-        JButton[] approve_buttons = new JButton[leave_staff.size()];
-        for (int i=0;i<leave_staff.size();i++) {
+        JButton[] approve_buttons = new JButton[leave_supervisor.size()];
+        for (int i=0;i<leave_supervisor.size();i++) {
             approve_buttons[i] = new JButton("Approve");
             approve_buttons[i].setFont(font2);
             jPanel.add(approve_buttons[i]);
@@ -747,8 +797,8 @@ public class Admin extends Person {
             j+=200;
         }
         j=200;
-        JButton[] reject_buttons = new JButton[leave_staff.size()];
-        for (int i=0;i<leave_staff.size();i++) {
+        JButton[] reject_buttons = new JButton[leave_supervisor.size()];
+        for (int i=0;i<leave_supervisor.size();i++) {
             reject_buttons[i] = new JButton("Reject");
             reject_buttons[i].setFont(font2);
             jPanel.add(reject_buttons[i]);
@@ -785,7 +835,7 @@ public class Admin extends Person {
         // Set Layout of components
         name_label.setBounds(790,1,150,50);
         date_label.setBounds(940, 1, 150, 50);
-        time_label.setBounds(1090, 1, 100, 50);
+        time_label.setBounds(1090, 1, 70, 50);
         Home.setBounds(1,1,100,50);
         Staff_list.setBounds(100,1,100,50);
         Logistics.setBounds(200,1,120,50);
@@ -794,6 +844,14 @@ public class Admin extends Person {
         leave_request.setBounds(540, 1, 150, 50);
         Tasks.setBounds(690, 1, 100, 50);
 
+        JButton logout = new JButton("Logout");
+        logout.setBounds(1160, 1, 150, 50);
+        logout.setFont(font2);
+        jPanel.add(logout);
+        logout.addActionListener(e -> {
+            jFrame.remove(jPanel);
+            Interface.FrontScreen(jFrame);
+        });
         // Setup frame
         jFrame.add(jPanel);
         timeKeeper.start();
@@ -807,9 +865,9 @@ public class Admin extends Person {
             approve_buttons[i].addActionListener(actionEvent -> {
                 JButton jButton = (JButton) actionEvent.getSource();
                 jButton.setEnabled(false);
-                leave_staff.get(temp).setValid(true);
-                leave_staff.remove(temp);
-                request(jFrame);
+                leave_supervisor.get(temp).setValid(true);
+                leave_supervisor.remove(temp);
+                leave_request(jFrame);
             });
         }
         for (int i = 0; i< reject_buttons.length; i++) {
@@ -817,8 +875,8 @@ public class Admin extends Person {
             reject_buttons[i].addActionListener(actionEvent -> {
                 JButton jButton = (JButton) actionEvent.getSource();
                 jButton.setEnabled(false);
-                leave_staff.remove(temp);
-                request(jFrame);
+                leave_supervisor.remove(temp);
+                leave_request(jFrame);
             });
         }
         Home.addActionListener(e -> {
@@ -845,5 +903,19 @@ public class Admin extends Person {
             jFrame.remove(jPanel);
             request(jFrame);
         });
+        leave_request.addActionListener(e -> {
+            jFrame.remove(jPanel);
+            leave_request(jFrame);
+        });
+    }
+    public void removeStaff(Staff staff) {
+        for (int i=0;i<Main.Staff.size();i++) {
+            if (Main.Staff.get(i).equals(staff)) {
+                Main.Staff.remove(i);
+            }
+        }
+    }
+    public void add_leave(Leave leave) {
+        leave_supervisor.add(leave);
     }
 }

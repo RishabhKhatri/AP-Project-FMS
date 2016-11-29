@@ -129,12 +129,13 @@ public class Login {
                     }
 
                     // Supervisor Login
-                    for (Person person:Main.supervisors) {
+                    for (Supervisor person:Main.supervisors) {
                         if (person.getUser_name().equals(this.username)) {
                             user_existence.setVisible(false);
                             if (person.getPassword().equals(this.Password))
                             {
-                                Supervisor.supervisor_login(jFrame);
+                                jFrame.remove(jPanel);
+                                person.supervisor_login(jFrame);
                                 flag1 = true;
                             }
                             else {
@@ -147,7 +148,8 @@ public class Login {
                         else if (person.getEmail().equals(this.username)) {
                             if (person.getPassword().equals(this.Password))
                             {
-                                Supervisor.supervisor_login(jFrame);
+                                jFrame.remove(jPanel);
+                                person.supervisor_login(jFrame);
                                 flag1 = true;
                             }
                             else {

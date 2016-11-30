@@ -45,6 +45,9 @@ public class Task_staff implements Serializable {
 
     public void setStatus(String status) {
         Status = status;
+        for (int i=0;i<staffs.size();i++) {
+            staffs.get(i).setTask_assigned(false);
+        }
     }
 
     public long getID() {

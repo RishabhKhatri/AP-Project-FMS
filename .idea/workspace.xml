@@ -2,39 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="11439510-4b7b-4d9f-b9e8-07683983dbc4" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FMS/ID.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ID.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Admin.dat" afterPath="$PROJECT_DIR$/Admin.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Staff.dat" afterPath="$PROJECT_DIR$/Staff.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Supervisors.dat" afterPath="$PROJECT_DIR$/Supervisors.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FMS/Admin$1.class" afterPath="$PROJECT_DIR$/out/production/FMS/Admin$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FMS/Admin.class" afterPath="$PROJECT_DIR$/out/production/FMS/Admin.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FMS/Interface.class" afterPath="$PROJECT_DIR$/out/production/FMS/Interface.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FMS/Leave.class" afterPath="$PROJECT_DIR$/out/production/FMS/Leave.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FMS/Login.class" afterPath="$PROJECT_DIR$/out/production/FMS/Login.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FMS/Logistics.class" afterPath="$PROJECT_DIR$/out/production/FMS/Logistics.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FMS/Main.class" afterPath="$PROJECT_DIR$/out/production/FMS/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FMS/Register.class" afterPath="$PROJECT_DIR$/out/production/FMS/Register.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FMS/Staff.class" afterPath="$PROJECT_DIR$/out/production/FMS/Staff.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FMS/Supervisor$1.class" afterPath="$PROJECT_DIR$/out/production/FMS/Supervisor$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FMS/Supervisor.class" afterPath="$PROJECT_DIR$/out/production/FMS/Supervisor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FMS/SupervisorTask.class" afterPath="$PROJECT_DIR$/out/production/FMS/SupervisorTask.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FMS/TaskReport.class" afterPath="$PROJECT_DIR$/out/production/FMS/TaskReport.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FMS/Task_staff.class" afterPath="$PROJECT_DIR$/out/production/FMS/Task_staff.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FMS/TimeKeeper$1.class" afterPath="$PROJECT_DIR$/out/production/FMS/TimeKeeper$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FMS/TimeKeeper.class" afterPath="$PROJECT_DIR$/out/production/FMS/TimeKeeper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Admin.java" afterPath="$PROJECT_DIR$/src/Admin.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Interface.java" afterPath="$PROJECT_DIR$/src/Interface.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Leave.java" afterPath="$PROJECT_DIR$/src/Leave.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Login.java" afterPath="$PROJECT_DIR$/src/Login.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Logistics.java" afterPath="$PROJECT_DIR$/src/Logistics.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Register.java" afterPath="$PROJECT_DIR$/src/Register.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Staff.java" afterPath="$PROJECT_DIR$/src/Staff.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Supervisor.java" afterPath="$PROJECT_DIR$/src/Supervisor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SupervisorTask.java" afterPath="$PROJECT_DIR$/src/SupervisorTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TaskReport.java" afterPath="$PROJECT_DIR$/src/TaskReport.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Task_staff.java" afterPath="$PROJECT_DIR$/src/Task_staff.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TimeKeeper.java" afterPath="$PROJECT_DIR$/src/TimeKeeper.java" />
     </list>
     <ignored path="FMS.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -58,11 +42,21 @@
       <file leaf-file-name="Register.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Register.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="54" lean-forward="false" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
+            <state relative-caret-position="-1305">
+              <caret line="12" column="46" lean-forward="false" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Login.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Login.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="63" column="29" lean-forward="false" selection-start-line="63" selection-start-column="29" selection-end-line="63" selection-end-column="29" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -88,6 +82,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Interface.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Interface.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="279">
+              <caret line="60" column="29" lean-forward="false" selection-start-line="60" selection-start-column="29" selection-end-line="60" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Logistics.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Logistics.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -101,20 +105,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Staff.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Staff.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Staff.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="650" column="46" lean-forward="false" selection-start-line="650" selection-start-column="46" selection-end-line="650" selection-end-column="46" />
+            <state relative-caret-position="3465">
+              <caret line="1023" column="43" lean-forward="false" selection-start-line="1023" selection-start-column="43" selection-end-line="1023" selection-end-column="43" />
               <folding>
                 <element signature="docComment;class#Staff#0" expanded="false" />
                 <element signature="method#Staff#0;class#Staff#0" expanded="false" />
-                <element signature="method#staff_login#0;class#Staff#0" expanded="false" />
-                <element signature="method#Task_action#0;class#Staff#0" expanded="false" />
-                <element signature="method#report_action#0;class#Staff#0" expanded="false" />
-                <element signature="method#list_string#0;class#Staff#0" expanded="false" />
-                <element signature="method#addTask#0;class#Staff#0" expanded="false" />
-                <element signature="method#setTask_assigned#0;class#Staff#0" expanded="false" />
+                <element signature="e#38821#38822#0" expanded="true" />
+                <element signature="e#38871#38872#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -130,23 +130,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Supervisor.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Supervisor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Supervisor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="787" column="55" lean-forward="false" selection-start-line="787" selection-start-column="55" selection-end-line="787" selection-end-column="55" />
+            <state relative-caret-position="-585">
+              <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding>
                 <element signature="docComment;class#Supervisor#0" expanded="false" />
                 <element signature="method#Supervisor#0;class#Supervisor#0" expanded="false" />
                 <element signature="method#RegistrationRequest_Staff#0;class#Supervisor#0" expanded="false" />
-                <element signature="method#supervisor_login#0;class#Supervisor#0" expanded="false" />
                 <element signature="method#logistics#0;class#Supervisor#0" expanded="false" />
                 <element signature="method#reports#0;class#Supervisor#0" expanded="false" />
                 <element signature="method#staff_list#0;class#Supervisor#0" expanded="false" />
                 <element signature="method#request#0;class#Supervisor#0" expanded="false" />
                 <element signature="method#removeStaff#0;class#Supervisor#0" expanded="false" />
-                <element signature="method#Tasks_action#0;class#Supervisor#0" expanded="false" />
-                <element signature="e#37570#37577#0" expanded="true" />
+                <element signature="e#37585#37592#0" expanded="true" />
                 <element signature="method#leave_request#0;class#Supervisor#0" expanded="false" />
                 <element signature="method#accept_leave_request#0;class#Supervisor#0" expanded="false" />
                 <element signature="method#addLeave#0;class#Supervisor#0" expanded="false" />
@@ -156,31 +154,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TaskReport.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/TaskReport.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="47" lean-forward="false" selection-start-line="5" selection-start-column="47" selection-end-line="5" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TimeKeeper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/TimeKeeper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="9" column="62" lean-forward="false" selection-start-line="9" selection-start-column="62" selection-end-line="9" selection-end-column="62" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="89" column="36" lean-forward="false" selection-start-line="89" selection-start-column="36" selection-end-line="89" selection-end-column="36" />
+            <state relative-caret-position="300">
+              <caret line="102" column="29" lean-forward="true" selection-start-line="102" selection-start-column="29" selection-end-line="102" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;class#Main#0" expanded="false" />
@@ -190,6 +168,7 @@
                 <element signature="method#writeSupervisors#0;class#Main#0" expanded="false" />
                 <element signature="method#readStaff#0;class#Main#0" expanded="false" />
                 <element signature="method#writeStaff#0;class#Main#0" expanded="false" />
+                <element signature="e#3000#3028#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -198,11 +177,11 @@
       <file leaf-file-name="Task_staff.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Task_staff.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="7" column="47" lean-forward="false" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
+            <state relative-caret-position="375">
+              <caret line="48" column="48" lean-forward="false" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
               <folding>
-                <element signature="e#1624#1625#0" expanded="true" />
-                <element signature="e#1657#1658#0" expanded="true" />
+                <element signature="e#1729#1730#0" expanded="true" />
+                <element signature="e#1762#1763#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -228,6 +207,8 @@
       <find>Main.supervisors</find>
       <find>Main.Staff</find>
       <find>view_logistics(jFrame);</find>
+      <find>time_label.setBounds(1100, 1, 100, 50);</find>
+      <find>logout.setBounds(1200, 1, 150, 50);</find>
     </findStrings>
     <replaceStrings>
       <replace>main.writeStaff()</replace>
@@ -235,6 +216,7 @@
       <replace>main.supervisors</replace>
       <replace>main.Staff</replace>
       <replace>report_action(jFrame, main);</replace>
+      <replace>name_label.setBounds(1150,1,150,50);</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -252,18 +234,18 @@
         <option value="$PROJECT_DIR$/src/Person.java" />
         <option value="$PROJECT_DIR$/src/Task.java" />
         <option value="$PROJECT_DIR$/src/Running.java" />
-        <option value="$PROJECT_DIR$/src/Interface.java" />
-        <option value="$PROJECT_DIR$/src/Login.java" />
         <option value="$PROJECT_DIR$/src/Admin.java" />
         <option value="$PROJECT_DIR$/src/Logistics.java" />
         <option value="$PROJECT_DIR$/src/Leave.java" />
         <option value="$PROJECT_DIR$/src/SupervisorTask.java" />
-        <option value="$PROJECT_DIR$/src/Task_staff.java" />
         <option value="$PROJECT_DIR$/src/TaskReport.java" />
         <option value="$PROJECT_DIR$/src/TimeKeeper.java" />
-        <option value="$PROJECT_DIR$/src/Register.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/Task_staff.java" />
         <option value="$PROJECT_DIR$/src/Supervisor.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/Interface.java" />
+        <option value="$PROJECT_DIR$/src/Register.java" />
+        <option value="$PROJECT_DIR$/src/Login.java" />
         <option value="$PROJECT_DIR$/src/Staff.java" />
       </list>
     </option>
@@ -630,7 +612,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="true" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="55" y="24" width="1311" height="744" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="55" y="24" width="1311" height="744" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -664,7 +646,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="16" />
+      <option name="time" value="17" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -734,14 +716,12 @@
             <element signature="docComment;class#Supervisor#0" expanded="false" />
             <element signature="method#Supervisor#0;class#Supervisor#0" expanded="false" />
             <element signature="method#RegistrationRequest_Staff#0;class#Supervisor#0" expanded="false" />
-            <element signature="method#supervisor_login#0;class#Supervisor#0" expanded="false" />
             <element signature="method#logistics#0;class#Supervisor#0" expanded="false" />
             <element signature="method#reports#0;class#Supervisor#0" expanded="false" />
             <element signature="method#staff_list#0;class#Supervisor#0" expanded="false" />
             <element signature="method#request#0;class#Supervisor#0" expanded="false" />
             <element signature="method#removeStaff#0;class#Supervisor#0" expanded="false" />
-            <element signature="method#Tasks_action#0;class#Supervisor#0" expanded="false" />
-            <element signature="e#37570#37577#0" expanded="true" />
+            <element signature="e#37585#37592#0" expanded="true" />
             <element signature="method#leave_request#0;class#Supervisor#0" expanded="false" />
             <element signature="method#accept_leave_request#0;class#Supervisor#0" expanded="false" />
             <element signature="method#addLeave#0;class#Supervisor#0" expanded="false" />
@@ -757,12 +737,8 @@
           <folding>
             <element signature="docComment;class#Staff#0" expanded="false" />
             <element signature="method#Staff#0;class#Staff#0" expanded="false" />
-            <element signature="method#staff_login#0;class#Staff#0" expanded="false" />
-            <element signature="method#Task_action#0;class#Staff#0" expanded="false" />
-            <element signature="method#report_action#0;class#Staff#0" expanded="false" />
-            <element signature="method#list_string#0;class#Staff#0" expanded="false" />
-            <element signature="method#addTask#0;class#Staff#0" expanded="false" />
-            <element signature="method#setTask_assigned#0;class#Staff#0" expanded="false" />
+            <element signature="e#38821#38822#0" expanded="true" />
+            <element signature="e#38871#38872#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -780,6 +756,7 @@
             <element signature="method#writeSupervisors#0;class#Main#0" expanded="false" />
             <element signature="method#readStaff#0;class#Main#0" expanded="false" />
             <element signature="method#writeStaff#0;class#Main#0" expanded="false" />
+            <element signature="e#3000#3028#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -837,14 +814,12 @@
             <element signature="docComment;class#Supervisor#0" expanded="false" />
             <element signature="method#Supervisor#0;class#Supervisor#0" expanded="false" />
             <element signature="method#RegistrationRequest_Staff#0;class#Supervisor#0" expanded="false" />
-            <element signature="method#supervisor_login#0;class#Supervisor#0" expanded="false" />
             <element signature="method#logistics#0;class#Supervisor#0" expanded="false" />
             <element signature="method#reports#0;class#Supervisor#0" expanded="false" />
             <element signature="method#staff_list#0;class#Supervisor#0" expanded="false" />
             <element signature="method#request#0;class#Supervisor#0" expanded="false" />
             <element signature="method#removeStaff#0;class#Supervisor#0" expanded="false" />
-            <element signature="method#Tasks_action#0;class#Supervisor#0" expanded="false" />
-            <element signature="e#37570#37577#0" expanded="true" />
+            <element signature="e#37585#37592#0" expanded="true" />
             <element signature="method#leave_request#0;class#Supervisor#0" expanded="false" />
             <element signature="method#accept_leave_request#0;class#Supervisor#0" expanded="false" />
             <element signature="method#addLeave#0;class#Supervisor#0" expanded="false" />
@@ -860,12 +835,8 @@
           <folding>
             <element signature="docComment;class#Staff#0" expanded="false" />
             <element signature="method#Staff#0;class#Staff#0" expanded="false" />
-            <element signature="method#staff_login#0;class#Staff#0" expanded="false" />
-            <element signature="method#Task_action#0;class#Staff#0" expanded="false" />
-            <element signature="method#report_action#0;class#Staff#0" expanded="false" />
-            <element signature="method#list_string#0;class#Staff#0" expanded="false" />
-            <element signature="method#addTask#0;class#Staff#0" expanded="false" />
-            <element signature="method#setTask_assigned#0;class#Staff#0" expanded="false" />
+            <element signature="e#38821#38822#0" expanded="true" />
+            <element signature="e#38871#38872#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -883,6 +854,7 @@
             <element signature="method#writeSupervisors#0;class#Main#0" expanded="false" />
             <element signature="method#readStaff#0;class#Main#0" expanded="false" />
             <element signature="method#writeStaff#0;class#Main#0" expanded="false" />
+            <element signature="e#3000#3028#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -940,14 +912,12 @@
             <element signature="docComment;class#Supervisor#0" expanded="false" />
             <element signature="method#Supervisor#0;class#Supervisor#0" expanded="false" />
             <element signature="method#RegistrationRequest_Staff#0;class#Supervisor#0" expanded="false" />
-            <element signature="method#supervisor_login#0;class#Supervisor#0" expanded="false" />
             <element signature="method#logistics#0;class#Supervisor#0" expanded="false" />
             <element signature="method#reports#0;class#Supervisor#0" expanded="false" />
             <element signature="method#staff_list#0;class#Supervisor#0" expanded="false" />
             <element signature="method#request#0;class#Supervisor#0" expanded="false" />
             <element signature="method#removeStaff#0;class#Supervisor#0" expanded="false" />
-            <element signature="method#Tasks_action#0;class#Supervisor#0" expanded="false" />
-            <element signature="e#37570#37577#0" expanded="true" />
+            <element signature="e#37585#37592#0" expanded="true" />
             <element signature="method#leave_request#0;class#Supervisor#0" expanded="false" />
             <element signature="method#accept_leave_request#0;class#Supervisor#0" expanded="false" />
             <element signature="method#addLeave#0;class#Supervisor#0" expanded="false" />
@@ -963,12 +933,8 @@
           <folding>
             <element signature="docComment;class#Staff#0" expanded="false" />
             <element signature="method#Staff#0;class#Staff#0" expanded="false" />
-            <element signature="method#staff_login#0;class#Staff#0" expanded="false" />
-            <element signature="method#Task_action#0;class#Staff#0" expanded="false" />
-            <element signature="method#report_action#0;class#Staff#0" expanded="false" />
-            <element signature="method#list_string#0;class#Staff#0" expanded="false" />
-            <element signature="method#addTask#0;class#Staff#0" expanded="false" />
-            <element signature="method#setTask_assigned#0;class#Staff#0" expanded="false" />
+            <element signature="e#38821#38822#0" expanded="true" />
+            <element signature="e#38871#38872#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -986,6 +952,7 @@
             <element signature="method#writeSupervisors#0;class#Main#0" expanded="false" />
             <element signature="method#readStaff#0;class#Main#0" expanded="false" />
             <element signature="method#writeStaff#0;class#Main#0" expanded="false" />
+            <element signature="e#3000#3028#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1043,14 +1010,12 @@
             <element signature="docComment;class#Supervisor#0" expanded="false" />
             <element signature="method#Supervisor#0;class#Supervisor#0" expanded="false" />
             <element signature="method#RegistrationRequest_Staff#0;class#Supervisor#0" expanded="false" />
-            <element signature="method#supervisor_login#0;class#Supervisor#0" expanded="false" />
             <element signature="method#logistics#0;class#Supervisor#0" expanded="false" />
             <element signature="method#reports#0;class#Supervisor#0" expanded="false" />
             <element signature="method#staff_list#0;class#Supervisor#0" expanded="false" />
             <element signature="method#request#0;class#Supervisor#0" expanded="false" />
             <element signature="method#removeStaff#0;class#Supervisor#0" expanded="false" />
-            <element signature="method#Tasks_action#0;class#Supervisor#0" expanded="false" />
-            <element signature="e#37570#37577#0" expanded="true" />
+            <element signature="e#37585#37592#0" expanded="true" />
             <element signature="method#leave_request#0;class#Supervisor#0" expanded="false" />
             <element signature="method#accept_leave_request#0;class#Supervisor#0" expanded="false" />
             <element signature="method#addLeave#0;class#Supervisor#0" expanded="false" />
@@ -1066,12 +1031,8 @@
           <folding>
             <element signature="docComment;class#Staff#0" expanded="false" />
             <element signature="method#Staff#0;class#Staff#0" expanded="false" />
-            <element signature="method#staff_login#0;class#Staff#0" expanded="false" />
-            <element signature="method#Task_action#0;class#Staff#0" expanded="false" />
-            <element signature="method#report_action#0;class#Staff#0" expanded="false" />
-            <element signature="method#list_string#0;class#Staff#0" expanded="false" />
-            <element signature="method#addTask#0;class#Staff#0" expanded="false" />
-            <element signature="method#setTask_assigned#0;class#Staff#0" expanded="false" />
+            <element signature="e#38821#38822#0" expanded="true" />
+            <element signature="e#38871#38872#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1089,6 +1050,7 @@
             <element signature="method#writeSupervisors#0;class#Main#0" expanded="false" />
             <element signature="method#readStaff#0;class#Main#0" expanded="false" />
             <element signature="method#writeStaff#0;class#Main#0" expanded="false" />
+            <element signature="e#3000#3028#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1120,14 +1082,12 @@
             <element signature="docComment;class#Supervisor#0" expanded="false" />
             <element signature="method#Supervisor#0;class#Supervisor#0" expanded="false" />
             <element signature="method#RegistrationRequest_Staff#0;class#Supervisor#0" expanded="false" />
-            <element signature="method#supervisor_login#0;class#Supervisor#0" expanded="false" />
             <element signature="method#logistics#0;class#Supervisor#0" expanded="false" />
             <element signature="method#reports#0;class#Supervisor#0" expanded="false" />
             <element signature="method#staff_list#0;class#Supervisor#0" expanded="false" />
             <element signature="method#request#0;class#Supervisor#0" expanded="false" />
             <element signature="method#removeStaff#0;class#Supervisor#0" expanded="false" />
-            <element signature="method#Tasks_action#0;class#Supervisor#0" expanded="false" />
-            <element signature="e#37570#37577#0" expanded="true" />
+            <element signature="e#37585#37592#0" expanded="true" />
             <element signature="method#leave_request#0;class#Supervisor#0" expanded="false" />
             <element signature="method#accept_leave_request#0;class#Supervisor#0" expanded="false" />
             <element signature="method#addLeave#0;class#Supervisor#0" expanded="false" />
@@ -1143,12 +1103,8 @@
           <folding>
             <element signature="docComment;class#Staff#0" expanded="false" />
             <element signature="method#Staff#0;class#Staff#0" expanded="false" />
-            <element signature="method#staff_login#0;class#Staff#0" expanded="false" />
-            <element signature="method#Task_action#0;class#Staff#0" expanded="false" />
-            <element signature="method#report_action#0;class#Staff#0" expanded="false" />
-            <element signature="method#list_string#0;class#Staff#0" expanded="false" />
-            <element signature="method#addTask#0;class#Staff#0" expanded="false" />
-            <element signature="method#setTask_assigned#0;class#Staff#0" expanded="false" />
+            <element signature="e#38821#38822#0" expanded="true" />
+            <element signature="e#38871#38872#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1162,22 +1118,6 @@
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/jre/lib/rt.jar!/java/util/ArrayList.class" />
     <entry file="file://$PROJECT_DIR$/src/Task.java" />
-    <entry file="file://$PROJECT_DIR$/src/Interface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="69" column="49" lean-forward="false" selection-start-line="69" selection-start-column="49" selection-end-line="69" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Login.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="93" column="45" lean-forward="false" selection-start-line="93" selection-start-column="45" selection-end-line="93" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Running.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1201,17 +1141,6 @@
         <state relative-caret-position="75">
           <caret line="8" column="51" lean-forward="false" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Task_staff.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="7" column="47" lean-forward="false" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
-          <folding>
-            <element signature="e#1624#1625#0" expanded="true" />
-            <element signature="e#1657#1658#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1258,16 +1187,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Register.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="54" lean-forward="false" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Person.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -1276,10 +1195,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Task_staff.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="48" column="48" lean-forward="false" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
+          <folding>
+            <element signature="e#1729#1730#0" expanded="true" />
+            <element signature="e#1762#1763#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="89" column="36" lean-forward="false" selection-start-line="89" selection-start-column="36" selection-end-line="89" selection-end-column="36" />
+        <state relative-caret-position="300">
+          <caret line="102" column="29" lean-forward="true" selection-start-line="102" selection-start-column="29" selection-end-line="102" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#Main#0" expanded="false" />
@@ -1289,7 +1219,16 @@
             <element signature="method#writeSupervisors#0;class#Main#0" expanded="false" />
             <element signature="method#readStaff#0;class#Main#0" expanded="false" />
             <element signature="method#writeStaff#0;class#Main#0" expanded="false" />
+            <element signature="e#3000#3028#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Interface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="60" column="29" lean-forward="false" selection-start-line="60" selection-start-column="29" selection-end-line="60" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1304,43 +1243,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Staff.java">
+    <entry file="file://$PROJECT_DIR$/src/Register.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="650" column="46" lean-forward="false" selection-start-line="650" selection-start-column="46" selection-end-line="650" selection-end-column="46" />
+        <state relative-caret-position="-1305">
+          <caret line="12" column="46" lean-forward="false" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
           <folding>
-            <element signature="docComment;class#Staff#0" expanded="false" />
-            <element signature="method#Staff#0;class#Staff#0" expanded="false" />
-            <element signature="method#staff_login#0;class#Staff#0" expanded="false" />
-            <element signature="method#Task_action#0;class#Staff#0" expanded="false" />
-            <element signature="method#report_action#0;class#Staff#0" expanded="false" />
-            <element signature="method#list_string#0;class#Staff#0" expanded="false" />
-            <element signature="method#addTask#0;class#Staff#0" expanded="false" />
-            <element signature="method#setTask_assigned#0;class#Staff#0" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="63" column="29" lean-forward="false" selection-start-line="63" selection-start-column="29" selection-end-line="63" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Supervisor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="787" column="55" lean-forward="false" selection-start-line="787" selection-start-column="55" selection-end-line="787" selection-end-column="55" />
+        <state relative-caret-position="-585">
+          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#Supervisor#0" expanded="false" />
             <element signature="method#Supervisor#0;class#Supervisor#0" expanded="false" />
             <element signature="method#RegistrationRequest_Staff#0;class#Supervisor#0" expanded="false" />
-            <element signature="method#supervisor_login#0;class#Supervisor#0" expanded="false" />
             <element signature="method#logistics#0;class#Supervisor#0" expanded="false" />
             <element signature="method#reports#0;class#Supervisor#0" expanded="false" />
             <element signature="method#staff_list#0;class#Supervisor#0" expanded="false" />
             <element signature="method#request#0;class#Supervisor#0" expanded="false" />
             <element signature="method#removeStaff#0;class#Supervisor#0" expanded="false" />
-            <element signature="method#Tasks_action#0;class#Supervisor#0" expanded="false" />
-            <element signature="e#37570#37577#0" expanded="true" />
+            <element signature="e#37585#37592#0" expanded="true" />
             <element signature="method#leave_request#0;class#Supervisor#0" expanded="false" />
             <element signature="method#accept_leave_request#0;class#Supervisor#0" expanded="false" />
             <element signature="method#addLeave#0;class#Supervisor#0" expanded="false" />
             <element signature="method#addLogistics#0;class#Supervisor#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Staff.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3465">
+          <caret line="1023" column="43" lean-forward="false" selection-start-line="1023" selection-start-column="43" selection-end-line="1023" selection-end-column="43" />
+          <folding>
+            <element signature="docComment;class#Staff#0" expanded="false" />
+            <element signature="method#Staff#0;class#Staff#0" expanded="false" />
+            <element signature="e#38821#38822#0" expanded="true" />
+            <element signature="e#38871#38872#0" expanded="true" />
           </folding>
         </state>
       </provider>

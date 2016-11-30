@@ -1020,13 +1020,8 @@ public class Staff extends Person {
         });
     }
 
-    public void setTask_assigned(boolean task_assigned, Main main) {
+    public void setTask_assigned(boolean task_assigned) {
         this.task_assigned = task_assigned;
-
-        // Write to database
-        main.writeAdmin();
-        main.writeStaff();
-        main.writeSupervisors();
     }
 
     public boolean isTask_assigned() {

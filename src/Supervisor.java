@@ -158,7 +158,7 @@ public class Supervisor extends Person {
         Font font1 = new Font("Roboto Light", Font.PLAIN, 20);
         Font font2 = new Font("Roboto Light", Font.PLAIN, 17);
         Border border = BorderFactory.createLineBorder(Color.blue, 1);
-        JLabel name_label = new JLabel(this.getName()+"(Admin)", SwingConstants.CENTER);
+        JLabel name_label = new JLabel(this.getName()+"(Supervisor)", SwingConstants.CENTER);
         JButton Home = new JButton("Home");
         JButton Tasks = new JButton("Tasks");
         JButton Staff_list = new JButton("Staff");
@@ -603,7 +603,7 @@ public class Supervisor extends Person {
         Font font1 = new Font("Roboto Light", Font.PLAIN, 20);
         Font font2 = new Font("Roboto Light", Font.PLAIN, 17);
         Border border = BorderFactory.createLineBorder(Color.blue, 1);
-        JLabel name_label = new JLabel(this.getName()+"(Admin)", SwingConstants.CENTER);
+        JLabel name_label = new JLabel(this.getName()+"(Supervisor)", SwingConstants.CENTER);
         JButton Home = new JButton("Home");
         JButton Tasks = new JButton("Tasks");
         JButton Staff_list = new JButton("Staff");
@@ -791,7 +791,7 @@ public class Supervisor extends Person {
         Font font1 = new Font("Roboto Light", Font.PLAIN, 20);
         Font font2 = new Font("Roboto Light", Font.PLAIN, 17);
         Border border = BorderFactory.createLineBorder(Color.blue, 1);
-        JLabel name_label = new JLabel(this.getName()+"(Admin)", SwingConstants.CENTER);
+        JLabel name_label = new JLabel(this.getName()+"(Supervisor)", SwingConstants.CENTER);
         JButton Home = new JButton("Home");
         JButton Tasks = new JButton("Tasks");
         JButton Staff_list = new JButton("Staff");
@@ -989,7 +989,7 @@ public class Supervisor extends Person {
                                 for (int i=0;i<arrayList.size();i++) {
                                     arrayList.get(i).addTask(new Task_staff(Description.getText(), Name.getText(), "Pending", Equipments.getText(),
                                             Deadline.getText(), arrayList), main);
-                                    arrayList.get(i).setTask_assigned(true, main);
+                                    arrayList.get(i).setTask_assigned(true);
                                 }
                                 tasks.add(new Task_staff(Description.getText(), Name.getText(), "Not Started", Equipments.getText(),
                                         Deadline.getText(), arrayList));
@@ -1208,7 +1208,7 @@ public class Supervisor extends Person {
         Font font1 = new Font("Roboto Light", Font.PLAIN, 20);
         Font font2 = new Font("Roboto Light", Font.PLAIN, 17);
         Border border = BorderFactory.createLineBorder(Color.blue, 1);
-        JLabel name_label = new JLabel(this.getName()+"(Admin)", SwingConstants.CENTER);
+        JLabel name_label = new JLabel(this.getName()+"(Supervisor)", SwingConstants.CENTER);
         JButton Home = new JButton("Home");
         JButton Tasks = new JButton("Tasks");
         JButton Staff_list = new JButton("Staff");

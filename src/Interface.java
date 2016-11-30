@@ -55,10 +55,10 @@ public class Interface {
         jPanel.add(login);
         jPanel.add(register);
         jPanel.add(exit);
-        jLabel.setBounds(250, 100, 500, 70);
-        login.setBounds(300, 200, 150, 50);
-        register.setBounds(500, 200, 150, 50);
-        exit.setBounds(400, 270, 150, 50);
+        jLabel.setBounds(350, 200, 500, 70);
+        login.setBounds(420, 300, 150, 50);
+        register.setBounds(590, 300, 150, 50);
+        exit.setBounds(500, 370, 150, 50);
 
         // JFrame setup
         jFrame.add(jPanel);

@@ -55,13 +55,13 @@ public class Login {
         jPanel.add(back);
 
         // Set layout
-        title.setBounds(300,100,500,70);
-        user_name_label.setBounds(100,200,300,30);
-        user_name.setBounds(400, 200, 300, 30);
-        password_label.setBounds(100, 250, 300, 30);
-        password.setBounds(400, 250, 300, 30);
-        login.setBounds(400, 300, 150, 40);
-        back.setBounds(570, 300, 130, 40);
+        title.setBounds(350,200,500,70);
+        user_name_label.setBounds(150,300,300,30);
+        user_name.setBounds(450, 300, 300, 30);
+        password_label.setBounds(150, 350, 300, 30);
+        password.setBounds(450, 350, 300, 30);
+        login.setBounds(450, 400, 150, 40);
+        back.setBounds(620, 400, 130, 40);
 
         // Set jFrame
         this.jFrame.add(jPanel);

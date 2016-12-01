@@ -28,37 +28,33 @@ public class Interface {
     }
     public static void FrontScreen(JFrame jFrame, Main main) {
         JPanel jPanel = new JPanel(null);
+        jPanel.setBackground(Color.WHITE);
         JLabel jLabel = new JLabel("Facility Management Service", SwingConstants.CENTER);
         JLabel label = new JLabel("(For new staff member)", SwingConstants.CENTER);
         label.setFont(font1);
-        label.setPreferredSize(new Dimension(200,500));
-        jLabel.setPreferredSize(new Dimension(300,70));
         jLabel.setFont(font);
         JButton login = new JButton("Login");
         JButton register = new JButton("Register");
         JButton exit = new JButton("Exit");
-        login.setPreferredSize(new Dimension(200,50));
-        register.setPreferredSize(new Dimension(200,50));
-        exit.setPreferredSize(new Dimension(200,50));
         login.setFont(font1);
+        login.setBackground(new Color(0, 153, 204));
+        login.setOpaque(true);
         register.setFont(font1);
+        register.setBackground(new Color(0, 153, 204));
+        register.setOpaque(true);
         exit.setFont(font1);
-
-        // Label and Button sizing
-        jLabel.setPreferredSize(jLabel.getPreferredSize());
-        login.setPreferredSize(login.getPreferredSize());
-        register.setPreferredSize(register.getPreferredSize());
-        exit.setPreferredSize(exit.getPreferredSize());
+        exit.setBackground(new Color(255, 51, 0));
+        exit.setOpaque(true);
 
         // Panel Layout using grid bag constraints
         jPanel.add(jLabel);
         jPanel.add(login);
         jPanel.add(register);
         jPanel.add(exit);
-        jLabel.setBounds(350, 200, 500, 70);
-        login.setBounds(420, 300, 150, 50);
-        register.setBounds(590, 300, 150, 50);
-        exit.setBounds(500, 370, 150, 50);
+        jLabel.setBounds(450, 200, 500, 70);
+        login.setBounds(520, 300, 150, 50);
+        register.setBounds(690, 300, 150, 50);
+        exit.setBounds(600, 370, 150, 50);
 
         // JFrame setup
         jFrame.add(jPanel);

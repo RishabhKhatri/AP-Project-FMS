@@ -86,22 +86,32 @@ public class Supervisor extends Person {
         jPanel.add(welcome_label);
         jPanel.add(Tasks);
         jPanel.add(leave_request);
+        welcome_label.setBounds(400, 300, 800, 70);
 
         // Set Layout of components
-        name_label.setBounds(790,1,150,50);
-        date_label.setBounds(940, 1, 150, 50);
-        time_label.setBounds(1090, 1, 100, 50);
-        Home.setBounds(1,1,100,50);
-        Staff_list.setBounds(100,1,100,50);
-        Logistics.setBounds(200,1,120,50);
-        Reports.setBounds(320,1,100,50);
-        Requests.setBounds(420,1,120,50);
-        leave_request.setBounds(540, 1, 150, 50);
-        Tasks.setBounds(690, 1, 100, 50);
-        welcome_label.setBounds(100, 300, 800, 70);
+        name_label.setBounds(1,1,150,50);
+        date_label.setBounds(160, 1, 150, 50);
+        time_label.setBounds(320, 1, 100, 50);
+        Home.setBounds(1,50,150,50);
+        Staff_list.setBounds(1,100,150,50);
+        Logistics.setBounds(1,150,150,50);
+        Reports.setBounds(1,200,150,50);
+        Requests.setBounds(1,250,150,50);
+        leave_request.setBounds(1, 300, 150, 50);
+        Tasks.setBounds(1, 350, 150, 50);
+        my_leaves.setBounds(1, 400, 150, 50);
 
         JButton logout = new JButton("Logout");
-        logout.setBounds(1160, 1, 150, 50);
+        logout.setBounds(1, 450, 150, 50);
+        Home.setBackground(new Color(51, 204, 255));
+        Staff_list.setBackground(new Color(51, 204, 255));
+        Logistics.setBackground(new Color(51, 204, 255));
+        Reports.setBackground(new Color(51, 204, 255));
+        Requests.setBackground(new Color(51, 204, 255));
+        leave_request.setBackground(new Color(51, 204, 255));
+        Tasks.setBackground(new Color(51, 204, 255));
+        my_leaves.setBackground(new Color(51, 204, 255));
+        logout.setBackground(new Color(255, 51, 0));
         logout.setFont(font2);
         jPanel.add(logout);
         logout.addActionListener(e -> {
@@ -178,28 +188,30 @@ public class Supervisor extends Person {
         JLabel[] request_list = new JLabel[logisticsArrayList.size()];
         for (int i=0;i<logisticsArrayList.size();i++) {
             request_list[i] = new JLabel(logisticsArrayList.get(i).list_string());
-            request_list[i].setBorder(border);
+//            request_list[i].setBorder(border);
             request_list[i].setFont(font2);
             jPanel.add(request_list[i]);
-            request_list[i].setBounds(20, j, 800, 200);
+            request_list[i].setBounds(300, j, 700, 200);
             j+=200;
         }
-        j=100;
+        j=150;
         JButton[] approve_buttons = new JButton[logisticsArrayList.size()];
         for (int i=0;i<logisticsArrayList.size();i++) {
             approve_buttons[i] = new JButton("Approve");
+            approve_buttons[i].setBackground(new Color(0, 153, 204));
             approve_buttons[i].setFont(font2);
             jPanel.add(approve_buttons[i]);
-            approve_buttons[i].setBounds(840, j, 100, 50);
+            approve_buttons[i].setBounds(730, j, 100, 50);
             j+=200;
         }
-        j=200;
+        j=210;
         JButton[] reject_buttons = new JButton[logisticsArrayList.size()];
         for (int i=0;i<logisticsArrayList.size();i++) {
             reject_buttons[i] = new JButton("Reject");
+            reject_buttons[i].setBackground(new Color(255, 51, 0));
             reject_buttons[i].setFont(font2);
             jPanel.add(reject_buttons[i]);
-            reject_buttons[i].setBounds(840, j, 100, 50);
+            reject_buttons[i].setBounds(730, j, 100, 50);
             j+=200;
         }
 
@@ -228,19 +240,29 @@ public class Supervisor extends Person {
         jPanel.add(leave_request);
 
         // Set Layout of components
-        name_label.setBounds(790,1,150,50);
-        date_label.setBounds(940, 1, 150, 50);
-        time_label.setBounds(1090, 1, 70, 50);
-        Home.setBounds(1,1,100,50);
-        Staff_list.setBounds(100,1,100,50);
-        Logistics.setBounds(200,1,120,50);
-        Reports.setBounds(320,1,100,50);
-        Requests.setBounds(420,1,120,50);
-        leave_request.setBounds(540, 1, 150, 50);
-        Tasks.setBounds(690, 1, 100, 50);
+        name_label.setBounds(1,1,150,50);
+        date_label.setBounds(160, 1, 150, 50);
+        time_label.setBounds(320, 1, 100, 50);
+        Home.setBounds(1,50,150,50);
+        Staff_list.setBounds(1,100,150,50);
+        Logistics.setBounds(1,150,150,50);
+        Reports.setBounds(1,200,150,50);
+        Requests.setBounds(1,250,150,50);
+        leave_request.setBounds(1, 300, 150, 50);
+        Tasks.setBounds(1, 350, 150, 50);
+        my_leaves.setBounds(1, 400, 150, 50);
 
         JButton logout = new JButton("Logout");
-        logout.setBounds(1160, 1, 150, 50);
+        logout.setBounds(1, 450, 150, 50);
+        Home.setBackground(new Color(51, 204, 255));
+        Staff_list.setBackground(new Color(51, 204, 255));
+        Logistics.setBackground(new Color(51, 204, 255));
+        Reports.setBackground(new Color(51, 204, 255));
+        Requests.setBackground(new Color(51, 204, 255));
+        leave_request.setBackground(new Color(51, 204, 255));
+        Tasks.setBackground(new Color(51, 204, 255));
+        my_leaves.setBackground(new Color(51, 204, 255));
+        logout.setBackground(new Color(255, 51, 0));
         logout.setFont(font2);
         jPanel.add(logout);
         // Setup frame
@@ -349,10 +371,10 @@ public class Supervisor extends Person {
         int j=100;
         for (int i=0;i<myReports.size();i++) {
             report_list[i] = new JLabel(myReports.get(i).list_string());
-            report_list[i].setBorder(border);
+//            report_list[i].setBorder(border);
             report_list[i].setFont(font2);
             jPanel.add(report_list[i]);
-            report_list[i].setBounds(20, j, 800, 200);
+            report_list[i].setBounds(300, j, 700, 200);
             j+=200;
         }
 
@@ -381,19 +403,29 @@ public class Supervisor extends Person {
         jPanel.add(leave_request);
 
         // Set Layout of components
-        name_label.setBounds(790,1,150,50);
-        date_label.setBounds(940, 1, 150, 50);
-        time_label.setBounds(1090, 1, 100, 50);
-        Home.setBounds(1,1,100,50);
-        Staff_list.setBounds(100,1,100,50);
-        Logistics.setBounds(200,1,120,50);
-        Reports.setBounds(320,1,100,50);
-        Requests.setBounds(420,1,120,50);
-        leave_request.setBounds(540, 1, 150, 50);
-        Tasks.setBounds(690, 1, 100, 50);
+        name_label.setBounds(1,1,150,50);
+        date_label.setBounds(160, 1, 150, 50);
+        time_label.setBounds(320, 1, 100, 50);
+        Home.setBounds(1,50,150,50);
+        Staff_list.setBounds(1,100,150,50);
+        Logistics.setBounds(1,150,150,50);
+        Reports.setBounds(1,200,150,50);
+        Requests.setBounds(1,250,150,50);
+        leave_request.setBounds(1, 300, 150, 50);
+        Tasks.setBounds(1, 350, 150, 50);
+        my_leaves.setBounds(1, 400, 150, 50);
 
         JButton logout = new JButton("Logout");
-        logout.setBounds(1160, 1, 150, 50);
+        logout.setBounds(1, 450, 150, 50);
+        Home.setBackground(new Color(51, 204, 255));
+        Staff_list.setBackground(new Color(51, 204, 255));
+        Logistics.setBackground(new Color(51, 204, 255));
+        Reports.setBackground(new Color(51, 204, 255));
+        Requests.setBackground(new Color(51, 204, 255));
+        leave_request.setBackground(new Color(51, 204, 255));
+        Tasks.setBackground(new Color(51, 204, 255));
+        my_leaves.setBackground(new Color(51, 204, 255));
+        logout.setBackground(new Color(255, 51, 0));
         logout.setFont(font2);
         jPanel.add(logout);
         // Setup frame
@@ -480,19 +512,20 @@ public class Supervisor extends Person {
         int j=100;
         for (int i=0;i<department_list.size();i++) {
             staff_list[i] = new JLabel(department_list.get(i).list_string());
-            staff_list[i].setBorder(border);
+//            staff_list[i].setBorder(border);
             staff_list[i].setFont(font2);
             jPanel.add(staff_list[i]);
-            staff_list[i].setBounds(20, j, 800, 200);
+            staff_list[i].setBounds(300, j, 700, 200);
             j+=200;
         }
-        j=100;
+        j=150;
         JButton[] delete_buttons = new JButton[department_list.size()];
         for (int i=0;i<department_list.size();i++) {
             delete_buttons[i] = new JButton("Delete");
+            delete_buttons[i].setBackground(new Color(255, 51, 0));
             delete_buttons[i].setFont(font2);
             jPanel.add(delete_buttons[i]);
-            delete_buttons[i].setBounds(840, j, 100, 50);
+            delete_buttons[i].setBounds(730, j, 100, 50);
             j+=200;
         }
 
@@ -521,19 +554,29 @@ public class Supervisor extends Person {
         jPanel.add(leave_request);
 
         // Set Layout of components
-        name_label.setBounds(790,1,150,50);
-        date_label.setBounds(940, 1, 150, 50);
-        time_label.setBounds(1090, 1, 100, 50);
-        Home.setBounds(1,1,100,50);
-        Staff_list.setBounds(100,1,100,50);
-        Logistics.setBounds(200,1,120,50);
-        Reports.setBounds(320,1,100,50);
-        Requests.setBounds(420,1,120,50);
-        leave_request.setBounds(540, 1, 150, 50);
-        Tasks.setBounds(690, 1, 100, 50);
+        name_label.setBounds(1,1,150,50);
+        date_label.setBounds(160, 1, 150, 50);
+        time_label.setBounds(320, 1, 100, 50);
+        Home.setBounds(1,50,150,50);
+        Staff_list.setBounds(1,100,150,50);
+        Logistics.setBounds(1,150,150,50);
+        Reports.setBounds(1,200,150,50);
+        Requests.setBounds(1,250,150,50);
+        leave_request.setBounds(1, 300, 150, 50);
+        Tasks.setBounds(1, 350, 150, 50);
+        my_leaves.setBounds(1, 400, 150, 50);
 
         JButton logout = new JButton("Logout");
-        logout.setBounds(1160, 1, 150, 50);
+        logout.setBounds(1, 450, 150, 50);
+        Home.setBackground(new Color(51, 204, 255));
+        Staff_list.setBackground(new Color(51, 204, 255));
+        Logistics.setBackground(new Color(51, 204, 255));
+        Reports.setBackground(new Color(51, 204, 255));
+        Requests.setBackground(new Color(51, 204, 255));
+        leave_request.setBackground(new Color(51, 204, 255));
+        Tasks.setBackground(new Color(51, 204, 255));
+        my_leaves.setBackground(new Color(51, 204, 255));
+        logout.setBackground(new Color(255, 51, 0));
         logout.setFont(font2);
         jPanel.add(logout);
         // Setup frame
@@ -624,28 +667,30 @@ public class Supervisor extends Person {
         int j=100;
         for (int i=0;i<registration_staff.size();i++) {
             request_list[i] = new JLabel(registration_staff.get(i).list_string());
-            request_list[i].setBorder(border);
+//            request_list[i].setBorder(border);
             request_list[i].setFont(font2);
             jPanel.add(request_list[i]);
-            request_list[i].setBounds(20, j, 800, 200);
+            request_list[i].setBounds(300, j, 700, 200);
             j+=200;
         }
-        j=100;
+        j=150;
         JButton[] approve_signup_buttons = new JButton[registration_staff.size()];
         for (int i=0;i<registration_staff.size();i++) {
             approve_signup_buttons[i] = new JButton("Approve");
+            approve_signup_buttons[i].setBackground(new Color(0, 153, 204));
             approve_signup_buttons[i].setFont(font2);
             jPanel.add(approve_signup_buttons[i]);
-            approve_signup_buttons[i].setBounds(840, j, 100, 50);
+            approve_signup_buttons[i].setBounds(730, j, 100, 50);
             j+=200;
         }
-        j=200;
+        j=210;
         JButton[] reject_signup_buttons = new JButton[registration_staff.size()];
         for (int i=0;i<registration_staff.size();i++) {
             reject_signup_buttons[i] = new JButton("Reject");
+            reject_signup_buttons[i].setBackground(new Color(255, 51, 0));
             reject_signup_buttons[i].setFont(font2);
             jPanel.add(reject_signup_buttons[i]);
-            reject_signup_buttons[i].setBounds(840, j, 100, 50);
+            reject_signup_buttons[i].setBounds(730, j, 100, 50);
             j+=200;
         }
 
@@ -674,19 +719,29 @@ public class Supervisor extends Person {
         jPanel.add(leave_request);
 
         // Set Layout of components
-        name_label.setBounds(790,1,150,50);
-        date_label.setBounds(940, 1, 150, 50);
-        time_label.setBounds(1090, 1, 70, 50);
-        Home.setBounds(1,1,100,50);
-        Staff_list.setBounds(100,1,100,50);
-        Logistics.setBounds(200,1,120,50);
-        Reports.setBounds(320,1,100,50);
-        Requests.setBounds(420,1,120,50);
-        leave_request.setBounds(540, 1, 150, 50);
-        Tasks.setBounds(690, 1, 100, 50);
+        name_label.setBounds(1,1,150,50);
+        date_label.setBounds(160, 1, 150, 50);
+        time_label.setBounds(320, 1, 100, 50);
+        Home.setBounds(1,50,150,50);
+        Staff_list.setBounds(1,100,150,50);
+        Logistics.setBounds(1,150,150,50);
+        Reports.setBounds(1,200,150,50);
+        Requests.setBounds(1,250,150,50);
+        leave_request.setBounds(1, 300, 150, 50);
+        Tasks.setBounds(1, 350, 150, 50);
+        my_leaves.setBounds(1, 400, 150, 50);
 
         JButton logout = new JButton("Logout");
-        logout.setBounds(1160, 1, 150, 50);
+        logout.setBounds(1, 450, 150, 50);
+        Home.setBackground(new Color(51, 204, 255));
+        Staff_list.setBackground(new Color(51, 204, 255));
+        Logistics.setBackground(new Color(51, 204, 255));
+        Reports.setBackground(new Color(51, 204, 255));
+        Requests.setBackground(new Color(51, 204, 255));
+        leave_request.setBackground(new Color(51, 204, 255));
+        Tasks.setBackground(new Color(51, 204, 255));
+        my_leaves.setBackground(new Color(51, 204, 255));
+        logout.setBackground(new Color(255, 51, 0));
         logout.setFont(font2);
         jPanel.add(logout);
         // Setup frame
@@ -820,10 +875,10 @@ public class Supervisor extends Person {
         int j=200;
         for (int i=0;i<tasks.size();i++) {
             task_list[i] = new JLabel(tasks.get(i).list_string());
-            task_list[i].setBorder(border);
+//            task_list[i].setBorder(border);
             task_list[i].setFont(font2);
             jPanel.add(task_list[i]);
-            task_list[i].setBounds(20, j, 800, 200);
+            task_list[i].setBounds(300, j, 700, 200);
             j+=200;
         }
 
@@ -853,20 +908,31 @@ public class Supervisor extends Person {
         jPanel.add(leave_request);
 
         // Set Layout of components
-        name_label.setBounds(790,1,150,50);
-        date_label.setBounds(940, 1, 150, 50);
-        time_label.setBounds(1090, 1, 70, 50);
-        Home.setBounds(1,1,100,50);
-        Staff_list.setBounds(100,1,100,50);
-        Logistics.setBounds(200,1,120,50);
-        Reports.setBounds(320,1,100,50);
-        Requests.setBounds(420,1,120,50);
-        leave_request.setBounds(540, 1, 150, 50);
-        Tasks.setBounds(690, 1, 100, 50);
-        new_task.setBounds(50, 100, 150, 50);
+        name_label.setBounds(1,1,150,50);
+        date_label.setBounds(160, 1, 150, 50);
+        time_label.setBounds(320, 1, 100, 50);
+        Home.setBounds(1,50,150,50);
+        Staff_list.setBounds(1,100,150,50);
+        Logistics.setBounds(1,150,150,50);
+        Reports.setBounds(1,200,150,50);
+        Requests.setBounds(1,250,150,50);
+        leave_request.setBounds(1, 300, 150, 50);
+        Tasks.setBounds(1, 350, 150, 50);
+        my_leaves.setBounds(1, 400, 150, 50);
+        new_task.setBounds(160, 50, 150, 50);
 
         JButton logout = new JButton("Logout");
-        logout.setBounds(1160, 1, 150, 50);
+        logout.setBounds(1, 450, 150, 50);
+        Home.setBackground(new Color(51, 204, 255));
+        Staff_list.setBackground(new Color(51, 204, 255));
+        Logistics.setBackground(new Color(51, 204, 255));
+        Reports.setBackground(new Color(51, 204, 255));
+        Requests.setBackground(new Color(51, 204, 255));
+        leave_request.setBackground(new Color(51, 204, 255));
+        Tasks.setBackground(new Color(51, 204, 255));
+        my_leaves.setBackground(new Color(51, 204, 255));
+        new_task.setBackground(new Color(0, 153, 204));
+        logout.setBackground(new Color(255, 51, 0));
         logout.setFont(font2);
         jPanel.add(logout);
         logout.addActionListener(e -> {
@@ -907,7 +973,16 @@ public class Supervisor extends Person {
                     JLabel supervisor_label = new JLabel("Staffers required");
                     JButton submit = new JButton("Assign Task");
 
+                    title.setFont(font);
+                    description_label.setFont(font2);
+                    name_label1.setFont(font2);
+                    equipments_label.setFont(font2);
+                    deadline_label.setFont(font2);
+                    supervisor_label.setFont(font2);
+                    submit.setBackground(new Color(0, 153, 204));
+
                     JPanel jPanel1 = new JPanel(null);
+                    jPanel1.setBackground(new Color(255, 255, 255));
 
                     JTextField Description = new JTextField(40);
                     JTextField Name = new JTextField(20);
@@ -920,6 +995,7 @@ public class Supervisor extends Person {
                     JComboBox<String>[] jComboBoxes = new JComboBox[number];
                     for (int i=0;i<number;i++) {
                         jComboBoxes[i] = new JComboBox<>(strings);
+                        jComboBoxes[i].setBackground(new Color(255, 255, 255));
                     }
 
                     // setup panel
@@ -987,7 +1063,8 @@ public class Supervisor extends Person {
                                     }
                                 }
                                 for (int i=0;i<arrayList.size();i++) {
-                                    arrayList.get(i).addTask(new Task_staff(Description.getText(), Name.getText(), "Pending", Equipments.getText(),
+                                    arrayList.get(i).addTask(new Task_staff(Description.getText(), Name.getText(), "Not Started",
+                                            Equipments.getText(),
                                             Deadline.getText(), arrayList), main);
                                     arrayList.get(i).setTask_assigned(true);
                                 }
@@ -1063,28 +1140,30 @@ public class Supervisor extends Person {
         int j=100;
         for (int i=0;i<leave_staff.size();i++) {
             request_list[i] = new JLabel(leave_staff.get(i).list_string());
-            request_list[i].setBorder(border);
+//            request_list[i].setBorder(border);
             request_list[i].setFont(font2);
             jPanel.add(request_list[i]);
-            request_list[i].setBounds(20, j, 800, 200);
+            request_list[i].setBounds(300, j, 700, 200);
             j+=200;
         }
-        j=100;
+        j=150;
         JButton[] approve_buttons = new JButton[leave_staff.size()];
         for (int i=0;i<leave_staff.size();i++) {
             approve_buttons[i] = new JButton("Approve");
+            approve_buttons[i].setBackground(new Color(0, 153, 204));
             approve_buttons[i].setFont(font2);
             jPanel.add(approve_buttons[i]);
-            approve_buttons[i].setBounds(840, j, 100, 50);
+            approve_buttons[i].setBounds(730, j, 100, 50);
             j+=200;
         }
-        j=200;
+        j=210;
         JButton[] reject_buttons = new JButton[leave_staff.size()];
         for (int i=0;i<leave_staff.size();i++) {
             reject_buttons[i] = new JButton("Reject");
+            reject_buttons[i].setBackground(new Color(730, 51, 0));
             reject_buttons[i].setFont(font2);
             jPanel.add(reject_buttons[i]);
-            reject_buttons[i].setBounds(840, j, 100, 50);
+            reject_buttons[i].setBounds(1260, j, 100, 50);
             j+=200;
         }
 
@@ -1115,19 +1194,29 @@ public class Supervisor extends Person {
         jPanel.add(leave_request_label);
 
         // Set Layout of components
-        name_label.setBounds(790,1,150,50);
-        date_label.setBounds(940, 1, 150, 50);
-        time_label.setBounds(1090, 1, 70, 50);
-        Home.setBounds(1,1,100,50);
-        Staff_list.setBounds(100,1,100,50);
-        Logistics.setBounds(200,1,120,50);
-        Reports.setBounds(320,1,100,50);
-        Requests.setBounds(420,1,120,50);
-        leave_request.setBounds(540, 1, 150, 50);
-        Tasks.setBounds(690, 1, 100, 50);
+        name_label.setBounds(1,1,150,50);
+        date_label.setBounds(160, 1, 150, 50);
+        time_label.setBounds(320, 1, 100, 50);
+        Home.setBounds(1,50,150,50);
+        Staff_list.setBounds(1,100,150,50);
+        Logistics.setBounds(1,150,150,50);
+        Reports.setBounds(1,200,150,50);
+        Requests.setBounds(1,250,150,50);
+        leave_request.setBounds(1, 300, 150, 50);
+        Tasks.setBounds(1, 350, 150, 50);
+        my_leaves.setBounds(1, 400, 150, 50);
 
         JButton logout = new JButton("Logout");
-        logout.setBounds(1160, 1, 150, 50);
+        logout.setBounds(1, 450, 150, 50);
+        Home.setBackground(new Color(51, 204, 255));
+        Staff_list.setBackground(new Color(51, 204, 255));
+        Logistics.setBackground(new Color(51, 204, 255));
+        Reports.setBackground(new Color(51, 204, 255));
+        Requests.setBackground(new Color(51, 204, 255));
+        leave_request.setBackground(new Color(51, 204, 255));
+        Tasks.setBackground(new Color(51, 204, 255));
+        my_leaves.setBackground(new Color(51, 204, 255));
+        logout.setBackground(new Color(255, 51, 0));
         logout.setFont(font2);
         jPanel.add(logout);
         logout.addActionListener(e -> {
@@ -1236,10 +1325,10 @@ public class Supervisor extends Person {
         int j=200;
         for (int i=0;i<myLeaves.size();i++) {
             leave_list[i] = new JLabel(myLeaves.get(i).list_string());
-            leave_list[i].setBorder(border);
+//            leave_list[i].setBorder(border);
             leave_list[i].setFont(font2);
             jPanel.add(leave_list[i]);
-            leave_list[i].setBounds(20, j, 800, 200);
+            leave_list[i].setBounds(300, j, 700, 200);
             j+=200;
         }
 
@@ -1270,20 +1359,31 @@ public class Supervisor extends Person {
         jPanel.add(new_leave);
 
         // Set Layout of components
-        name_label.setBounds(790,1,150,50);
-        date_label.setBounds(940, 1, 150, 50);
-        time_label.setBounds(1090, 1, 100, 50);
-        Home.setBounds(1,1,100,50);
-        Staff_list.setBounds(100,1,100,50);
-        Logistics.setBounds(200,1,120,50);
-        Reports.setBounds(320,1,100,50);
-        Requests.setBounds(420,1,120,50);
-        leave_request.setBounds(540, 1, 150, 50);
-        Tasks.setBounds(690, 1, 100, 50);
-        new_leave.setBounds(20, 150, 120, 50);
+        name_label.setBounds(1,1,150,50);
+        date_label.setBounds(160, 1, 150, 50);
+        time_label.setBounds(320, 1, 100, 50);
+        Home.setBounds(1,50,150,50);
+        Staff_list.setBounds(1,100,150,50);
+        Logistics.setBounds(1,150,150,50);
+        Reports.setBounds(1,200,150,50);
+        Requests.setBounds(1,250,150,50);
+        leave_request.setBounds(1, 300, 150, 50);
+        Tasks.setBounds(1, 350, 150, 50);
+        my_leaves.setBounds(1, 400, 150, 50);
+        new_leave.setBounds(160, 50, 150, 50);
 
         JButton logout = new JButton("Logout");
-        logout.setBounds(1160, 1, 150, 50);
+        logout.setBounds(1, 450, 150, 50);
+        Home.setBackground(new Color(51, 204, 255));
+        Staff_list.setBackground(new Color(51, 204, 255));
+        Logistics.setBackground(new Color(51, 204, 255));
+        Reports.setBackground(new Color(51, 204, 255));
+        Requests.setBackground(new Color(51, 204, 255));
+        leave_request.setBackground(new Color(51, 204, 255));
+        Tasks.setBackground(new Color(51, 204, 255));
+        my_leaves.setBackground(new Color(51, 204, 255));
+        new_leave.setBackground(new Color(0, 153, 204));
+        logout.setBackground(new Color(255, 51, 0));
         logout.setFont(font2);
         jPanel.add(logout);
 
@@ -1305,6 +1405,7 @@ public class Supervisor extends Person {
         new_leave.addActionListener(e -> {
             JFrame jFrame1 = new JFrame("Application for leave");
             JPanel jPanel1 = new JPanel(null);
+            jPanel1.setBackground(Color.WHITE);
             JLabel title = new JLabel("Application for leave");
             JLabel toWhom_label = new JLabel("Apply to");
             JLabel reason_label = new JLabel("Reason");
@@ -1326,6 +1427,7 @@ public class Supervisor extends Person {
             submit.setFont(font2);
             reason_label.setFont(font2);
             toWhom.setFont(font2);
+            submit.setBackground(new Color(0, 253, 204));
 
             jPanel1.add(title);
             jPanel1.add(toWhom_label);

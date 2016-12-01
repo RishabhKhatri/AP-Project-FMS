@@ -84,6 +84,8 @@ public class Staff extends Person {
         JButton my_logistics = new JButton("My Logistics");
         my_logistics.setFont(font2);
         jPanel.add(my_logistics);
+        welcome_label.setBounds(300, 300, 800, 70);
+
         // Set Layout of components
         Home.setBounds(1,1,100,50);
         Tasks.setBounds(100, 1, 100, 50);
@@ -97,6 +99,14 @@ public class Staff extends Person {
 
         JButton logout = new JButton("Logout");
         logout.setBounds(1200, 1, 150, 50);
+        Home.setBackground(new Color(51, 204, 255));
+        Tasks.setBackground(new Color(51, 204, 255));
+        Logistics.setBackground(new Color(51, 204, 255));
+        my_leaves.setBackground(new Color(51, 204, 255));
+        Reports.setBackground(new Color(51, 204, 255));
+        my_logistics.setBackground(new Color(51, 204, 255));
+        logout.setBackground(new Color(255, 51, 0));
+        jPanel.setBackground(new Color(255, 255, 255));
         logout.setFont(font2);
         jPanel.add(logout);
 
@@ -171,10 +181,10 @@ public class Staff extends Person {
         int j=100;
         for (int i=0;i<myTasks.size();i++) {
             staff_list[i] = new JLabel(myTasks.get(i).list_string());
-            staff_list[i].setBorder(border);
+//            staff_list[i].setBorder(border);
             staff_list[i].setFont(font2);
             jPanel.add(staff_list[i]);
-            staff_list[i].setBounds(20, j, 800, 200);
+            staff_list[i].setBounds(100, j, 700, 200);
             j+=200;
         }
         j=100;
@@ -193,10 +203,11 @@ public class Staff extends Person {
             else {
                 ongoing_buttons[i].setEnabled(true);
             }
-            ongoing_buttons[i].setBounds(840, j, 100, 30);
+            ongoing_buttons[i].setBounds(730, j, 100, 40);
+            ongoing_buttons[i].setBackground(new Color(0, 153, 204));
             j+=200;
         }
-        j=100;
+        j=150;
         for (int i=0;i<myTasks.size();i++) {
             complete_buttons[i] = new JButton("Complete");
             complete_buttons[i].setFont(font2);
@@ -208,16 +219,18 @@ public class Staff extends Person {
             else {
                 complete_buttons[i].setEnabled(true);
             }
-            complete_buttons[i].setBounds(940, j, 150, 30);
+            complete_buttons[i].setBounds(730, j, 150, 40);
+            complete_buttons[i].setBackground(new Color(51, 204, 51));
             j+=200;
         }
-        j=100;
+        j=200;
         JButton[] generate_task = new JButton[myTasks.size()];
         for (int i=0;i<myTasks.size();i++) {
             generate_task[i] = new JButton("Generate Task Report");
             generate_task[i].setFont(font2);
             jPanel.add(generate_task[i]);
-            generate_task[i].setBounds(1090, j, 250, 30);
+            generate_task[i].setBounds(730, j, 250, 40);
+            generate_task[i].setBackground(new Color(0, 153, 204));
             j+=200;
         }
 
@@ -255,6 +268,14 @@ public class Staff extends Person {
 
         JButton logout = new JButton("Logout");
         logout.setBounds(1200, 1, 150, 50);
+        Home.setBackground(new Color(51, 204, 255));
+        Tasks.setBackground(new Color(51, 204, 255));
+        Logistics.setBackground(new Color(51, 204, 255));
+        my_leaves.setBackground(new Color(51, 204, 255));
+        Reports.setBackground(new Color(51, 204, 255));
+        my_logistics.setBackground(new Color(51, 204, 255));
+        logout.setBackground(new Color(255, 51, 0));
+        jPanel.setBackground(new Color(255, 255, 255));
         logout.setFont(font2);
         jPanel.add(logout);
 
@@ -301,6 +322,7 @@ public class Staff extends Person {
                 JButton jButton = (JButton) actionEvent.getSource();
                 jButton.setEnabled(false);
                 JPanel jPanel1 = new JPanel(null);
+                jPanel1.setBackground(Color.WHITE);
                 JFrame jFrame1 = new JFrame("Task Report");
                 JLabel title = new JLabel("Task Report");
                 JLabel id_label = new JLabel("ID");
@@ -318,6 +340,7 @@ public class Staff extends Person {
                 JTextField comments = new JTextField();
 
                 JButton submit = new JButton("Submit");
+                submit.setBackground(new Color(0, 153, 204));
 
                 title.setFont(font);
                 id_label.setFont(font2);
@@ -440,7 +463,7 @@ public class Staff extends Person {
             staff_list[i].setBorder(border);
             staff_list[i].setFont(font2);
             jPanel.add(staff_list[i]);
-            staff_list[i].setBounds(20, j, 800, 200);
+            staff_list[i].setBounds(100, j, 700, 200);
             j+=200;
         }
 
@@ -478,6 +501,14 @@ public class Staff extends Person {
 
         JButton logout = new JButton("Logout");
         logout.setBounds(1200, 1, 150, 50);
+        Home.setBackground(new Color(51, 204, 255));
+        Tasks.setBackground(new Color(51, 204, 255));
+        Logistics.setBackground(new Color(51, 204, 255));
+        my_leaves.setBackground(new Color(51, 204, 255));
+        Reports.setBackground(new Color(51, 204, 255));
+        my_logistics.setBackground(new Color(51, 204, 255));
+        logout.setBackground(new Color(255, 51, 0));
+        jPanel.setBackground(new Color(255, 255, 255));
         logout.setFont(font2);
         jPanel.add(logout);
 
@@ -561,6 +592,8 @@ public class Staff extends Person {
             strings[i] = ""+arrayList.get(i).getID();
         }
         jComboBox = new JComboBox<>(strings);
+        jComboBox.setBackground(new Color(255, 255, 255));
+        submit.setBackground(new Color(0, 153, 204));
 
         ArrayList<Staff> department_list = new ArrayList<>();
         for (int i=0;i<main.Staff.size();i++) {
@@ -616,17 +649,25 @@ public class Staff extends Person {
 
         JButton logout = new JButton("Logout");
         logout.setBounds(1200, 1, 150, 50);
+        Home.setBackground(new Color(51, 204, 255));
+        Tasks.setBackground(new Color(51, 204, 255));
+        Logistics.setBackground(new Color(51, 204, 255));
+        my_leaves.setBackground(new Color(51, 204, 255));
+        Reports.setBackground(new Color(51, 204, 255));
+        my_logistics.setBackground(new Color(51, 204, 255));
+        logout.setBackground(new Color(255, 51, 0));
+        jPanel.setBackground(new Color(255, 255, 255));
         logout.setFont(font2);
         jPanel.add(logout);
 
-        title.setBounds(400 , 200 , 400, 50);
-        id_label.setBounds(200 , 300 , 150, 30);
-        id.setBounds(400 , 300 , 300, 30);
-        items_label.setBounds(200 , 350 , 150, 30);
-        items.setBounds(400 , 350 , 300, 30);
-        task_label.setBounds(200 , 400 , 150, 30);
-        jComboBox.setBounds(400, 400, 150, 30);
-        submit.setBounds(400 , 450 , 300, 30);
+        title.setBounds(450 , 200 , 700, 50);
+        id_label.setBounds(300 , 300 , 150, 30);
+        id.setBounds(500 , 300 , 300, 30);
+        items_label.setBounds(300 , 350 , 150, 30);
+        items.setBounds(500 , 350 , 300, 30);
+        task_label.setBounds(300 , 400 , 150, 30);
+        jComboBox.setBounds(500, 400, 150, 30);
+        submit.setBounds(500 , 450 , 300, 30);
 
         // Setup frame
         jFrame.add(jPanel);
@@ -636,7 +677,7 @@ public class Staff extends Person {
         // Button Listeners
         submit.addActionListener(e -> {
             if (id.getText().isEmpty() || items.getText().isEmpty()) {
-                JOptionPane.showMessageDialog(null, "Someof the field(s) left empty!");
+                JOptionPane.showMessageDialog(null, "Some of the field(s) left empty!");
                 jFrame.remove(jPanel);
                 logistics(jFrame, main);
             }
@@ -716,10 +757,10 @@ public class Staff extends Person {
         int j=100;
         for (int i=0;i<myLogistics.size();i++) {
             logistics_list[i] = new JLabel(myLogistics.get(i).list_string());
-            logistics_list[i].setBorder(border);
+//            logistics_list[i].setBorder(border);
             logistics_list[i].setFont(font2);
             jPanel.add(logistics_list[i]);
-            logistics_list[i].setBounds(20, j, 800, 200);
+            logistics_list[i].setBounds(100, j, 700, 200);
             j+=200;
         }
 
@@ -757,6 +798,14 @@ public class Staff extends Person {
 
         JButton logout = new JButton("Logout");
         logout.setBounds(1200, 1, 150, 50);
+        Home.setBackground(new Color(51, 204, 255));
+        Tasks.setBackground(new Color(51, 204, 255));
+        Logistics.setBackground(new Color(51, 204, 255));
+        my_leaves.setBackground(new Color(51, 204, 255));
+        Reports.setBackground(new Color(51, 204, 255));
+        my_logistics.setBackground(new Color(51, 204, 255));
+        logout.setBackground(new Color(255, 51, 0));
+        jPanel.setBackground(new Color(255, 255, 255));
         logout.setFont(font2);
         jPanel.add(logout);
 
@@ -844,10 +893,10 @@ public class Staff extends Person {
         int j=200;
         for (int i=0;i<myLeaves.size();i++) {
             leave_list[i] = new JLabel(myLeaves.get(i).list_string());
-            leave_list[i].setBorder(border);
+//            leave_list[i].setBorder(border);
             leave_list[i].setFont(font2);
             jPanel.add(leave_list[i]);
-            leave_list[i].setBounds(20, j, 800, 200);
+            leave_list[i].setBounds(100, j, 700, 200);
             j+=200;
         }
 
@@ -884,10 +933,19 @@ public class Staff extends Person {
         date_label.setBounds(950, 1, 150, 50);
         time_label.setBounds(1100, 1, 100, 50);
         my_logistics.setBounds(620, 1, 150, 50);
-        new_leave.setBounds(20, 100, 150, 30);
+        new_leave.setBounds(50, 100, 150, 50);
 
         JButton logout = new JButton("Logout");
         logout.setBounds(1200, 1, 150, 50);
+        Home.setBackground(new Color(51, 204, 255));
+        Tasks.setBackground(new Color(51, 204, 255));
+        Logistics.setBackground(new Color(51, 204, 255));
+        my_leaves.setBackground(new Color(51, 204, 255));
+        Reports.setBackground(new Color(51, 204, 255));
+        my_logistics.setBackground(new Color(51, 204, 255));
+        logout.setBackground(new Color(255, 51, 0));
+        jPanel.setBackground(new Color(255, 255, 255));
+        new_leave.setBackground(new Color(0, 153, 204));
         logout.setFont(font2);
         jPanel.add(logout);
         // Setup frame
@@ -914,6 +972,7 @@ public class Staff extends Person {
         new_leave.addActionListener(e -> {
             JFrame jFrame1 = new JFrame("Application for leave");
             JPanel jPanel1 = new JPanel(null);
+            jPanel1.setBackground(Color.WHITE);
             JLabel title = new JLabel("Application for leave");
             JLabel toWhom_label = new JLabel("Apply to");
             JLabel reason_label = new JLabel("Reason");
@@ -924,6 +983,7 @@ public class Staff extends Person {
             JTextField to = new JTextField();
             JComboBox<String> toWhom;
             JButton submit = new JButton("Submit leave");
+            submit.setBackground(new Color(0, 153, 204));
 
             title.setFont(font);
             toWhom_label.setFont(font2);
@@ -942,6 +1002,7 @@ public class Staff extends Person {
                 }
             }
             toWhom = new JComboBox<String>(strings);
+            toWhom.setBackground(Color.WHITE);
 
             jPanel1.add(title);
             jPanel1.add(toWhom_label);

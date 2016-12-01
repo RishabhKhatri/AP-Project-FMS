@@ -2,23 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="11439510-4b7b-4d9f-b9e8-07683983dbc4" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/FMS/ID.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ID.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Admin.dat" afterPath="$PROJECT_DIR$/Admin.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Staff.dat" afterPath="$PROJECT_DIR$/Staff.dat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Supervisors.dat" afterPath="$PROJECT_DIR$/Supervisors.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FMS/Staff.class" afterPath="$PROJECT_DIR$/out/production/FMS/Staff.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FMS/Supervisor$1.class" afterPath="$PROJECT_DIR$/out/production/FMS/Supervisor$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FMS/Supervisor.class" afterPath="$PROJECT_DIR$/out/production/FMS/Supervisor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FMS/Task_staff.class" afterPath="$PROJECT_DIR$/out/production/FMS/Task_staff.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FMS/Admin$1.class" afterPath="$PROJECT_DIR$/out/production/FMS/Admin$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FMS/Admin.class" afterPath="$PROJECT_DIR$/out/production/FMS/Admin.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FMS/Interface.class" afterPath="$PROJECT_DIR$/out/production/FMS/Interface.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FMS/Login.class" afterPath="$PROJECT_DIR$/out/production/FMS/Login.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FMS/Main.class" afterPath="$PROJECT_DIR$/out/production/FMS/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FMS/Register.class" afterPath="$PROJECT_DIR$/out/production/FMS/Register.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Admin.java" afterPath="$PROJECT_DIR$/src/Admin.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Interface.java" afterPath="$PROJECT_DIR$/src/Interface.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Login.java" afterPath="$PROJECT_DIR$/src/Login.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Register.java" afterPath="$PROJECT_DIR$/src/Register.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Staff.java" afterPath="$PROJECT_DIR$/src/Staff.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Supervisor.java" afterPath="$PROJECT_DIR$/src/Supervisor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Task_staff.java" afterPath="$PROJECT_DIR$/src/Task_staff.java" />
     </list>
     <ignored path="FMS.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,10 +42,11 @@
       <file leaf-file-name="Register.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Register.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1305">
-              <caret line="12" column="46" lean-forward="false" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+            <state relative-caret-position="322">
+              <caret line="54" column="53" lean-forward="true" selection-start-line="54" selection-start-column="53" selection-end-line="54" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <marker date="1480559247753" expanded="true" signature="11531:11565" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -54,8 +55,8 @@
       <file leaf-file-name="Login.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Login.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="63" column="29" lean-forward="false" selection-start-line="63" selection-start-column="29" selection-end-line="63" selection-end-column="29" />
+            <state relative-caret-position="403">
+              <caret line="211" column="51" lean-forward="false" selection-start-line="211" selection-start-column="51" selection-end-line="211" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -64,19 +65,21 @@
       <file leaf-file-name="Admin.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Admin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-135">
-              <caret line="384" column="67" lean-forward="true" selection-start-line="384" selection-start-column="67" selection-end-line="384" selection-end-column="67" />
+            <state relative-caret-position="541">
+              <caret line="90" column="52" lean-forward="true" selection-start-line="90" selection-start-column="52" selection-end-line="90" selection-end-column="52" />
               <folding>
                 <element signature="docComment;class#Admin#0" expanded="false" />
+                <element signature="method#Admin#0;class#Admin#0" expanded="false" />
                 <element signature="method#RegistrationRequest_Staff#0;class#Admin#0" expanded="false" />
-                <element signature="method#admin_login#0;class#Admin#0" expanded="false" />
                 <element signature="method#staff_list#0;class#Admin#0" expanded="false" />
-                <element signature="e#14222#14230#0" expanded="true" />
+                <element signature="method#Tasks_action#0;class#Admin#0" expanded="false" />
                 <element signature="method#logistics#0;class#Admin#0" expanded="false" />
                 <element signature="method#reports#0;class#Admin#0" expanded="false" />
+                <element signature="method#request#0;class#Admin#0" expanded="false" />
                 <element signature="method#leave_request#0;class#Admin#0" expanded="false" />
                 <element signature="method#removeStaff#0;class#Admin#0" expanded="false" />
                 <element signature="method#addLeaves#0;class#Admin#0" expanded="false" />
+                <marker date="1480562297297" expanded="false" signature="45138:45146" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -85,8 +88,8 @@
       <file leaf-file-name="Interface.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Interface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="60" column="29" lean-forward="false" selection-start-line="60" selection-start-column="29" selection-end-line="60" selection-end-column="29" />
+            <state relative-caret-position="126">
+              <caret line="45" column="47" lean-forward="false" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -95,12 +98,9 @@
       <file leaf-file-name="Logistics.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Logistics.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="46" lean-forward="false" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
-              <folding>
-                <element signature="e#914#915#0" expanded="true" />
-                <element signature="e#942#943#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="119">
+              <caret line="7" column="25" lean-forward="false" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -108,13 +108,17 @@
       <file leaf-file-name="Staff.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Staff.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3465">
-              <caret line="1023" column="43" lean-forward="false" selection-start-line="1023" selection-start-column="43" selection-end-line="1023" selection-end-column="43" />
+            <state relative-caret-position="386">
+              <caret line="865" column="63" lean-forward="false" selection-start-line="865" selection-start-column="63" selection-end-line="865" selection-end-column="63" />
               <folding>
-                <element signature="docComment;class#Staff#0" expanded="false" />
-                <element signature="method#Staff#0;class#Staff#0" expanded="false" />
-                <element signature="e#38821#38822#0" expanded="true" />
-                <element signature="e#38871#38872#0" expanded="true" />
+                <element signature="method#staff_login#0;class#Staff#0" expanded="false" />
+                <element signature="method#Task_action#0;class#Staff#0" expanded="false" />
+                <element signature="method#report_action#0;class#Staff#0" expanded="false" />
+                <element signature="method#logistics#0;class#Staff#0" expanded="false" />
+                <element signature="method#view_logistics#0;class#Staff#0" expanded="false" />
+                <element signature="method#list_string#0;class#Staff#0" expanded="false" />
+                <element signature="method#addTask#0;class#Staff#0" expanded="false" />
+                <element signature="method#accept_leave_request#0;class#Staff#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -123,9 +127,26 @@
       <file leaf-file-name="Person.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Person.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
+            <state relative-caret-position="85">
               <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-              <folding />
+              <folding>
+                <element signature="e#570#571#0" expanded="false" />
+                <element signature="e#598#599#0" expanded="false" />
+                <element signature="e#625#626#0" expanded="false" />
+                <element signature="e#650#651#0" expanded="false" />
+                <element signature="e#684#685#0" expanded="false" />
+                <element signature="e#714#715#0" expanded="false" />
+                <element signature="e#745#746#0" expanded="false" />
+                <element signature="e#772#773#0" expanded="false" />
+                <element signature="e#808#809#0" expanded="false" />
+                <element signature="e#840#841#0" expanded="false" />
+                <element signature="e#875#876#0" expanded="false" />
+                <element signature="e#906#907#0" expanded="false" />
+                <element signature="e#939#940#0" expanded="false" />
+                <element signature="e#969#970#0" expanded="false" />
+                <element signature="e#1012#1013#0" expanded="false" />
+                <element signature="e#1046#1047#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -133,22 +154,27 @@
       <file leaf-file-name="Supervisor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Supervisor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-585">
-              <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+            <state relative-caret-position="369">
+              <caret line="842" column="55" lean-forward="false" selection-start-line="842" selection-start-column="55" selection-end-line="842" selection-end-column="55" />
               <folding>
                 <element signature="docComment;class#Supervisor#0" expanded="false" />
                 <element signature="method#Supervisor#0;class#Supervisor#0" expanded="false" />
                 <element signature="method#RegistrationRequest_Staff#0;class#Supervisor#0" expanded="false" />
+                <element signature="method#supervisor_login#0;class#Supervisor#0" expanded="false" />
                 <element signature="method#logistics#0;class#Supervisor#0" expanded="false" />
                 <element signature="method#reports#0;class#Supervisor#0" expanded="false" />
                 <element signature="method#staff_list#0;class#Supervisor#0" expanded="false" />
                 <element signature="method#request#0;class#Supervisor#0" expanded="false" />
                 <element signature="method#removeStaff#0;class#Supervisor#0" expanded="false" />
-                <element signature="e#37585#37592#0" expanded="true" />
+                <element signature="method#Tasks_action#0;class#Supervisor#0" expanded="false" />
                 <element signature="method#leave_request#0;class#Supervisor#0" expanded="false" />
                 <element signature="method#accept_leave_request#0;class#Supervisor#0" expanded="false" />
+                <element signature="method#addTask#0;class#Supervisor#0" expanded="false" />
                 <element signature="method#addLeave#0;class#Supervisor#0" expanded="false" />
                 <element signature="method#addLogistics#0;class#Supervisor#0" expanded="false" />
+                <marker date="1480565320756" expanded="false" signature="7:74" ph="..." />
+                <marker date="1480565320756" expanded="true" signature="60599:60601" ph="//..." />
+                <marker date="1480565320756" expanded="false" signature="60599:60607" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -157,18 +183,11 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="102" column="29" lean-forward="true" selection-start-line="102" selection-start-column="29" selection-end-line="102" selection-end-column="29" />
+            <state relative-caret-position="238">
+              <caret line="87" column="28" lean-forward="false" selection-start-line="87" selection-start-column="28" selection-end-line="87" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;class#Main#0" expanded="false" />
-                <element signature="method#readAdmin#0;class#Main#0" expanded="false" />
-                <element signature="method#writeAdmin#0;class#Main#0" expanded="false" />
-                <element signature="method#readSupervisors#0;class#Main#0" expanded="false" />
-                <element signature="method#writeSupervisors#0;class#Main#0" expanded="false" />
-                <element signature="method#readStaff#0;class#Main#0" expanded="false" />
-                <element signature="method#writeStaff#0;class#Main#0" expanded="false" />
-                <element signature="e#3000#3028#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -177,11 +196,14 @@
       <file leaf-file-name="Task_staff.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Task_staff.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
+            <state relative-caret-position="748">
               <caret line="48" column="48" lean-forward="false" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
               <folding>
-                <element signature="e#1729#1730#0" expanded="true" />
-                <element signature="e#1762#1763#0" expanded="true" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#1431#1432#0" expanded="false" />
+                <element signature="e#1460#1461#0" expanded="false" />
+                <element signature="e#1667#1668#0" expanded="false" />
+                <element signature="e#1692#1693#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -234,27 +256,27 @@
         <option value="$PROJECT_DIR$/src/Person.java" />
         <option value="$PROJECT_DIR$/src/Task.java" />
         <option value="$PROJECT_DIR$/src/Running.java" />
-        <option value="$PROJECT_DIR$/src/Admin.java" />
         <option value="$PROJECT_DIR$/src/Logistics.java" />
         <option value="$PROJECT_DIR$/src/Leave.java" />
         <option value="$PROJECT_DIR$/src/SupervisorTask.java" />
         <option value="$PROJECT_DIR$/src/TaskReport.java" />
         <option value="$PROJECT_DIR$/src/TimeKeeper.java" />
         <option value="$PROJECT_DIR$/src/Task_staff.java" />
-        <option value="$PROJECT_DIR$/src/Supervisor.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/Interface.java" />
-        <option value="$PROJECT_DIR$/src/Register.java" />
         <option value="$PROJECT_DIR$/src/Login.java" />
+        <option value="$PROJECT_DIR$/src/Register.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/Admin.java" />
+        <option value="$PROJECT_DIR$/src/Interface.java" />
+        <option value="$PROJECT_DIR$/src/Supervisor.java" />
         <option value="$PROJECT_DIR$/src/Staff.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="55" />
-    <option name="y" value="24" />
-    <option name="width" value="1311" />
-    <option name="height" value="744" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="754" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -275,7 +297,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -304,11 +325,12 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/opencsv-3.8.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -600,25 +622,25 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="55" y="24" width="1311" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32735425" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32608697" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="55" y="24" width="1311" height="744" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="true" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="0" y="23" width="1366" height="715" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14721587" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14714494" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -646,7 +668,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="17" />
+      <option name="time" value="19" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -659,7 +681,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-          <folding />
+          <folding>
+            <element signature="e#570#571#0" expanded="false" />
+            <element signature="e#598#599#0" expanded="false" />
+            <element signature="e#625#626#0" expanded="false" />
+            <element signature="e#650#651#0" expanded="false" />
+            <element signature="e#684#685#0" expanded="false" />
+            <element signature="e#714#715#0" expanded="false" />
+            <element signature="e#745#746#0" expanded="false" />
+            <element signature="e#772#773#0" expanded="false" />
+            <element signature="e#808#809#0" expanded="false" />
+            <element signature="e#840#841#0" expanded="false" />
+            <element signature="e#875#876#0" expanded="false" />
+            <element signature="e#906#907#0" expanded="false" />
+            <element signature="e#939#940#0" expanded="false" />
+            <element signature="e#969#970#0" expanded="false" />
+            <element signature="e#1012#1013#0" expanded="false" />
+            <element signature="e#1046#1047#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -669,6 +708,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <marker date="1480559247753" expanded="true" signature="11531:11565" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -687,15 +727,17 @@
           <caret line="5" column="61" lean-forward="false" selection-start-line="5" selection-start-column="61" selection-end-line="5" selection-end-column="61" />
           <folding>
             <element signature="docComment;class#Admin#0" expanded="false" />
+            <element signature="method#Admin#0;class#Admin#0" expanded="false" />
             <element signature="method#RegistrationRequest_Staff#0;class#Admin#0" expanded="false" />
-            <element signature="method#admin_login#0;class#Admin#0" expanded="false" />
             <element signature="method#staff_list#0;class#Admin#0" expanded="false" />
-            <element signature="e#14222#14230#0" expanded="true" />
+            <element signature="method#Tasks_action#0;class#Admin#0" expanded="false" />
             <element signature="method#logistics#0;class#Admin#0" expanded="false" />
             <element signature="method#reports#0;class#Admin#0" expanded="false" />
+            <element signature="method#request#0;class#Admin#0" expanded="false" />
             <element signature="method#leave_request#0;class#Admin#0" expanded="false" />
             <element signature="method#removeStaff#0;class#Admin#0" expanded="false" />
             <element signature="method#addLeaves#0;class#Admin#0" expanded="false" />
+            <marker date="1480562297297" expanded="false" signature="45138:45146" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -716,16 +758,21 @@
             <element signature="docComment;class#Supervisor#0" expanded="false" />
             <element signature="method#Supervisor#0;class#Supervisor#0" expanded="false" />
             <element signature="method#RegistrationRequest_Staff#0;class#Supervisor#0" expanded="false" />
+            <element signature="method#supervisor_login#0;class#Supervisor#0" expanded="false" />
             <element signature="method#logistics#0;class#Supervisor#0" expanded="false" />
             <element signature="method#reports#0;class#Supervisor#0" expanded="false" />
             <element signature="method#staff_list#0;class#Supervisor#0" expanded="false" />
             <element signature="method#request#0;class#Supervisor#0" expanded="false" />
             <element signature="method#removeStaff#0;class#Supervisor#0" expanded="false" />
-            <element signature="e#37585#37592#0" expanded="true" />
+            <element signature="method#Tasks_action#0;class#Supervisor#0" expanded="false" />
             <element signature="method#leave_request#0;class#Supervisor#0" expanded="false" />
             <element signature="method#accept_leave_request#0;class#Supervisor#0" expanded="false" />
+            <element signature="method#addTask#0;class#Supervisor#0" expanded="false" />
             <element signature="method#addLeave#0;class#Supervisor#0" expanded="false" />
             <element signature="method#addLogistics#0;class#Supervisor#0" expanded="false" />
+            <marker date="1480565320756" expanded="false" signature="7:74" ph="..." />
+            <marker date="1480565320756" expanded="true" signature="60599:60601" ph="//..." />
+            <marker date="1480565320756" expanded="false" signature="60599:60607" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -735,10 +782,14 @@
         <state relative-caret-position="75">
           <caret line="5" column="61" lean-forward="false" selection-start-line="5" selection-start-column="61" selection-end-line="5" selection-end-column="61" />
           <folding>
-            <element signature="docComment;class#Staff#0" expanded="false" />
-            <element signature="method#Staff#0;class#Staff#0" expanded="false" />
-            <element signature="e#38821#38822#0" expanded="true" />
-            <element signature="e#38871#38872#0" expanded="true" />
+            <element signature="method#staff_login#0;class#Staff#0" expanded="false" />
+            <element signature="method#Task_action#0;class#Staff#0" expanded="false" />
+            <element signature="method#report_action#0;class#Staff#0" expanded="false" />
+            <element signature="method#logistics#0;class#Staff#0" expanded="false" />
+            <element signature="method#view_logistics#0;class#Staff#0" expanded="false" />
+            <element signature="method#list_string#0;class#Staff#0" expanded="false" />
+            <element signature="method#addTask#0;class#Staff#0" expanded="false" />
+            <element signature="method#accept_leave_request#0;class#Staff#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -750,13 +801,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#Main#0" expanded="false" />
-            <element signature="method#readAdmin#0;class#Main#0" expanded="false" />
-            <element signature="method#writeAdmin#0;class#Main#0" expanded="false" />
-            <element signature="method#readSupervisors#0;class#Main#0" expanded="false" />
-            <element signature="method#writeSupervisors#0;class#Main#0" expanded="false" />
-            <element signature="method#readStaff#0;class#Main#0" expanded="false" />
-            <element signature="method#writeStaff#0;class#Main#0" expanded="false" />
-            <element signature="e#3000#3028#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -765,7 +809,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="62" lean-forward="false" selection-start-line="3" selection-start-column="62" selection-end-line="3" selection-end-column="62" />
-          <folding />
+          <folding>
+            <element signature="e#570#571#0" expanded="false" />
+            <element signature="e#598#599#0" expanded="false" />
+            <element signature="e#625#626#0" expanded="false" />
+            <element signature="e#650#651#0" expanded="false" />
+            <element signature="e#684#685#0" expanded="false" />
+            <element signature="e#714#715#0" expanded="false" />
+            <element signature="e#745#746#0" expanded="false" />
+            <element signature="e#772#773#0" expanded="false" />
+            <element signature="e#808#809#0" expanded="false" />
+            <element signature="e#840#841#0" expanded="false" />
+            <element signature="e#875#876#0" expanded="false" />
+            <element signature="e#906#907#0" expanded="false" />
+            <element signature="e#939#940#0" expanded="false" />
+            <element signature="e#969#970#0" expanded="false" />
+            <element signature="e#1012#1013#0" expanded="false" />
+            <element signature="e#1046#1047#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -775,6 +836,7 @@
           <caret line="1" column="62" lean-forward="false" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="true" />
+            <marker date="1480559247753" expanded="true" signature="11531:11565" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -785,15 +847,17 @@
           <caret line="1" column="62" lean-forward="false" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
           <folding>
             <element signature="docComment;class#Admin#0" expanded="false" />
+            <element signature="method#Admin#0;class#Admin#0" expanded="false" />
             <element signature="method#RegistrationRequest_Staff#0;class#Admin#0" expanded="false" />
-            <element signature="method#admin_login#0;class#Admin#0" expanded="false" />
             <element signature="method#staff_list#0;class#Admin#0" expanded="false" />
-            <element signature="e#14222#14230#0" expanded="true" />
+            <element signature="method#Tasks_action#0;class#Admin#0" expanded="false" />
             <element signature="method#logistics#0;class#Admin#0" expanded="false" />
             <element signature="method#reports#0;class#Admin#0" expanded="false" />
+            <element signature="method#request#0;class#Admin#0" expanded="false" />
             <element signature="method#leave_request#0;class#Admin#0" expanded="false" />
             <element signature="method#removeStaff#0;class#Admin#0" expanded="false" />
             <element signature="method#addLeaves#0;class#Admin#0" expanded="false" />
+            <marker date="1480562297297" expanded="false" signature="45138:45146" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -814,16 +878,21 @@
             <element signature="docComment;class#Supervisor#0" expanded="false" />
             <element signature="method#Supervisor#0;class#Supervisor#0" expanded="false" />
             <element signature="method#RegistrationRequest_Staff#0;class#Supervisor#0" expanded="false" />
+            <element signature="method#supervisor_login#0;class#Supervisor#0" expanded="false" />
             <element signature="method#logistics#0;class#Supervisor#0" expanded="false" />
             <element signature="method#reports#0;class#Supervisor#0" expanded="false" />
             <element signature="method#staff_list#0;class#Supervisor#0" expanded="false" />
             <element signature="method#request#0;class#Supervisor#0" expanded="false" />
             <element signature="method#removeStaff#0;class#Supervisor#0" expanded="false" />
-            <element signature="e#37585#37592#0" expanded="true" />
+            <element signature="method#Tasks_action#0;class#Supervisor#0" expanded="false" />
             <element signature="method#leave_request#0;class#Supervisor#0" expanded="false" />
             <element signature="method#accept_leave_request#0;class#Supervisor#0" expanded="false" />
+            <element signature="method#addTask#0;class#Supervisor#0" expanded="false" />
             <element signature="method#addLeave#0;class#Supervisor#0" expanded="false" />
             <element signature="method#addLogistics#0;class#Supervisor#0" expanded="false" />
+            <marker date="1480565320756" expanded="false" signature="7:74" ph="..." />
+            <marker date="1480565320756" expanded="true" signature="60599:60601" ph="//..." />
+            <marker date="1480565320756" expanded="false" signature="60599:60607" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -833,10 +902,14 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="docComment;class#Staff#0" expanded="false" />
-            <element signature="method#Staff#0;class#Staff#0" expanded="false" />
-            <element signature="e#38821#38822#0" expanded="true" />
-            <element signature="e#38871#38872#0" expanded="true" />
+            <element signature="method#staff_login#0;class#Staff#0" expanded="false" />
+            <element signature="method#Task_action#0;class#Staff#0" expanded="false" />
+            <element signature="method#report_action#0;class#Staff#0" expanded="false" />
+            <element signature="method#logistics#0;class#Staff#0" expanded="false" />
+            <element signature="method#view_logistics#0;class#Staff#0" expanded="false" />
+            <element signature="method#list_string#0;class#Staff#0" expanded="false" />
+            <element signature="method#addTask#0;class#Staff#0" expanded="false" />
+            <element signature="method#accept_leave_request#0;class#Staff#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -848,13 +921,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#Main#0" expanded="false" />
-            <element signature="method#readAdmin#0;class#Main#0" expanded="false" />
-            <element signature="method#writeAdmin#0;class#Main#0" expanded="false" />
-            <element signature="method#readSupervisors#0;class#Main#0" expanded="false" />
-            <element signature="method#writeSupervisors#0;class#Main#0" expanded="false" />
-            <element signature="method#readStaff#0;class#Main#0" expanded="false" />
-            <element signature="method#writeStaff#0;class#Main#0" expanded="false" />
-            <element signature="e#3000#3028#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -863,7 +929,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="62" lean-forward="false" selection-start-line="3" selection-start-column="62" selection-end-line="3" selection-end-column="62" />
-          <folding />
+          <folding>
+            <element signature="e#570#571#0" expanded="false" />
+            <element signature="e#598#599#0" expanded="false" />
+            <element signature="e#625#626#0" expanded="false" />
+            <element signature="e#650#651#0" expanded="false" />
+            <element signature="e#684#685#0" expanded="false" />
+            <element signature="e#714#715#0" expanded="false" />
+            <element signature="e#745#746#0" expanded="false" />
+            <element signature="e#772#773#0" expanded="false" />
+            <element signature="e#808#809#0" expanded="false" />
+            <element signature="e#840#841#0" expanded="false" />
+            <element signature="e#875#876#0" expanded="false" />
+            <element signature="e#906#907#0" expanded="false" />
+            <element signature="e#939#940#0" expanded="false" />
+            <element signature="e#969#970#0" expanded="false" />
+            <element signature="e#1012#1013#0" expanded="false" />
+            <element signature="e#1046#1047#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -873,6 +956,7 @@
           <caret line="1" column="62" lean-forward="false" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="true" />
+            <marker date="1480559247753" expanded="true" signature="11531:11565" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -883,15 +967,17 @@
           <caret line="1" column="62" lean-forward="false" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
           <folding>
             <element signature="docComment;class#Admin#0" expanded="false" />
+            <element signature="method#Admin#0;class#Admin#0" expanded="false" />
             <element signature="method#RegistrationRequest_Staff#0;class#Admin#0" expanded="false" />
-            <element signature="method#admin_login#0;class#Admin#0" expanded="false" />
             <element signature="method#staff_list#0;class#Admin#0" expanded="false" />
-            <element signature="e#14222#14230#0" expanded="true" />
+            <element signature="method#Tasks_action#0;class#Admin#0" expanded="false" />
             <element signature="method#logistics#0;class#Admin#0" expanded="false" />
             <element signature="method#reports#0;class#Admin#0" expanded="false" />
+            <element signature="method#request#0;class#Admin#0" expanded="false" />
             <element signature="method#leave_request#0;class#Admin#0" expanded="false" />
             <element signature="method#removeStaff#0;class#Admin#0" expanded="false" />
             <element signature="method#addLeaves#0;class#Admin#0" expanded="false" />
+            <marker date="1480562297297" expanded="false" signature="45138:45146" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -912,16 +998,21 @@
             <element signature="docComment;class#Supervisor#0" expanded="false" />
             <element signature="method#Supervisor#0;class#Supervisor#0" expanded="false" />
             <element signature="method#RegistrationRequest_Staff#0;class#Supervisor#0" expanded="false" />
+            <element signature="method#supervisor_login#0;class#Supervisor#0" expanded="false" />
             <element signature="method#logistics#0;class#Supervisor#0" expanded="false" />
             <element signature="method#reports#0;class#Supervisor#0" expanded="false" />
             <element signature="method#staff_list#0;class#Supervisor#0" expanded="false" />
             <element signature="method#request#0;class#Supervisor#0" expanded="false" />
             <element signature="method#removeStaff#0;class#Supervisor#0" expanded="false" />
-            <element signature="e#37585#37592#0" expanded="true" />
+            <element signature="method#Tasks_action#0;class#Supervisor#0" expanded="false" />
             <element signature="method#leave_request#0;class#Supervisor#0" expanded="false" />
             <element signature="method#accept_leave_request#0;class#Supervisor#0" expanded="false" />
+            <element signature="method#addTask#0;class#Supervisor#0" expanded="false" />
             <element signature="method#addLeave#0;class#Supervisor#0" expanded="false" />
             <element signature="method#addLogistics#0;class#Supervisor#0" expanded="false" />
+            <marker date="1480565320756" expanded="false" signature="7:74" ph="..." />
+            <marker date="1480565320756" expanded="true" signature="60599:60601" ph="//..." />
+            <marker date="1480565320756" expanded="false" signature="60599:60607" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -931,10 +1022,14 @@
         <state relative-caret-position="15">
           <caret line="1" column="62" lean-forward="false" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
           <folding>
-            <element signature="docComment;class#Staff#0" expanded="false" />
-            <element signature="method#Staff#0;class#Staff#0" expanded="false" />
-            <element signature="e#38821#38822#0" expanded="true" />
-            <element signature="e#38871#38872#0" expanded="true" />
+            <element signature="method#staff_login#0;class#Staff#0" expanded="false" />
+            <element signature="method#Task_action#0;class#Staff#0" expanded="false" />
+            <element signature="method#report_action#0;class#Staff#0" expanded="false" />
+            <element signature="method#logistics#0;class#Staff#0" expanded="false" />
+            <element signature="method#view_logistics#0;class#Staff#0" expanded="false" />
+            <element signature="method#list_string#0;class#Staff#0" expanded="false" />
+            <element signature="method#addTask#0;class#Staff#0" expanded="false" />
+            <element signature="method#accept_leave_request#0;class#Staff#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -946,13 +1041,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#Main#0" expanded="false" />
-            <element signature="method#readAdmin#0;class#Main#0" expanded="false" />
-            <element signature="method#writeAdmin#0;class#Main#0" expanded="false" />
-            <element signature="method#readSupervisors#0;class#Main#0" expanded="false" />
-            <element signature="method#writeSupervisors#0;class#Main#0" expanded="false" />
-            <element signature="method#readStaff#0;class#Main#0" expanded="false" />
-            <element signature="method#writeStaff#0;class#Main#0" expanded="false" />
-            <element signature="e#3000#3028#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -961,7 +1049,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="62" lean-forward="false" selection-start-line="3" selection-start-column="62" selection-end-line="3" selection-end-column="62" />
-          <folding />
+          <folding>
+            <element signature="e#570#571#0" expanded="false" />
+            <element signature="e#598#599#0" expanded="false" />
+            <element signature="e#625#626#0" expanded="false" />
+            <element signature="e#650#651#0" expanded="false" />
+            <element signature="e#684#685#0" expanded="false" />
+            <element signature="e#714#715#0" expanded="false" />
+            <element signature="e#745#746#0" expanded="false" />
+            <element signature="e#772#773#0" expanded="false" />
+            <element signature="e#808#809#0" expanded="false" />
+            <element signature="e#840#841#0" expanded="false" />
+            <element signature="e#875#876#0" expanded="false" />
+            <element signature="e#906#907#0" expanded="false" />
+            <element signature="e#939#940#0" expanded="false" />
+            <element signature="e#969#970#0" expanded="false" />
+            <element signature="e#1012#1013#0" expanded="false" />
+            <element signature="e#1046#1047#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -971,6 +1076,7 @@
           <caret line="1" column="62" lean-forward="false" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="true" />
+            <marker date="1480559247753" expanded="true" signature="11531:11565" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -981,15 +1087,17 @@
           <caret line="1" column="62" lean-forward="false" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
           <folding>
             <element signature="docComment;class#Admin#0" expanded="false" />
+            <element signature="method#Admin#0;class#Admin#0" expanded="false" />
             <element signature="method#RegistrationRequest_Staff#0;class#Admin#0" expanded="false" />
-            <element signature="method#admin_login#0;class#Admin#0" expanded="false" />
             <element signature="method#staff_list#0;class#Admin#0" expanded="false" />
-            <element signature="e#14222#14230#0" expanded="true" />
+            <element signature="method#Tasks_action#0;class#Admin#0" expanded="false" />
             <element signature="method#logistics#0;class#Admin#0" expanded="false" />
             <element signature="method#reports#0;class#Admin#0" expanded="false" />
+            <element signature="method#request#0;class#Admin#0" expanded="false" />
             <element signature="method#leave_request#0;class#Admin#0" expanded="false" />
             <element signature="method#removeStaff#0;class#Admin#0" expanded="false" />
             <element signature="method#addLeaves#0;class#Admin#0" expanded="false" />
+            <marker date="1480562297297" expanded="false" signature="45138:45146" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1010,16 +1118,21 @@
             <element signature="docComment;class#Supervisor#0" expanded="false" />
             <element signature="method#Supervisor#0;class#Supervisor#0" expanded="false" />
             <element signature="method#RegistrationRequest_Staff#0;class#Supervisor#0" expanded="false" />
+            <element signature="method#supervisor_login#0;class#Supervisor#0" expanded="false" />
             <element signature="method#logistics#0;class#Supervisor#0" expanded="false" />
             <element signature="method#reports#0;class#Supervisor#0" expanded="false" />
             <element signature="method#staff_list#0;class#Supervisor#0" expanded="false" />
             <element signature="method#request#0;class#Supervisor#0" expanded="false" />
             <element signature="method#removeStaff#0;class#Supervisor#0" expanded="false" />
-            <element signature="e#37585#37592#0" expanded="true" />
+            <element signature="method#Tasks_action#0;class#Supervisor#0" expanded="false" />
             <element signature="method#leave_request#0;class#Supervisor#0" expanded="false" />
             <element signature="method#accept_leave_request#0;class#Supervisor#0" expanded="false" />
+            <element signature="method#addTask#0;class#Supervisor#0" expanded="false" />
             <element signature="method#addLeave#0;class#Supervisor#0" expanded="false" />
             <element signature="method#addLogistics#0;class#Supervisor#0" expanded="false" />
+            <marker date="1480565320756" expanded="false" signature="7:74" ph="..." />
+            <marker date="1480565320756" expanded="true" signature="60599:60601" ph="//..." />
+            <marker date="1480565320756" expanded="false" signature="60599:60607" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1029,10 +1142,14 @@
         <state relative-caret-position="15">
           <caret line="1" column="62" lean-forward="false" selection-start-line="1" selection-start-column="62" selection-end-line="1" selection-end-column="62" />
           <folding>
-            <element signature="docComment;class#Staff#0" expanded="false" />
-            <element signature="method#Staff#0;class#Staff#0" expanded="false" />
-            <element signature="e#38821#38822#0" expanded="true" />
-            <element signature="e#38871#38872#0" expanded="true" />
+            <element signature="method#staff_login#0;class#Staff#0" expanded="false" />
+            <element signature="method#Task_action#0;class#Staff#0" expanded="false" />
+            <element signature="method#report_action#0;class#Staff#0" expanded="false" />
+            <element signature="method#logistics#0;class#Staff#0" expanded="false" />
+            <element signature="method#view_logistics#0;class#Staff#0" expanded="false" />
+            <element signature="method#list_string#0;class#Staff#0" expanded="false" />
+            <element signature="method#addTask#0;class#Staff#0" expanded="false" />
+            <element signature="method#accept_leave_request#0;class#Staff#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1044,13 +1161,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;class#Main#0" expanded="false" />
-            <element signature="method#readAdmin#0;class#Main#0" expanded="false" />
-            <element signature="method#writeAdmin#0;class#Main#0" expanded="false" />
-            <element signature="method#readSupervisors#0;class#Main#0" expanded="false" />
-            <element signature="method#writeSupervisors#0;class#Main#0" expanded="false" />
-            <element signature="method#readStaff#0;class#Main#0" expanded="false" />
-            <element signature="method#writeStaff#0;class#Main#0" expanded="false" />
-            <element signature="e#3000#3028#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1061,15 +1171,17 @@
           <caret line="3" column="18" lean-forward="false" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
           <folding>
             <element signature="docComment;class#Admin#0" expanded="false" />
+            <element signature="method#Admin#0;class#Admin#0" expanded="false" />
             <element signature="method#RegistrationRequest_Staff#0;class#Admin#0" expanded="false" />
-            <element signature="method#admin_login#0;class#Admin#0" expanded="false" />
             <element signature="method#staff_list#0;class#Admin#0" expanded="false" />
-            <element signature="e#14222#14230#0" expanded="true" />
+            <element signature="method#Tasks_action#0;class#Admin#0" expanded="false" />
             <element signature="method#logistics#0;class#Admin#0" expanded="false" />
             <element signature="method#reports#0;class#Admin#0" expanded="false" />
+            <element signature="method#request#0;class#Admin#0" expanded="false" />
             <element signature="method#leave_request#0;class#Admin#0" expanded="false" />
             <element signature="method#removeStaff#0;class#Admin#0" expanded="false" />
             <element signature="method#addLeaves#0;class#Admin#0" expanded="false" />
+            <marker date="1480562297297" expanded="false" signature="45138:45146" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1082,16 +1194,21 @@
             <element signature="docComment;class#Supervisor#0" expanded="false" />
             <element signature="method#Supervisor#0;class#Supervisor#0" expanded="false" />
             <element signature="method#RegistrationRequest_Staff#0;class#Supervisor#0" expanded="false" />
+            <element signature="method#supervisor_login#0;class#Supervisor#0" expanded="false" />
             <element signature="method#logistics#0;class#Supervisor#0" expanded="false" />
             <element signature="method#reports#0;class#Supervisor#0" expanded="false" />
             <element signature="method#staff_list#0;class#Supervisor#0" expanded="false" />
             <element signature="method#request#0;class#Supervisor#0" expanded="false" />
             <element signature="method#removeStaff#0;class#Supervisor#0" expanded="false" />
-            <element signature="e#37585#37592#0" expanded="true" />
+            <element signature="method#Tasks_action#0;class#Supervisor#0" expanded="false" />
             <element signature="method#leave_request#0;class#Supervisor#0" expanded="false" />
             <element signature="method#accept_leave_request#0;class#Supervisor#0" expanded="false" />
+            <element signature="method#addTask#0;class#Supervisor#0" expanded="false" />
             <element signature="method#addLeave#0;class#Supervisor#0" expanded="false" />
             <element signature="method#addLogistics#0;class#Supervisor#0" expanded="false" />
+            <marker date="1480565320756" expanded="false" signature="7:74" ph="..." />
+            <marker date="1480565320756" expanded="true" signature="60599:60601" ph="//..." />
+            <marker date="1480565320756" expanded="false" signature="60599:60607" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1101,10 +1218,14 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="docComment;class#Staff#0" expanded="false" />
-            <element signature="method#Staff#0;class#Staff#0" expanded="false" />
-            <element signature="e#38821#38822#0" expanded="true" />
-            <element signature="e#38871#38872#0" expanded="true" />
+            <element signature="method#staff_login#0;class#Staff#0" expanded="false" />
+            <element signature="method#Task_action#0;class#Staff#0" expanded="false" />
+            <element signature="method#report_action#0;class#Staff#0" expanded="false" />
+            <element signature="method#logistics#0;class#Staff#0" expanded="false" />
+            <element signature="method#view_logistics#0;class#Staff#0" expanded="false" />
+            <element signature="method#list_string#0;class#Staff#0" expanded="false" />
+            <element signature="method#addTask#0;class#Staff#0" expanded="false" />
+            <element signature="method#accept_leave_request#0;class#Staff#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1122,7 +1243,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1130,9 +1250,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="42" lean-forward="false" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1140,7 +1257,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="8" column="51" lean-forward="false" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1148,7 +1264,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="47" lean-forward="false" selection-start-line="5" selection-start-column="47" selection-end-line="5" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1156,142 +1271,156 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="9" column="62" lean-forward="false" selection-start-line="9" selection-start-column="62" selection-end-line="9" selection-end-column="62" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Admin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-135">
-          <caret line="384" column="67" lean-forward="true" selection-start-line="384" selection-start-column="67" selection-end-line="384" selection-end-column="67" />
-          <folding>
-            <element signature="docComment;class#Admin#0" expanded="false" />
-            <element signature="method#RegistrationRequest_Staff#0;class#Admin#0" expanded="false" />
-            <element signature="method#admin_login#0;class#Admin#0" expanded="false" />
-            <element signature="method#staff_list#0;class#Admin#0" expanded="false" />
-            <element signature="e#14222#14230#0" expanded="true" />
-            <element signature="method#logistics#0;class#Admin#0" expanded="false" />
-            <element signature="method#reports#0;class#Admin#0" expanded="false" />
-            <element signature="method#leave_request#0;class#Admin#0" expanded="false" />
-            <element signature="method#removeStaff#0;class#Admin#0" expanded="false" />
-            <element signature="method#addLeaves#0;class#Admin#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ID.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ID.txt" />
     <entry file="file://$PROJECT_DIR$/src/Person.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
+        <state relative-caret-position="85">
           <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-          <folding />
+          <folding>
+            <element signature="e#570#571#0" expanded="false" />
+            <element signature="e#598#599#0" expanded="false" />
+            <element signature="e#625#626#0" expanded="false" />
+            <element signature="e#650#651#0" expanded="false" />
+            <element signature="e#684#685#0" expanded="false" />
+            <element signature="e#714#715#0" expanded="false" />
+            <element signature="e#745#746#0" expanded="false" />
+            <element signature="e#772#773#0" expanded="false" />
+            <element signature="e#808#809#0" expanded="false" />
+            <element signature="e#840#841#0" expanded="false" />
+            <element signature="e#875#876#0" expanded="false" />
+            <element signature="e#906#907#0" expanded="false" />
+            <element signature="e#939#940#0" expanded="false" />
+            <element signature="e#969#970#0" expanded="false" />
+            <element signature="e#1012#1013#0" expanded="false" />
+            <element signature="e#1046#1047#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Task_staff.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
+        <state relative-caret-position="748">
           <caret line="48" column="48" lean-forward="false" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
           <folding>
-            <element signature="e#1729#1730#0" expanded="true" />
-            <element signature="e#1762#1763#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="102" column="29" lean-forward="true" selection-start-line="102" selection-start-column="29" selection-end-line="102" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#Main#0" expanded="false" />
-            <element signature="method#readAdmin#0;class#Main#0" expanded="false" />
-            <element signature="method#writeAdmin#0;class#Main#0" expanded="false" />
-            <element signature="method#readSupervisors#0;class#Main#0" expanded="false" />
-            <element signature="method#writeSupervisors#0;class#Main#0" expanded="false" />
-            <element signature="method#readStaff#0;class#Main#0" expanded="false" />
-            <element signature="method#writeStaff#0;class#Main#0" expanded="false" />
-            <element signature="e#3000#3028#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Interface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="60" column="29" lean-forward="false" selection-start-line="60" selection-start-column="29" selection-end-line="60" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Logistics.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="46" lean-forward="false" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
-          <folding>
-            <element signature="e#914#915#0" expanded="true" />
-            <element signature="e#942#943#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Register.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1305">
-          <caret line="12" column="46" lean-forward="false" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1431#1432#0" expanded="false" />
+            <element signature="e#1460#1461#0" expanded="false" />
+            <element signature="e#1667#1668#0" expanded="false" />
+            <element signature="e#1692#1693#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Login.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="63" column="29" lean-forward="false" selection-start-line="63" selection-start-column="29" selection-end-line="63" selection-end-column="29" />
+        <state relative-caret-position="403">
+          <caret line="211" column="51" lean-forward="false" selection-start-line="211" selection-start-column="51" selection-end-line="211" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Logistics.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="25" lean-forward="false" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="87" column="28" lean-forward="false" selection-start-line="87" selection-start-column="28" selection-end-line="87" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;class#Main#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Register.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="54" column="53" lean-forward="true" selection-start-line="54" selection-start-column="53" selection-end-line="54" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1480559247753" expanded="true" signature="11531:11565" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Admin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="541">
+          <caret line="90" column="52" lean-forward="true" selection-start-line="90" selection-start-column="52" selection-end-line="90" selection-end-column="52" />
+          <folding>
+            <element signature="docComment;class#Admin#0" expanded="false" />
+            <element signature="method#Admin#0;class#Admin#0" expanded="false" />
+            <element signature="method#RegistrationRequest_Staff#0;class#Admin#0" expanded="false" />
+            <element signature="method#staff_list#0;class#Admin#0" expanded="false" />
+            <element signature="method#Tasks_action#0;class#Admin#0" expanded="false" />
+            <element signature="method#logistics#0;class#Admin#0" expanded="false" />
+            <element signature="method#reports#0;class#Admin#0" expanded="false" />
+            <element signature="method#request#0;class#Admin#0" expanded="false" />
+            <element signature="method#leave_request#0;class#Admin#0" expanded="false" />
+            <element signature="method#removeStaff#0;class#Admin#0" expanded="false" />
+            <element signature="method#addLeaves#0;class#Admin#0" expanded="false" />
+            <marker date="1480562297297" expanded="false" signature="45138:45146" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Interface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="45" column="47" lean-forward="false" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Supervisor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-585">
-          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+        <state relative-caret-position="369">
+          <caret line="842" column="55" lean-forward="false" selection-start-line="842" selection-start-column="55" selection-end-line="842" selection-end-column="55" />
           <folding>
             <element signature="docComment;class#Supervisor#0" expanded="false" />
             <element signature="method#Supervisor#0;class#Supervisor#0" expanded="false" />
             <element signature="method#RegistrationRequest_Staff#0;class#Supervisor#0" expanded="false" />
+            <element signature="method#supervisor_login#0;class#Supervisor#0" expanded="false" />
             <element signature="method#logistics#0;class#Supervisor#0" expanded="false" />
             <element signature="method#reports#0;class#Supervisor#0" expanded="false" />
             <element signature="method#staff_list#0;class#Supervisor#0" expanded="false" />
             <element signature="method#request#0;class#Supervisor#0" expanded="false" />
             <element signature="method#removeStaff#0;class#Supervisor#0" expanded="false" />
-            <element signature="e#37585#37592#0" expanded="true" />
+            <element signature="method#Tasks_action#0;class#Supervisor#0" expanded="false" />
             <element signature="method#leave_request#0;class#Supervisor#0" expanded="false" />
             <element signature="method#accept_leave_request#0;class#Supervisor#0" expanded="false" />
+            <element signature="method#addTask#0;class#Supervisor#0" expanded="false" />
             <element signature="method#addLeave#0;class#Supervisor#0" expanded="false" />
             <element signature="method#addLogistics#0;class#Supervisor#0" expanded="false" />
+            <marker date="1480565320756" expanded="false" signature="7:74" ph="..." />
+            <marker date="1480565320756" expanded="true" signature="60599:60601" ph="//..." />
+            <marker date="1480565320756" expanded="false" signature="60599:60607" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Staff.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3465">
-          <caret line="1023" column="43" lean-forward="false" selection-start-line="1023" selection-start-column="43" selection-end-line="1023" selection-end-column="43" />
+        <state relative-caret-position="386">
+          <caret line="865" column="63" lean-forward="false" selection-start-line="865" selection-start-column="63" selection-end-line="865" selection-end-column="63" />
           <folding>
-            <element signature="docComment;class#Staff#0" expanded="false" />
-            <element signature="method#Staff#0;class#Staff#0" expanded="false" />
-            <element signature="e#38821#38822#0" expanded="true" />
-            <element signature="e#38871#38872#0" expanded="true" />
+            <element signature="method#staff_login#0;class#Staff#0" expanded="false" />
+            <element signature="method#Task_action#0;class#Staff#0" expanded="false" />
+            <element signature="method#report_action#0;class#Staff#0" expanded="false" />
+            <element signature="method#logistics#0;class#Staff#0" expanded="false" />
+            <element signature="method#view_logistics#0;class#Staff#0" expanded="false" />
+            <element signature="method#list_string#0;class#Staff#0" expanded="false" />
+            <element signature="method#addTask#0;class#Staff#0" expanded="false" />
+            <element signature="method#accept_leave_request#0;class#Staff#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -31,6 +31,7 @@ public class Register {
     }
     public void GUI(Main main) {
         // Panel Setup
+        jPanel.setBackground(Color.WHITE);
         JLabel title = new JLabel("Registration Details", SwingConstants.CENTER);
         JLabel name_label = new JLabel("Name ", SwingConstants.CENTER);
         JLabel id_label = new JLabel("ID "+ID, SwingConstants.CENTER);
@@ -49,7 +50,9 @@ public class Register {
         JLabel department_label = new JLabel("Department", SwingConstants.CENTER);
         JLabel type_label = new JLabel("Type", SwingConstants.CENTER);
         JButton back = new JButton("Back");
+        back.setBackground(new Color(0, 153, 204));
         JButton submit = new JButton("Submit");
+        submit.setBackground(new Color(0, 153, 204));
 
         // Setup combo box
         String[] strings = {"Electricity", "HVAC", "Audio/Video", "Security", "Housekeeping"};
@@ -116,25 +119,26 @@ public class Register {
         warning.setVisible(false);
         id.setText(""+ID);
         id.setEnabled(false);
-        title.setBounds(350,100,500,70);
-        name_label.setBounds(150,200,300,30);
-        name.setBounds(450,200,300,30);
-        id_label.setBounds(150,250,300,30);
-        id.setBounds(450,250,300,30);
-        user_name_label.setBounds(150,300,300,30);
-        user_name.setBounds(450,300,300,30);
-        email_label.setBounds(150,350,300,30);
-        email.setBounds(450,350,300,30);
-        password_label.setBounds(150,400,300,30);
-        password.setBounds(450,400,300,30);
-        confirm_password_label.setBounds(150,450,300,30);
-        confirm_password.setBounds(450,450,300,30);
-        contact_label.setBounds(150,500,300,30);
-        contact.setBounds(450,500,300,30);
-        department_label.setBounds(150,550,300,30);
-        department.setBounds(450,550,300,30);
-        submit.setBounds(450, 600, 130,50);
-        back.setBounds(600, 600, 130, 50);
+        title.setBounds(450,100,500,70);
+        name_label.setBounds(250,200,300,30);
+        name.setBounds(550,200,300,30);
+        id_label.setBounds(250,250,300,30);
+        id.setBounds(550,250,300,30);
+        user_name_label.setBounds(250,300,300,30);
+        user_name.setBounds(550,300,300,30);
+        email_label.setBounds(250,350,300,30);
+        email.setBounds(550,350,300,30);
+        password_label.setBounds(250,400,300,30);
+        password.setBounds(550,400,300,30);
+        confirm_password_label.setBounds(250,450,300,30);
+        confirm_password.setBounds(550,450,300,30);
+        contact_label.setBounds(250,500,300,30);
+        contact.setBounds(550,500,300,30);
+        department_label.setBounds(250,550,300,30);
+        department.setBounds(550,550,300,30);
+        department.setBackground(new Color(255, 255, 255));
+        submit.setBounds(550, 600, 130,50);
+        back.setBounds(700, 600, 130, 50);
 
         // Initialize frame
         jFrame.add(jPanel);
@@ -149,44 +153,46 @@ public class Register {
             flag=true;
             // Display error messages
             if (name.getText().isEmpty()) {
-                name_warning.setBounds(720,200,300,30);
+                name_warning.setBounds(870,200,300,30);
                 name_warning.setVisible(true);
                 jFrame.setVisible(true);
                 flag=false;
             } else {name_warning.setVisible(false);}
             if (user_name.getText().isEmpty()) {
-                user_name_warning.setBounds(720,300,300,30);
+                user_name_warning.setBounds(870,300,300,30);
                 user_name_warning.setVisible(true);
                 jFrame.setVisible(true);
                 flag=false;
             } else {user_name_warning.setVisible(false);}
             if (email.getText().isEmpty()) {
-                email_warning.setBounds(720,350,300,30);
+                email_warning.setBounds(870,350,300,30);
                 email_warning.setVisible(true);
                 jFrame.setVisible(true);
                 flag=false;
             } else {email_warning.setVisible(false);}
             if (password.getPassword().length==0) {
-                password_warning.setBounds(720,400,300,30);
+                password_warning.setBounds(870,400,300,30);
                 password_warning.setVisible(true);
                 jFrame.setVisible(true);
                 flag=false;
             } else {password_warning.setVisible(false);}
             if (confirm_password.getPassword().length==0) {
-                confirm_password_warning.setBounds(720,450,300,30);
+                confirm_password_warning.setBounds(870,450,300,30);
                 confirm_password_warning.setVisible(true);
                 jFrame.setVisible(true);
                 flag=false;
             } else {confirm_password_warning.setVisible(false);}
             if (contact.getText().isEmpty()) {
-                contact_warning.setBounds(720,500,300,30);
+                contact_warning.setBounds(870,500,300,30);
                 contact_warning.setVisible(true);
                 jFrame.setVisible(true);
                 flag=false;
             } else {contact_warning.setVisible(false);}
             if (!Arrays.equals(password.getPassword(), confirm_password.getPassword())) {
                 warning.setText("Passwords are not same!");
-                warning.setBounds(720,450,300,30);
+                warning.setBounds(870,450,300,30);
+                password.setText("");
+                confirm_password.setText("");
                 warning.setVisible(true);
                 jFrame.setVisible(true);
                 flag=false;
@@ -204,35 +210,39 @@ public class Register {
 
             Staff temp=null;
             Supervisor temp1=null;
-            if (Type.equals("Staffer")) {
-                temp = new Staff(Name, ID, username, Password, Contact, Email, Department);
-            } else {
-                temp1 = new Supervisor(Name, ID, username, Password, Contact, Email, Department);
-            }
+            temp = new Staff(Name, ID, username, Password, Contact, Email, Department);
 
             // Check for existing staff member
-            if (Type.equals("Staffer")) {
-                for (Person person : main.Staff) {
-                    if (person.getUser_name().equals(temp.getUser_name()) ||
-                            person.getEmail().equals(temp.getEmail())) {
-                        warning.setText("User already exists!");
-                        submit.setBounds(400, 600, 200,50);
+            for (int i=0;i<main.Staff.size();i++) {
+                if (temp.getUser_name().equals(main.Staff.get(i).getUser_name()) ||
+                        temp.getEmail().equals(main.Staff.get(i).getEmail())) {
+                    JOptionPane.showMessageDialog(null, "User already exists. Please choose another username/email.");
+                    user_name.setText("");
+                    email.setText("");
+                    jFrame.setVisible(true);
+                    flag=false;
+                }
+            }
+            if (flag)
+                for (int i=0;i<main.supervisors.size();i++) {
+                    if (temp.getUser_name().equals(main.supervisors.get(i).getUser_name()) ||
+                            temp.getEmail().equals(main.supervisors.get(i).getEmail())) {
+                        JOptionPane.showMessageDialog(null, "User already exists. Please choose another username/email.");
+                        user_name.setText("");
+                        email.setText("");
                         jFrame.setVisible(true);
                         flag=false;
                     }
                 }
-            }
-            else {
-                for (Person person : main.supervisors) {
-                    if (person.getUser_name().equals(temp1.getUser_name()) ||
-                            person.getEmail().equals(temp1.getEmail())) {
-                        warning.setText("User already exists!");
-                        submit.setBounds(400, 600, 200,50);
-                        jFrame.setVisible(true);
-                        flag=false;
-                    }
+            if (flag)
+                if (temp.getUser_name().equals(main.admin.getUser_name()) ||
+                        temp.getEmail().equals(main.admin.getEmail())) {
+                    JOptionPane.showMessageDialog(null, "User already exists. Please choose another username/email.");
+                    user_name.setText("");
+                    email.setText("");
+                    jFrame.setVisible(true);
+                    flag=false;
                 }
-            }
 
             // Create a new staff member if everything is good to go
             if (flag) {

@@ -7,6 +7,7 @@ import java.awt.*;
 public class Login {
     private String username, Password;
     private JFrame jFrame;
+
     private JPanel jPanel = new JPanel(null);
     private JTextField user_name = new JTextField(20);
     private JPasswordField password = new JPasswordField(20);
@@ -53,15 +54,18 @@ public class Login {
         jPanel.add(password);
         jPanel.add(login);
         jPanel.add(back);
+        jPanel.setBackground(Color.WHITE);
 
         // Set layout
-        title.setBounds(350,200,500,70);
-        user_name_label.setBounds(150,300,300,30);
-        user_name.setBounds(450, 300, 300, 30);
-        password_label.setBounds(150, 350, 300, 30);
-        password.setBounds(450, 350, 300, 30);
-        login.setBounds(450, 400, 150, 40);
-        back.setBounds(620, 400, 130, 40);
+        title.setBounds(450,200,500,70);
+        user_name_label.setBounds(250,300,300,30);
+        user_name.setBounds(550, 300, 300, 30);
+        password_label.setBounds(250, 350, 300, 30);
+        password.setBounds(550, 350, 300, 30);
+        login.setBounds(550, 400, 150, 40);
+        login.setBackground(new Color(0, 153, 204));
+        back.setBounds(720, 400, 130, 40);
+        back.setBackground(new Color(0, 153, 204));
 
         // Set jFrame
         this.jFrame.add(jPanel);
@@ -73,14 +77,14 @@ public class Login {
         });
         login.addActionListener(e -> {
             if (user_name.getText().isEmpty()) {
-                user_name_warning.setBounds(700, 200, 300, 30);
+                user_name_warning.setBounds(870, 200, 300, 30);
                 user_name_warning.setVisible(true);
                 jFrame.setVisible(true);
                 flag = false;
             } else {
                 user_name_warning.setVisible(false);
                 if (password.getPassword().length==0) {
-                    password_warning.setBounds(700, 250, 300, 30);
+                    password_warning.setBounds(870, 250, 300, 30);
                     password_warning.setVisible(true);
                     jFrame.setVisible(true);
                     flag = false;
@@ -132,7 +136,7 @@ public class Login {
                                 }
                             }
                             else {
-                                password_wrong.setBounds(700, 250, 300, 30);
+                                password_wrong.setBounds(870, 250, 300, 30);
                                 password_wrong.setVisible(true);
                                 jFrame.setVisible(true);
                                 flag1 = true;
@@ -151,7 +155,7 @@ public class Login {
                                 flag1 = true;
                             }
                             else {
-                                password_wrong.setBounds(700, 250, 300, 30);
+                                password_wrong.setBounds(870, 250, 300, 30);
                                 password_wrong.setVisible(true);
                                 jFrame.setVisible(true);
                                 flag1 = true;
@@ -165,7 +169,7 @@ public class Login {
                                 flag1 = true;
                             }
                             else {
-                                password_wrong.setBounds(700, 250, 300, 30);
+                                password_wrong.setBounds(870, 250, 300, 30);
                                 password_wrong.setVisible(true);
                                 jFrame.setVisible(true);
                                 flag1 = true;
@@ -183,7 +187,7 @@ public class Login {
                             flag1 = true;
                         }
                         else {
-                            password_wrong.setBounds(700, 250, 300, 30);
+                            password_wrong.setBounds(870, 250, 300, 30);
                             password_wrong.setVisible(true);
                             jFrame.setVisible(true);
                             flag1 = true;
@@ -197,7 +201,7 @@ public class Login {
                             flag1 = true;
                         }
                         else {
-                            password_wrong.setBounds(700, 250, 300, 30);
+                            password_wrong.setBounds(870, 250, 300, 30);
                             password_wrong.setVisible(true);
                             jFrame.setVisible(true);
                             flag1 = true;
@@ -205,7 +209,7 @@ public class Login {
                     }
 
                     if (!flag1) {
-                        user_existence.setBounds(700, 200, 300, 30);
+                        user_existence.setBounds(870, 200, 300, 30);
                         user_existence.setVisible(true);
                         jFrame.setVisible(true);
                     }

@@ -86,7 +86,7 @@ public class Main {
         supervisors = readSupervisors();
         Staff = readStaff();
         Interface frame = new Interface(main);
-        //Staff = new ArrayList<>();
+//        Staff = new ArrayList<>();
 //        supervisors = new ArrayList<>();
 //        admin = new Admin("Admin", 1000001, "admin", "admin", "1234567890", "admin@admin.com");
 //        supervisors.add(new Supervisor("Ravi", 1000002, "ravi", "ravi",
